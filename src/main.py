@@ -17,19 +17,6 @@ def load_options():
             "skeleton": False
             },
             "game_options": {
-            "player1": {
-                "name": "PLACEHOLDER",
-                "attack": 0,
-                "health": 0,
-                "mana": 0
-            },
-            "player2": {
-                "name": "PLACEHOLDER",
-                "color": "blue",
-                "attack": 0,
-                "health": 0,
-                "mana": 0
-            },
             "ai": {
                 "attack": 0,
                 "health": 0,
