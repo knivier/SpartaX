@@ -1,11 +1,5 @@
 game_options:
-  debug_mode:
-    default: false
-    type: boolean
+  debug_mode: false
   mode: player_vs_ai
-  skeleton:
-    default: false
-    type: boolean
-  splitscreen:
-    default: false
-    type: boolean
+  skeleton: true
+  splitscreen: false

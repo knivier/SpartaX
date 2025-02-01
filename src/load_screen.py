@@ -27,7 +27,7 @@ def save_options(options):
 pygame.init()
 
 # Screen dimensions
-SCREEN_WIDTH, SCREEN_HEIGHT = 800, 600
+SCREEN_WIDTH, SCREEN_HEIGHT = 800, 600 # Init heights, can change to 1020x1080rez
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption('SpartaX')
 
@@ -71,7 +71,7 @@ def main_menu():
                 sys.exit()
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if buttons["Play"].collidepoint(event.pos):
-                    start_game()
+                    start_game() # Start game, ideally close this one after the next file starts
                 elif buttons["Options"].collidepoint(event.pos):
                     options_menu()
                 elif buttons["Quit"].collidepoint(event.pos):
@@ -109,6 +109,12 @@ def options_menu():
                 for key, rect in option_rects.items():
                     if rect.collidepoint(event.pos):
                         if isinstance(options["game_options"][key], bool):
+                            options["game_options"][key] = not options["game_options"][key]
+                        elif key == "splitscreen":
+                            options["game_options"][key] = not options["game_options"][key]
+                        elif key == "skeleton":
+                            options["game_options"][key] = not options["game_options"][key]
+                        elif key == "debug_mode":
                             options["game_options"][key] = not options["game_options"][key]
                         elif key == "mode":
                             options["game_options"][key] = "player_vs_ai" if options["game_options"][key] == "two_player" else "two_player"
