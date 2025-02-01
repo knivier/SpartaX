@@ -1,24 +1,15 @@
 game_options:
-  mode: 
+  debug_mode:
+    default: false
+    type: boolean
+  mode:
+    options:
+    - two_player
+    - player_vs_ai
     type: string
-    options: 
-      - two_player
-      - player_vs_ai
-  debug_mode: 
-    type: boolean
+  skeleton:
     default: false
-  splitscreen: 
     type: boolean
+  splitscreen:
     default: false
-  skeleton: 
     type: boolean
-    default: false
-#  resource_allocations: 
-#    type: object
-#    properties:
-#      memory: 
-#        type: integer
-#        default: 1024
-#      cpu: 
-#        type: integer
-#        default: 2
