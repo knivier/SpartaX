@@ -2,7 +2,6 @@ import pygame
 import yaml
 import game
 import sys
-import time
 
 # Load game options from YAML file
 def load_options():
@@ -10,7 +9,6 @@ def load_options():
         with open('../properties.yaml', 'r') as file:
             return yaml.safe_load(file)
     except FileNotFoundError:
-        # Default options if file doesn't exist
         return {
             "game_options": {
                 "mode": "two_player",
@@ -29,176 +27,103 @@ def save_options(options):
 pygame.init()
 
 # Screen dimensions
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
+SCREEN_WIDTH, SCREEN_HEIGHT = 800, 600
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+pygame.display.set_caption('SpartaX')
 
 # Colors
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-GRAY = (200, 200, 200)
-BLUE = (0, 0, 255)
-LIGHT_BLUE = (173, 216, 230)
-DARK_GRAY = (50, 50, 50)
-GREEN = (0, 255, 0)
-RED = (255, 0, 0)
+WHITE, BLACK, GRAY, LIGHT_GRAY = (255, 255, 255), (0, 0, 0), (200, 200, 200), (220, 220, 220)
+BLUE, LIGHT_BLUE, DARK_GRAY, GREEN, RED = (0, 0, 255), (173, 216, 230), (50, 50, 50), (0, 255, 0), (255, 0, 0)
 
 # Fonts
-FONT = pygame.font.Font(None, 36)
-TITLE_FONT = pygame.font.Font(None, 72)
-TOOLTIP_FONT = pygame.font.Font(None, 24)
-
-# Create screen
-screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption('SpartaX Load Screen')
+FONT, TITLE_FONT, TOOLTIP_FONT = pygame.font.Font(None, 36), pygame.font.Font(None, 72), pygame.font.Font(None, 24)
 
 # Load options
 options = load_options()
 
-# Button class for better UI
-class Button:
-    def __init__(self, text, x, y, width, height, color, hover_color):
-        self.text = text
-        self.rect = pygame.Rect(x, y, width, height)
-        self.color = color
-        self.hover_color = hover_color
-        self.hovered = False
-
-    def draw(self, screen):
-        if self.hovered:
-            pygame.draw.rect(screen, self.hover_color, self.rect)
-        else:
-            pygame.draw.rect(screen, self.color, self.rect)
-        text_surface = FONT.render(self.text, True, BLACK)
-        text_rect = text_surface.get_rect(center=self.rect.center)
-        screen.blit(text_surface, text_rect)
-
-    def check_hover(self, mouse_pos):
-        self.hovered = self.rect.collidepoint(mouse_pos)
-
-# Fade-in animation
-def fade_in(screen, width, height):
-    fade_surface = pygame.Surface((width, height))
-    fade_surface.fill(BLACK)
-    for alpha in range(255, 0, -5):
-        fade_surface.set_alpha(alpha)
-        screen.blit(fade_surface, (0, 0))
-        pygame.display.flip()
-        pygame.time.delay(30)
+# Button class for UI
+def draw_button(text, x, y, width, height, color, hover_color, mouse_pos):
+    rect = pygame.Rect(x, y, width, height)
+    pygame.draw.rect(screen, hover_color if rect.collidepoint(mouse_pos) else color, rect, border_radius=10)
+    text_surface = FONT.render(text, True, BLACK)
+    screen.blit(text_surface, text_surface.get_rect(center=rect.center))
+    return rect
 
 # Main menu
 def main_menu():
-    fade_in(screen, SCREEN_WIDTH, SCREEN_HEIGHT)
     running = True
-    play_button = Button('Play', 350, 250, 100, 50, GRAY, LIGHT_BLUE)
-    options_button = Button('Options', 350, 320, 100, 50, GRAY, LIGHT_BLUE)
-    quit_button = Button('Quit', 350, 390, 100, 50, GRAY, LIGHT_BLUE)
-
     while running:
         screen.fill(WHITE)
-
-        # Draw title
+        mouse_pos = pygame.mouse.get_pos()
+        
         title_text = TITLE_FONT.render('SpartaX', True, DARK_GRAY)
         screen.blit(title_text, (SCREEN_WIDTH // 2 - title_text.get_width() // 2, 100))
 
-        # Draw buttons
-        play_button.draw(screen)
-        options_button.draw(screen)
-        quit_button.draw(screen)
-
-        # Tooltip for first-time users
-        tooltip_text = TOOLTIP_FONT.render("Use the mouse to navigate the menu.", True, DARK_GRAY)
-        screen.blit(tooltip_text, (SCREEN_WIDTH // 2 - tooltip_text.get_width() // 2, 450))
-
+        buttons = {
+            "Play": draw_button('Play', 350, 250, 100, 50, GRAY, LIGHT_BLUE, mouse_pos),
+            "Options": draw_button('Options', 350, 320, 100, 50, GRAY, LIGHT_BLUE, mouse_pos),
+            "Quit": draw_button('Quit', 350, 390, 100, 50, GRAY, LIGHT_BLUE, mouse_pos)
+        }
+        
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                running = False
                 pygame.quit()
                 sys.exit()
             elif event.type == pygame.MOUSEBUTTONDOWN:
-                if play_button.rect.collidepoint(event.pos):
+                if buttons["Play"].collidepoint(event.pos):
                     start_game()
-                elif options_button.rect.collidepoint(event.pos):
+                elif buttons["Options"].collidepoint(event.pos):
                     options_menu()
-                elif quit_button.rect.collidepoint(event.pos):
-                    running = False
+                elif buttons["Quit"].collidepoint(event.pos):
                     pygame.quit()
                     sys.exit()
-            elif event.type == pygame.MOUSEMOTION:
-                play_button.check_hover(event.pos)
-                options_button.check_hover(event.pos)
-                quit_button.check_hover(event.pos)
-
+        
         pygame.display.flip()
 
 # Options menu
 def options_menu():
-    fade_in(screen, SCREEN_WIDTH, SCREEN_HEIGHT)
     running = True
-    selected_option = 0
-    option_keys = list(options["game_options"].keys())
-    exit_button = Button('No Save', 300, 500, 200, 50, GRAY, LIGHT_BLUE)
-    save_button = Button('Save', 500, 500, 150, 50, GRAY, LIGHT_BLUE)
-
     while running:
         screen.fill(WHITE)
-
-        # Draw options
-        for i, key in enumerate(option_keys):
-            option_text = FONT.render(f'{key.capitalize()}: {options["game_options"][key]}', True, DARK_GRAY)
-            screen.blit(option_text, (100, 100 + i * 50))
-            if i == selected_option:
-                pygame.draw.rect(screen, BLUE, (90, 100 + i * 50, 400, 40), 3)
-
-        # Draw buttons
-        exit_button.draw(screen)
-        save_button.draw(screen)
-
-        # Tooltip for first-time users
-        tooltip_text = TOOLTIP_FONT.render("Use UP/DOWN arrows to navigate, LEFT/RIGHT to change values.", True, DARK_GRAY)
-        screen.blit(tooltip_text, (SCREEN_WIDTH // 2 - tooltip_text.get_width() // 2, 450))
-
+        mouse_pos = pygame.mouse.get_pos()
+        
+        option_keys = list(options["game_options"].keys())
+        y_offset = 120
+        option_rects = {}
+        
+        for key in option_keys:
+            option_text = f'{key.capitalize()}: {options["game_options"][key]}'
+            option_rects[key] = draw_button(option_text, 200, y_offset, 400, 40, GRAY, LIGHT_BLUE, mouse_pos)
+            y_offset += 60
+        
+        buttons = {
+            "Save": draw_button('Save', 500, 500, 150, 50, GREEN, LIGHT_BLUE, mouse_pos),
+            "Back": draw_button('Back', 300, 500, 150, 50, RED, LIGHT_BLUE, mouse_pos)
+        }
+        
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                running = False
                 pygame.quit()
                 sys.exit()
             elif event.type == pygame.MOUSEBUTTONDOWN:
-                if exit_button.rect.collidepoint(event.pos):
-                    running = False
-                elif save_button.rect.collidepoint(event.pos):
+                for key, rect in option_rects.items():
+                    if rect.collidepoint(event.pos):
+                        if isinstance(options["game_options"][key], bool):
+                            options["game_options"][key] = not options["game_options"][key]
+                        elif key == "mode":
+                            options["game_options"][key] = "player_vs_ai" if options["game_options"][key] == "two_player" else "two_player"
+                if buttons["Save"].collidepoint(event.pos):
                     save_options(options)
                     running = False
-                else:
-                    for i, key in enumerate(option_keys):
-                        if 100 <= event.pos[1] <= 140 + i * 50:
-                            selected_option = i
-                            break
-            elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_UP:
-                    selected_option = (selected_option - 1) % len(option_keys)
-                elif event.key == pygame.K_DOWN:
-                    selected_option = (selected_option + 1) % len(option_keys)
-                elif event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
-                    current_value = options["game_options"][option_keys[selected_option]]
-                    if isinstance(current_value, bool):
-                        options["game_options"][option_keys[selected_option]] = not current_value
-                    elif isinstance(current_value, str):
-                        if option_keys[selected_option] == "mode":
-                            options["game_options"][option_keys[
-                                selected_option]] = "player_vs_ai" if current_value == "two_player" else "two_player"
-            elif event.type == pygame.MOUSEMOTION:
-                exit_button.check_hover(event.pos)
-                save_button.check_hover(event.pos)
-
+                elif buttons["Back"].collidepoint(event.pos):
+                    running = False
+        
         pygame.display.flip()
 
 # Start game
 def start_game():
-    # Import and start the game from game.py
     game.run()
 
 # Run main menu
 main_menu()
-
-# Quit Pygame
 pygame.quit()

@@ -2,11 +2,7 @@ game_options:
   debug_mode:
     default: false
     type: boolean
-  mode:
-    options:
-    - two_player
-    - player_vs_ai
-    type: string
+  mode: player_vs_ai
   skeleton:
     default: false
     type: boolean
