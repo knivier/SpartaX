@@ -49,7 +49,7 @@ pygame.init()
 # Screen dimensions
 SCREEN_WIDTH, SCREEN_HEIGHT = 800, 600 # Init heights, can change to 1020x1080rez
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption('SpartaX')
+pygame.display.set_caption('WizViz')
 
 # Colors
 WHITE, BLACK, GRAY, LIGHT_GRAY = (255, 255, 255), (0, 0, 0), (200, 200, 200), (220, 220, 220)
@@ -76,7 +76,7 @@ def main_menu():
         screen.fill(WHITE)
         mouse_pos = pygame.mouse.get_pos()
         
-        title_text = TITLE_FONT.render('SpartaX', True, DARK_GRAY)
+        title_text = TITLE_FONT.render('WizViz', True, DARK_GRAY)
         screen.blit(title_text, (SCREEN_WIDTH // 2 - title_text.get_width() // 2, 100))
 
         buttons = {
