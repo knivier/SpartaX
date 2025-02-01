@@ -1,0 +1,21 @@
+base_options:
+  debug_mode: true
+  mode: player_vs_ai
+  skeleton: true
+  splitscreen: true
+game_options:
+  ai:
+    attack: 0
+    health: 0
+    mana: 0
+  player1:
+    attack: 0
+    health: 0
+    mana: 0
+    name: PLACEHOLDER
+  player2:
+    attack: 0
+    color: blue
+    health: 0
+    mana: 0
+    name: PLACEHOLDER
