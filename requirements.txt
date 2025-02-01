@@ -1,0 +1,4 @@
+pygame
+PyYAML
+opencv-python
+mediapipe
