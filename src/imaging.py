@@ -22,15 +22,16 @@ SOLO_PLAY = False
 
 NUM_POSES = 2
 """Number of poses to detect"""
-MODEL_PATH = "pose_landmarker_full.task"
+MODEL_PATH = "/Users/ankur/Coding-Projects/Hackathon/SpartahackX/SpartaX/src/pose_landmarker_full.task"
+# MODEL_PATH = "./src/pose_landmarker_full.task"
 """Path to the pose landmarker model"""
 
-pygame.init()
-cap = cv2.VideoCapture(0)
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, WIDTH)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, HEIGHT)
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("WizViz Pose Detection")
+# pygame.init()
+# cap = cv2.VideoCapture(0)
+# cap.set(cv2.CAP_PROP_FRAME_WIDTH, WIDTH)
+# cap.set(cv2.CAP_PROP_FRAME_HEIGHT, HEIGHT)
+# screen = pygame.display.set_mode((WIDTH, HEIGHT))
+# pygame.display.set_caption("WizViz Pose Detection")
 
 to_window = None
 last_timestamp_ms = 0
@@ -178,7 +179,7 @@ def draw_landmarks_on_image(rgb_image, detection_result):
             mp.solutions.drawing_styles.get_default_pose_landmarks_style(),
         )
 
-        if False:  # ! Disable for production
+        if True:  # ! Disable for production
             nose_pose = pose_landmarks[mp.solutions.pose.PoseLandmark.NOSE]
             action = define_action(pose_landmarks)
 
@@ -232,8 +233,16 @@ def draw_landmarks_on_image(rgb_image, detection_result):
     return annotated_image
 
 
-def scan(seconds, solo_play) -> any:
+def scan(seconds, solo_play):
     global SOLO_PLAY
+    
+    pygame.init()
+    cap = cv2.VideoCapture(0)
+    cap.set(cv2.CAP_PROP_FRAME_WIDTH, WIDTH)
+    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, HEIGHT)
+    screen = pygame.display.set_mode((WIDTH, HEIGHT))
+    pygame.display.set_caption("WizViz Pose Detection")
+
 
     def timer_callback():
         nonlocal running
@@ -272,7 +281,7 @@ def scan(seconds, solo_play) -> any:
             if detection_result is not None:
                 for pose_landmarks in detection_result.pose_landmarks:
                     action = define_action(pose_landmarks)
-                    print(f"Player {action[0]}: {action[1]}")
+                    # print(f"Player {action[0]}: {action[1]}")
                     if action[0] == 1:
                         if action[1] == "Attack":
                             p1_actions[0] += 1
@@ -308,8 +317,8 @@ def scan(seconds, solo_play) -> any:
                 break
 
         cap.release()
-        pygame.quit()
-
+        # pygame.display.quit()
+        
     max_action_index_p1 = np.argmax(p1_actions)
     max_action_index_p2 = np.argmax(p2_actions)
     return tuple([actions[max_action_index_p1], actions[max_action_index_p2]])
