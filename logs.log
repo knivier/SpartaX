@@ -96,3 +96,245 @@
 2025-02-02 09:35:52,790 - DEBUG - LogWindow updated
 2025-02-02 09:35:52,790 - DEBUG - GUI updated
 2025-02-02 09:35:52,792 - DEBUG - Battle round completed
+2025-02-02 09:37:06,411 - INFO - NEW SESSION ID: 1738507026.4118228
+2025-02-02 09:37:06,414 - DEBUG - Configuration loaded from YAML
+2025-02-02 09:37:06,530 - DEBUG - LogWindow initialized
+2025-02-02 09:37:06,531 - DEBUG - GameEngine initialized
+2025-02-02 09:37:06,531 - INFO - GameEngine instance created
+2025-02-02 09:37:06,531 - DEBUG - Starting battle round
+2025-02-02 09:37:33,112 - INFO - NEW SESSION ID: 1738507053.1111376
+2025-02-02 09:37:33,115 - DEBUG - Configuration loaded from YAML
+2025-02-02 09:37:33,222 - DEBUG - LogWindow initialized
+2025-02-02 09:37:33,222 - DEBUG - GameEngine initialized
+2025-02-02 09:37:33,222 - INFO - GameEngine instance created
+2025-02-02 09:37:33,222 - DEBUG - Starting battle round
+2025-02-02 09:37:41,209 - DEBUG - Scanned moves: Defending
+2025-02-02 09:37:41,209 - DEBUG - Message added to LogWindow: Moves this turn: Hydra -> Defending, Centaurus -> Attack
+2025-02-02 09:37:41,209 - INFO - Moves this turn: Hydra -> Defending, Centaurus -> Attack
+2025-02-02 09:37:41,209 - DEBUG - Processing moves: Hydra -> Defending, Centaurus -> Attack
+2025-02-02 09:37:41,209 - DEBUG - Message added to LogWindow: Hydra is defending this turn!
+2025-02-02 09:37:41,209 - INFO - Hydra is defending this turn!
+2025-02-02 09:37:41,220 - DEBUG - Camera view updated with new frame
+2025-02-02 09:37:41,225 - DEBUG - LogWindow updated
+2025-02-02 09:37:41,226 - DEBUG - GUI updated
+2025-02-02 09:37:41,226 - DEBUG - Battle round completed
+2025-02-02 09:37:46,227 - DEBUG - Starting battle round
+2025-02-02 09:37:54,478 - DEBUG - Scanned moves: Special Attack
+2025-02-02 09:37:54,478 - DEBUG - Message added to LogWindow: Moves this turn: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:37:54,478 - INFO - Moves this turn: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:37:54,478 - DEBUG - Processing moves: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:37:54,489 - DEBUG - Camera view updated with new frame
+2025-02-02 09:37:54,491 - DEBUG - LogWindow updated
+2025-02-02 09:37:54,492 - DEBUG - GUI updated
+2025-02-02 09:37:54,492 - DEBUG - Battle round completed
+2025-02-02 09:37:59,493 - DEBUG - Starting battle round
+2025-02-02 09:38:08,166 - DEBUG - Scanned moves: Defending
+2025-02-02 09:38:08,166 - DEBUG - Message added to LogWindow: Moves this turn: Hydra -> Defending, Centaurus -> Attack
+2025-02-02 09:38:08,166 - INFO - Moves this turn: Hydra -> Defending, Centaurus -> Attack
+2025-02-02 09:38:08,166 - DEBUG - Processing moves: Hydra -> Defending, Centaurus -> Attack
+2025-02-02 09:38:08,166 - DEBUG - Message added to LogWindow: Hydra is defending this turn!
+2025-02-02 09:38:08,166 - INFO - Hydra is defending this turn!
+2025-02-02 09:38:08,178 - DEBUG - Camera view updated with new frame
+2025-02-02 09:38:08,180 - DEBUG - LogWindow updated
+2025-02-02 09:38:08,181 - DEBUG - GUI updated
+2025-02-02 09:38:08,181 - DEBUG - Battle round completed
+2025-02-02 09:38:13,183 - DEBUG - Starting battle round
+2025-02-02 09:38:21,178 - DEBUG - Scanned moves: Special Attack
+2025-02-02 09:38:21,179 - DEBUG - Message added to LogWindow: Moves this turn: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:38:21,179 - INFO - Moves this turn: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:38:21,179 - DEBUG - Processing moves: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:38:21,189 - DEBUG - Camera view updated with new frame
+2025-02-02 09:38:21,191 - DEBUG - LogWindow updated
+2025-02-02 09:38:21,191 - DEBUG - GUI updated
+2025-02-02 09:38:21,192 - DEBUG - Battle round completed
+2025-02-02 09:38:26,193 - DEBUG - Starting battle round
+2025-02-02 09:38:34,332 - DEBUG - Scanned moves: Special Attack
+2025-02-02 09:38:34,333 - DEBUG - Message added to LogWindow: Moves this turn: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:38:34,333 - INFO - Moves this turn: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:38:34,333 - DEBUG - Processing moves: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:38:34,344 - DEBUG - Camera view updated with new frame
+2025-02-02 09:38:34,345 - DEBUG - LogWindow updated
+2025-02-02 09:38:34,345 - DEBUG - GUI updated
+2025-02-02 09:38:34,346 - DEBUG - Battle round completed
+2025-02-02 09:38:39,347 - DEBUG - Starting battle round
+2025-02-02 09:38:48,122 - DEBUG - Scanned moves: Defending
+2025-02-02 09:38:48,122 - DEBUG - Message added to LogWindow: Moves this turn: Hydra -> Defending, Centaurus -> Attack
+2025-02-02 09:38:48,122 - INFO - Moves this turn: Hydra -> Defending, Centaurus -> Attack
+2025-02-02 09:38:48,122 - DEBUG - Processing moves: Hydra -> Defending, Centaurus -> Attack
+2025-02-02 09:38:48,122 - DEBUG - Message added to LogWindow: Hydra is defending this turn!
+2025-02-02 09:38:48,122 - INFO - Hydra is defending this turn!
+2025-02-02 09:38:48,132 - DEBUG - Camera view updated with new frame
+2025-02-02 09:38:48,135 - DEBUG - LogWindow updated
+2025-02-02 09:38:48,135 - DEBUG - GUI updated
+2025-02-02 09:38:48,136 - DEBUG - Battle round completed
+2025-02-02 09:38:53,137 - DEBUG - Starting battle round
+2025-02-02 09:39:02,036 - DEBUG - Scanned moves: Defending
+2025-02-02 09:39:02,036 - DEBUG - Message added to LogWindow: Moves this turn: Hydra -> Defending, Centaurus -> Attack
+2025-02-02 09:39:02,036 - INFO - Moves this turn: Hydra -> Defending, Centaurus -> Attack
+2025-02-02 09:39:02,036 - DEBUG - Processing moves: Hydra -> Defending, Centaurus -> Attack
+2025-02-02 09:39:02,037 - DEBUG - Message added to LogWindow: Hydra is defending this turn!
+2025-02-02 09:39:02,037 - INFO - Hydra is defending this turn!
+2025-02-02 09:39:02,047 - DEBUG - Camera view updated with new frame
+2025-02-02 09:39:02,049 - DEBUG - LogWindow updated
+2025-02-02 09:39:02,049 - DEBUG - GUI updated
+2025-02-02 09:39:02,050 - DEBUG - Battle round completed
+2025-02-02 09:39:07,051 - DEBUG - Starting battle round
+2025-02-02 09:39:15,349 - DEBUG - Scanned moves: Special Attack
+2025-02-02 09:39:15,349 - DEBUG - Message added to LogWindow: Moves this turn: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:39:15,349 - INFO - Moves this turn: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:39:15,349 - DEBUG - Processing moves: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:39:15,358 - DEBUG - Camera view updated with new frame
+2025-02-02 09:39:15,360 - DEBUG - LogWindow updated
+2025-02-02 09:39:15,361 - DEBUG - GUI updated
+2025-02-02 09:39:15,361 - DEBUG - Battle round completed
+2025-02-02 09:39:20,364 - DEBUG - Starting battle round
+2025-02-02 09:39:27,482 - DEBUG - Scanned moves: Special Attack
+2025-02-02 09:39:27,483 - DEBUG - Message added to LogWindow: Moves this turn: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:39:27,483 - INFO - Moves this turn: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:39:27,483 - DEBUG - Processing moves: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:39:27,501 - DEBUG - Camera view updated with new frame
+2025-02-02 09:39:27,504 - DEBUG - LogWindow updated
+2025-02-02 09:39:27,506 - DEBUG - GUI updated
+2025-02-02 09:39:27,507 - DEBUG - Battle round completed
+2025-02-02 09:39:32,509 - DEBUG - Starting battle round
+2025-02-02 09:39:39,602 - DEBUG - Scanned moves: Resting
+2025-02-02 09:39:39,603 - DEBUG - Message added to LogWindow: Moves this turn: Hydra -> Resting, Centaurus -> Attack
+2025-02-02 09:39:39,603 - INFO - Moves this turn: Hydra -> Resting, Centaurus -> Attack
+2025-02-02 09:39:39,603 - DEBUG - Processing moves: Hydra -> Resting, Centaurus -> Attack
+2025-02-02 09:39:39,603 - DEBUG - Message added to LogWindow: Hydra rests and gains 26 mana!
+2025-02-02 09:39:39,603 - INFO - Hydra rests and gains 26 mana!
+2025-02-02 09:39:39,621 - DEBUG - Camera view updated with new frame
+2025-02-02 09:39:39,626 - DEBUG - LogWindow updated
+2025-02-02 09:39:39,627 - DEBUG - GUI updated
+2025-02-02 09:39:39,628 - DEBUG - Battle round completed
+2025-02-02 09:39:44,629 - DEBUG - Starting battle round
+2025-02-02 09:39:51,698 - DEBUG - Scanned moves: Resting
+2025-02-02 09:39:51,698 - DEBUG - Message added to LogWindow: Moves this turn: Hydra -> Resting, Centaurus -> Attack
+2025-02-02 09:39:51,699 - INFO - Moves this turn: Hydra -> Resting, Centaurus -> Attack
+2025-02-02 09:39:51,699 - DEBUG - Processing moves: Hydra -> Resting, Centaurus -> Attack
+2025-02-02 09:39:51,699 - DEBUG - Message added to LogWindow: Hydra rests and gains 33 mana!
+2025-02-02 09:39:51,699 - INFO - Hydra rests and gains 33 mana!
+2025-02-02 09:39:51,717 - DEBUG - Camera view updated with new frame
+2025-02-02 09:39:51,721 - DEBUG - LogWindow updated
+2025-02-02 09:39:51,722 - DEBUG - GUI updated
+2025-02-02 09:39:51,723 - DEBUG - Battle round completed
+2025-02-02 09:39:56,724 - DEBUG - Starting battle round
+2025-02-02 09:40:03,750 - DEBUG - Scanned moves: Resting
+2025-02-02 09:40:03,750 - DEBUG - Message added to LogWindow: Moves this turn: Hydra -> Resting, Centaurus -> Attack
+2025-02-02 09:40:03,750 - INFO - Moves this turn: Hydra -> Resting, Centaurus -> Attack
+2025-02-02 09:40:03,750 - DEBUG - Processing moves: Hydra -> Resting, Centaurus -> Attack
+2025-02-02 09:40:03,750 - DEBUG - Message added to LogWindow: Hydra rests and gains 33 mana!
+2025-02-02 09:40:03,750 - INFO - Hydra rests and gains 33 mana!
+2025-02-02 09:40:03,769 - DEBUG - Camera view updated with new frame
+2025-02-02 09:40:03,773 - DEBUG - LogWindow updated
+2025-02-02 09:40:03,774 - DEBUG - GUI updated
+2025-02-02 09:40:03,776 - DEBUG - Battle round completed
+2025-02-02 09:40:08,777 - DEBUG - Starting battle round
+2025-02-02 09:40:15,824 - DEBUG - Scanned moves: Resting
+2025-02-02 09:40:15,824 - DEBUG - Message added to LogWindow: Moves this turn: Hydra -> Resting, Centaurus -> Attack
+2025-02-02 09:40:15,824 - INFO - Moves this turn: Hydra -> Resting, Centaurus -> Attack
+2025-02-02 09:40:15,824 - DEBUG - Processing moves: Hydra -> Resting, Centaurus -> Attack
+2025-02-02 09:40:15,824 - DEBUG - Message added to LogWindow: Hydra rests and gains 20 mana!
+2025-02-02 09:40:15,825 - INFO - Hydra rests and gains 20 mana!
+2025-02-02 09:40:15,842 - DEBUG - Camera view updated with new frame
+2025-02-02 09:40:15,849 - DEBUG - LogWindow updated
+2025-02-02 09:40:15,850 - DEBUG - GUI updated
+2025-02-02 09:40:15,851 - DEBUG - Battle round completed
+2025-02-02 09:40:20,852 - DEBUG - Starting battle round
+2025-02-02 09:40:28,133 - DEBUG - Scanned moves: Resting
+2025-02-02 09:40:28,133 - DEBUG - Message added to LogWindow: Moves this turn: Hydra -> Resting, Centaurus -> Attack
+2025-02-02 09:40:28,133 - INFO - Moves this turn: Hydra -> Resting, Centaurus -> Attack
+2025-02-02 09:40:28,133 - DEBUG - Processing moves: Hydra -> Resting, Centaurus -> Attack
+2025-02-02 09:40:28,133 - DEBUG - Message added to LogWindow: Hydra rests and gains 30 mana!
+2025-02-02 09:40:28,134 - INFO - Hydra rests and gains 30 mana!
+2025-02-02 09:40:28,152 - DEBUG - Camera view updated with new frame
+2025-02-02 09:40:28,156 - DEBUG - LogWindow updated
+2025-02-02 09:40:28,157 - DEBUG - GUI updated
+2025-02-02 09:40:28,158 - DEBUG - Battle round completed
+2025-02-02 09:40:33,160 - DEBUG - Starting battle round
+2025-02-02 09:40:40,419 - DEBUG - Scanned moves: Resting
+2025-02-02 09:40:40,419 - DEBUG - Message added to LogWindow: Moves this turn: Hydra -> Resting, Centaurus -> Attack
+2025-02-02 09:40:40,420 - INFO - Moves this turn: Hydra -> Resting, Centaurus -> Attack
+2025-02-02 09:40:40,420 - DEBUG - Processing moves: Hydra -> Resting, Centaurus -> Attack
+2025-02-02 09:40:40,420 - DEBUG - Message added to LogWindow: Hydra rests and gains 28 mana!
+2025-02-02 09:40:40,420 - INFO - Hydra rests and gains 28 mana!
+2025-02-02 09:40:40,432 - DEBUG - Camera view updated with new frame
+2025-02-02 09:40:40,434 - DEBUG - LogWindow updated
+2025-02-02 09:40:40,435 - DEBUG - GUI updated
+2025-02-02 09:40:40,436 - DEBUG - Battle round completed
+2025-02-02 09:40:45,437 - DEBUG - Starting battle round
+2025-02-02 09:40:52,512 - DEBUG - Scanned moves: Resting
+2025-02-02 09:40:52,512 - DEBUG - Message added to LogWindow: Moves this turn: Hydra -> Resting, Centaurus -> Attack
+2025-02-02 09:40:52,512 - INFO - Moves this turn: Hydra -> Resting, Centaurus -> Attack
+2025-02-02 09:40:52,512 - DEBUG - Processing moves: Hydra -> Resting, Centaurus -> Attack
+2025-02-02 09:40:52,513 - DEBUG - Message added to LogWindow: Hydra rests and gains 22 mana!
+2025-02-02 09:40:52,513 - INFO - Hydra rests and gains 22 mana!
+2025-02-02 09:40:52,527 - DEBUG - Camera view updated with new frame
+2025-02-02 09:40:52,530 - DEBUG - LogWindow updated
+2025-02-02 09:40:52,531 - DEBUG - GUI updated
+2025-02-02 09:40:52,531 - DEBUG - Battle round completed
+2025-02-02 09:40:57,531 - DEBUG - Starting battle round
+2025-02-02 09:41:04,611 - DEBUG - Scanned moves: Resting
+2025-02-02 09:41:04,611 - DEBUG - Message added to LogWindow: Moves this turn: Hydra -> Resting, Centaurus -> Attack
+2025-02-02 09:41:04,611 - INFO - Moves this turn: Hydra -> Resting, Centaurus -> Attack
+2025-02-02 09:41:04,611 - DEBUG - Processing moves: Hydra -> Resting, Centaurus -> Attack
+2025-02-02 09:41:04,611 - DEBUG - Message added to LogWindow: Hydra rests and gains 35 mana!
+2025-02-02 09:41:04,611 - INFO - Hydra rests and gains 35 mana!
+2025-02-02 09:41:04,629 - DEBUG - Camera view updated with new frame
+2025-02-02 09:41:04,632 - DEBUG - LogWindow updated
+2025-02-02 09:41:04,633 - DEBUG - GUI updated
+2025-02-02 09:41:04,634 - DEBUG - Battle round completed
+2025-02-02 09:41:09,635 - DEBUG - Starting battle round
+2025-02-02 09:41:16,719 - DEBUG - Scanned moves: Special Attack
+2025-02-02 09:41:16,719 - DEBUG - Message added to LogWindow: Moves this turn: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:41:16,719 - INFO - Moves this turn: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:41:16,719 - DEBUG - Processing moves: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:41:16,733 - DEBUG - Camera view updated with new frame
+2025-02-02 09:41:16,735 - DEBUG - LogWindow updated
+2025-02-02 09:41:16,736 - DEBUG - GUI updated
+2025-02-02 09:41:16,737 - DEBUG - Battle round completed
+2025-02-02 09:41:21,737 - DEBUG - Starting battle round
+2025-02-02 09:46:49,083 - INFO - NEW SESSION ID: 1738507609.0834765
+2025-02-02 09:46:49,101 - DEBUG - Configuration loaded from YAML
+2025-02-02 09:46:49,263 - DEBUG - LogWindow initialized
+2025-02-02 09:46:49,263 - DEBUG - GameEngine initialized
+2025-02-02 09:46:49,263 - INFO - GameEngine instance created
+2025-02-02 09:46:49,263 - DEBUG - Starting battle round
+2025-02-02 09:47:01,560 - DEBUG - Scanned moves: Healing
+2025-02-02 09:47:01,560 - DEBUG - Message added to LogWindow: Moves this turn: Hydra -> Healing, Centaurus -> Attack
+2025-02-02 09:47:01,560 - INFO - Moves this turn: Hydra -> Healing, Centaurus -> Attack
+2025-02-02 09:47:01,560 - DEBUG - Processing moves: Hydra -> Healing, Centaurus -> Attack
+2025-02-02 09:47:01,560 - DEBUG - Message added to LogWindow: Hydra heals and gains 21 health!
+2025-02-02 09:47:01,560 - INFO - Hydra heals and gains 21 health!
+2025-02-02 09:47:52,992 - INFO - NEW SESSION ID: 1738507672.9927986
+2025-02-02 09:47:52,995 - DEBUG - Configuration loaded from YAML
+2025-02-02 09:47:53,105 - DEBUG - LogWindow initialized
+2025-02-02 09:47:53,106 - DEBUG - GameEngine initialized
+2025-02-02 09:47:53,106 - INFO - GameEngine instance created
+2025-02-02 09:47:53,106 - DEBUG - Starting battle round
+2025-02-02 09:48:04,203 - DEBUG - Scanned moves: Healing
+2025-02-02 09:48:04,203 - DEBUG - Message added to LogWindow: Moves this turn: Hydra -> Healing, Centaurus -> Attack
+2025-02-02 09:48:04,203 - INFO - Moves this turn: Hydra -> Healing, Centaurus -> Attack
+2025-02-02 09:48:04,203 - DEBUG - Processing moves: Hydra -> Healing, Centaurus -> Attack
+2025-02-02 09:48:04,203 - DEBUG - Message added to LogWindow: Hydra heals and gains 27 health!
+2025-02-02 09:48:04,203 - INFO - Hydra heals and gains 27 health!
+2025-02-02 09:48:04,204 - DEBUG - Message added to LogWindow: Centaurus attacks Hydra for 33 damage!
+2025-02-02 09:48:04,204 - INFO - Centaurus attacks Hydra for 33 damage!
+2025-02-02 09:48:04,217 - DEBUG - Camera view updated with new frame
+2025-02-02 09:48:04,223 - DEBUG - LogWindow updated
+2025-02-02 09:48:04,223 - DEBUG - GUI updated
+2025-02-02 09:48:04,224 - DEBUG - Battle round completed
+2025-02-02 09:48:09,225 - DEBUG - Starting battle round
+2025-02-02 09:48:17,399 - DEBUG - Scanned moves: Special Attack
+2025-02-02 09:48:17,399 - DEBUG - Message added to LogWindow: Moves this turn: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:48:17,399 - INFO - Moves this turn: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:48:17,399 - DEBUG - Processing moves: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:48:17,400 - DEBUG - Message added to LogWindow: Hydra uses a special attack on Centaurus for 60 damage!
+2025-02-02 09:48:17,400 - INFO - Hydra uses a special attack on Centaurus for 60 damage!
+2025-02-02 09:48:17,400 - DEBUG - Message added to LogWindow: Centaurus attacks Hydra for 33 damage!
+2025-02-02 09:48:17,400 - INFO - Centaurus attacks Hydra for 33 damage!
+2025-02-02 09:48:17,411 - DEBUG - Camera view updated with new frame
+2025-02-02 09:48:17,414 - DEBUG - LogWindow updated
+2025-02-02 09:48:17,415 - DEBUG - GUI updated
+2025-02-02 09:48:17,415 - DEBUG - Battle round completed
+2025-02-02 09:48:22,417 - DEBUG - Starting battle round

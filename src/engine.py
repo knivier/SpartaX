@@ -1,6 +1,5 @@
 import random
 import pygame
-import particles
 
 from Player_List import (
     Draco,
@@ -93,7 +92,7 @@ class GameEngine:
 
         # Set up a dedicated GUI surface for the right half.
         # Right half occupies x = 684 to 1368.
-        self.gui_surface = pygame.Surface((1920 // 2, 1080))
+        self.gui_surface = pygame.Surface((1368 // 2, 720))
         # Positions for health/mana bars (relative to the GUI surface).
         self.p1_health_rect = pygame.Rect(16, 50, 200, 20)
         self.p1_mana_rect = pygame.Rect(16, 80, 200, 20)
@@ -196,8 +195,8 @@ class GameEngine:
     def process_round_moves(self, move1, move2):
         """
         Process both players' moves concurrently.
-        move1: move chosen by player1 ("Attack", "Defending", "Resting")
-        move2: move chosen by player2 ("Attack", "Defending", "Resting")
+        move1: move chosen by player1 ("Attack", "Defending", "Resting", "Healing", "Special Attack")
+        move2: move chosen by player2 ("Attack", "Defending", "Resting", "Healing", "Special Attack")
         """
         logging.debug(
             f"Processing moves: {self.player1.get_name()} -> {move1}, {self.player2.get_name()} -> {move2}"
@@ -205,14 +204,6 @@ class GameEngine:
         # Process player1's move.
         self.particle_effects = []
         if move1 == "Attack":
-            # p1_name = player_classes.get(player1_name)
-            #TODO implement particles based on player
-            effect = particles.ParticleEffect(pos=(200, 300), num_particles=30, color=(255, 50, 50))
-            self.particle_effects.append(effect)
-            for effect in self.particle_effects:
-                effect.update()
-                effect.draw(self.screen)
-            self.particle_effects = [effect for effect in self.particle_effects if effect.particles]
             pygame.display.update()
             if self.player1.get_mana() >= 20:
                 self.player1.set_mana(self.player1.get_mana() - 20)
@@ -257,15 +248,32 @@ class GameEngine:
             mana_gain = random.randint(20, 35)
             self.player1.set_mana(self.player1.get_mana() + mana_gain)
             self.log(f"{self.player1.get_name()} rests and gains {mana_gain} mana!")
+        elif move1 == "Healing":
+            if self.player1.get_mana() >= 30:
+                self.player1.set_mana(self.player1.get_mana() - 30)
+                health_gain = random.randint(15, 30)
+                self.player1.set_health(self.player1.get_health() + health_gain)
+                self.log(f"{self.player1.get_name()} heals and gains {health_gain} health!")
+            else:
+                self.log(
+                    f"{self.player1.get_name()} tried to heal but didn't have enough mana!"
+                )
+        elif move1 == "Special Attack":
+            if self.player1.get_mana() >= 50:
+                self.player1.set_mana(self.player1.get_mana() - 50)
+                damage = self.player1.get_attack() * 2
+                self.player2.set_health(self.player2.get_health() - damage)
+                self.log(
+                    f"{self.player1.get_name()} uses a special attack on {self.player2.get_name()} for {damage} damage!"
+                )
+            else:
+                self.log(
+                    f"{self.player1.get_name()} tried to use a special attack but didn't have enough mana!"
+                )
 
         # Process player2's move.
-        if move2 == "Attacking":
-            effect = particles.ParticleEffect(pos=(800, 300), num_particles=30, color=(50, 50, 255))
-            self.particle_effects.append(effect)
-            for effect in self.particle_effects:
-                effect.update()
-                effect.draw(self.screen)
-            self.particle_effects = [effect for effect in self.particle_effects if effect.particles]
+        if move2 == "Attack":
+            
             pygame.display.update()
             if self.player2.get_mana() >= 20:
                 self.player2.set_mana(self.player2.get_mana() - 20)
@@ -310,6 +318,28 @@ class GameEngine:
             mana_gain = random.randint(20, 35)
             self.player2.set_mana(self.player2.get_mana() + mana_gain)
             self.log(f"{self.player2.get_name()} rests and gains {mana_gain} mana!")
+        elif move2 == "Healing":
+            if self.player2.get_mana() >= 30:
+                self.player2.set_mana(self.player2.get_mana() - 30)
+                health_gain = random.randint(15, 30)
+                self.player2.set_health(self.player2.get_health() + health_gain)
+                self.log(f"{self.player2.get_name()} heals and gains {health_gain} health!")
+            else:
+                self.log(
+                    f"{self.player2.get_name()} tried to heal but didn't have enough mana!"
+                )
+        elif move2 == "Special Attack":
+            if self.player2.get_mana() >= 50:
+                self.player2.set_mana(self.player2.get_mana() - 50)
+                damage = self.player2.get_attack() * 2
+                self.player1.set_health(self.player1.get_health() - damage)
+                self.log(
+                    f"{self.player2.get_name()} uses a special attack on {self.player1.get_name()} for {damage} damage!"
+                )
+            else:
+                self.log(
+                    f"{self.player2.get_name()} tried to use a special attack but didn't have enough mana!"
+                )
 
     def battle_round(self, single_player=False, bot=None):
         """
