@@ -128,6 +128,7 @@ class GameEngine:
         """
         Draw the GUI on the right half: background, health/mana bars, and log window.
         """
+        self.particle_effects = []
         self.gui_surface.fill((50, 50, 50))
         # Draw health/mana bars for player1.
         p1_health_width = int((self.player1.get_health() / 100) * 200)
@@ -181,10 +182,21 @@ class GameEngine:
             self.p2_mana_rect.height,
             ),
         )
-        # Update log window on the GUI surface.
+        for effect in self.particle_effects:
+            effect.update()
+            effect.draw(self.screen)
+
+        # Remove dead particle effects
+        self.particle_effects = [effect for effect in self.particle_effects if effect.particles]
+
+        # Update log window on the GUI surface
         self.log_window.update(self.gui_surface)
-        # Blit the GUI surface onto the right half of the main screen.
+
+        # Blit the GUI surface onto the right half of the main screen
         self.screen.blit(self.gui_surface, (684, 0))
+
+    # Update the display
+        pygame.display.update()
         logging.debug("GUI updated")
 
     def log(self, message):
