@@ -21,7 +21,6 @@ MODEL_PATH = "pose_landmarker_full.task"
 
 pygame.init()
 infoObject = pygame.display.Info()
-# WIDTH, HEIGHT = infoObject.current_w, infoObject.current_h
 cap = cv2.VideoCapture(0)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, WIDTH)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, HEIGHT)
@@ -102,12 +101,6 @@ def define_action(pose_landmarks):
     ):
         player_move = "Attack"
 
-    # if (
-    #     abs(right_ankle_x - human_center) > 2 * shoulder_width
-    #     or abs(left_ankle_x - human_center) > 2 * shoulder_width
-    # ):
-    #     player_move = "Kick"
-
     if (
         abs(
             pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_WRIST].x
@@ -146,7 +139,6 @@ def draw_landmarks_on_image(rgb_image, detection_result):
 
     # Loop through the detected poses to visualize.
     for idx in range(len(pose_object_list)):
-        # print ("Pose ID:", idx)
         pose_landmarks = pose_object_list[idx]
 
         pose_landmarks_proto = landmark_pb2.NormalizedLandmarkList()
@@ -166,9 +158,6 @@ def draw_landmarks_on_image(rgb_image, detection_result):
         )
 
         nose_pose = pose_landmarks[mp.solutions.pose.PoseLandmark.NOSE]
-        # print(f"RGB Image Shape: {rgb_image.shape}")
-
-        # for pose_landmarks in detection_result.pose_landmarks:
         action = define_action(pose_landmarks)
 
         cv2.putText(
@@ -240,11 +229,6 @@ def scan() -> any:
             timestamp_ms = int(cv2.getTickCount() / cv2.getTickFrequency() * 1000)
 
             landmarker.detect_async(mp_image, timestamp_ms)
-
-            # if detection_result is not None or detection_result.pose_landmarks:
-            #     for pose_landmarks in detection_result.pose_landmarks:
-            #         action = define_action(pose_landmarks)
-            #         print(action)
 
             if to_window is not None:
                 # Flip the frame horizontally
