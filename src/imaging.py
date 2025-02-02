@@ -21,8 +21,8 @@ SOLO_PLAY = False
 """Whether the player is playing alone"""
 NUM_POSES = 2
 """Number of poses to detect"""
-MODEL_PATH_ALT = "/Users/ankur/Coding-Projects/Hackathon/SpartahackX/SpartaX/src/pose_landmarker_full.task"
-MODEL_PATH = "C:\\Users\\agniv\\Documents\\Code\\spartax\\src\\pose_landmarker_full.task"
+MODEL_PATH = "/Users/ankur/Coding-Projects/Hackathon/SpartahackX/SpartaX/src/pose_landmarker_full.task"
+# MODEL_PATH = "C:\\Users\\agniv\\Documents\\Code\\spartax\\src\\pose_landmarker_full.task"
 
 # MODEL_PATH = "./src/pose_landmarker_full.task"
 """Path to the pose landmarker model"""
@@ -336,8 +336,10 @@ def scan(seconds, solo_play):
                 frame_rgb = cv2.cvtColor(frame_rotated, cv2.COLOR_BGR2RGB)
                 # Convert the frame to a Pygame surface
                 frame_surface = pygame.surfarray.make_surface(frame_rgb)
+                
+                scaled_frame_surface = pygame.transform.scale(frame_surface, (WIDTH, HEIGHT))
                 # Display the surface on the Pygame screen
-                screen.blit(frame_surface, (0, 0))
+                screen.blit(scaled_frame_surface, (0, 0))
 
                 pygame.display.flip()
 

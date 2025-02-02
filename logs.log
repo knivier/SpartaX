@@ -1,0 +1,1562 @@
+2025-02-02 11:16:37,771 - INFO - NEW SESSION ID: 1738512997.771428
+2025-02-02 11:16:37,772 - DEBUG - Configuration loaded from YAML
+2025-02-02 11:16:37,885 - DEBUG - LogWindow initialized
+2025-02-02 11:16:37,885 - DEBUG - GameEngine initialized
+2025-02-02 11:16:37,885 - INFO - GameEngine instance created
+2025-02-02 11:16:37,885 - DEBUG - Starting battle round
+2025-02-02 11:16:44,466 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:16:44,466 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Centaurus -> Attack
+2025-02-02 11:16:44,466 - INFO - Moves this turn: Draco -> Special Attack, Centaurus -> Attack
+2025-02-02 11:16:44,466 - DEBUG - Processing moves: Draco -> Special Attack, Centaurus -> Attack
+2025-02-02 11:16:44,466 - DEBUG - Message added to LogWindow: Draco uses a special attack on Centaurus for 50 damage!
+2025-02-02 11:16:44,466 - INFO - Draco uses a special attack on Centaurus for 50 damage!
+2025-02-02 11:16:44,468 - DEBUG - Message added to LogWindow: Centaurus attacks Draco for 33 damage!
+2025-02-02 11:16:44,468 - INFO - Centaurus attacks Draco for 33 damage!
+2025-02-02 11:16:44,472 - DEBUG - Camera view updated with new frame
+2025-02-02 11:16:44,476 - DEBUG - LogWindow updated
+2025-02-02 11:16:44,477 - DEBUG - GUI updated
+2025-02-02 11:16:44,478 - DEBUG - Battle round completed
+2025-02-02 11:16:49,479 - DEBUG - Starting battle round
+2025-02-02 11:16:55,906 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:16:55,906 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Centaurus -> Attack
+2025-02-02 11:16:55,906 - INFO - Moves this turn: Draco -> Special Attack, Centaurus -> Attack
+2025-02-02 11:16:55,906 - DEBUG - Processing moves: Draco -> Special Attack, Centaurus -> Attack
+2025-02-02 11:16:55,906 - DEBUG - Message added to LogWindow: Draco uses a special attack on Centaurus for 50 damage!
+2025-02-02 11:16:55,906 - INFO - Draco uses a special attack on Centaurus for 50 damage!
+2025-02-02 11:16:55,907 - DEBUG - Message added to LogWindow: Centaurus attacks Draco for 33 damage!
+2025-02-02 11:16:55,908 - INFO - Centaurus attacks Draco for 33 damage!
+2025-02-02 11:16:55,911 - DEBUG - Camera view updated with new frame
+2025-02-02 11:16:55,912 - DEBUG - LogWindow updated
+2025-02-02 11:16:55,913 - DEBUG - GUI updated
+2025-02-02 11:16:55,927 - DEBUG - Battle round completed
+2025-02-02 11:17:00,928 - DEBUG - Game over condition met
+2025-02-02 11:17:00,929 - DEBUG - Message added to LogWindow: Draco wins!
+2025-02-02 11:17:00,929 - INFO - Draco wins!
+2025-02-02 11:17:00,929 - INFO - Game ended, winner declared
+2025-02-02 11:17:00,942 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:00,945 - DEBUG - LogWindow updated
+2025-02-02 11:17:00,949 - DEBUG - GUI updated
+2025-02-02 11:17:00,959 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:00,960 - DEBUG - LogWindow updated
+2025-02-02 11:17:00,963 - DEBUG - GUI updated
+2025-02-02 11:17:00,992 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:00,994 - DEBUG - LogWindow updated
+2025-02-02 11:17:00,996 - DEBUG - GUI updated
+2025-02-02 11:17:01,025 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,025 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,028 - DEBUG - GUI updated
+2025-02-02 11:17:01,058 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,059 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,061 - DEBUG - GUI updated
+2025-02-02 11:17:01,091 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,093 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,095 - DEBUG - GUI updated
+2025-02-02 11:17:01,125 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,126 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,128 - DEBUG - GUI updated
+2025-02-02 11:17:01,159 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,160 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,162 - DEBUG - GUI updated
+2025-02-02 11:17:01,194 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,196 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,199 - DEBUG - GUI updated
+2025-02-02 11:17:01,229 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,229 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,232 - DEBUG - GUI updated
+2025-02-02 11:17:01,263 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,264 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,266 - DEBUG - GUI updated
+2025-02-02 11:17:01,298 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,299 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,301 - DEBUG - GUI updated
+2025-02-02 11:17:01,332 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,333 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,335 - DEBUG - GUI updated
+2025-02-02 11:17:01,367 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,367 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,370 - DEBUG - GUI updated
+2025-02-02 11:17:01,400 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,401 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,403 - DEBUG - GUI updated
+2025-02-02 11:17:01,434 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,434 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,437 - DEBUG - GUI updated
+2025-02-02 11:17:01,468 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,468 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,471 - DEBUG - GUI updated
+2025-02-02 11:17:01,503 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,505 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,507 - DEBUG - GUI updated
+2025-02-02 11:17:01,536 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,538 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,541 - DEBUG - GUI updated
+2025-02-02 11:17:01,570 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,572 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,575 - DEBUG - GUI updated
+2025-02-02 11:17:01,604 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,607 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,609 - DEBUG - GUI updated
+2025-02-02 11:17:01,638 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,638 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,640 - DEBUG - GUI updated
+2025-02-02 11:17:01,672 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,674 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,676 - DEBUG - GUI updated
+2025-02-02 11:17:01,706 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,708 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,711 - DEBUG - GUI updated
+2025-02-02 11:17:01,740 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,741 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,743 - DEBUG - GUI updated
+2025-02-02 11:17:01,775 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,777 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,779 - DEBUG - GUI updated
+2025-02-02 11:17:01,809 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,811 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,813 - DEBUG - GUI updated
+2025-02-02 11:17:01,842 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,844 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,846 - DEBUG - GUI updated
+2025-02-02 11:17:01,877 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,878 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,880 - DEBUG - GUI updated
+2025-02-02 11:17:01,911 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,912 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,915 - DEBUG - GUI updated
+2025-02-02 11:17:01,944 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,945 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,947 - DEBUG - GUI updated
+2025-02-02 11:17:01,979 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:01,982 - DEBUG - LogWindow updated
+2025-02-02 11:17:01,984 - DEBUG - GUI updated
+2025-02-02 11:17:02,012 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,013 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,015 - DEBUG - GUI updated
+2025-02-02 11:17:02,047 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,049 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,051 - DEBUG - GUI updated
+2025-02-02 11:17:02,080 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,081 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,083 - DEBUG - GUI updated
+2025-02-02 11:17:02,114 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,115 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,117 - DEBUG - GUI updated
+2025-02-02 11:17:02,149 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,151 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,153 - DEBUG - GUI updated
+2025-02-02 11:17:02,183 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,186 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,188 - DEBUG - GUI updated
+2025-02-02 11:17:02,217 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,219 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,221 - DEBUG - GUI updated
+2025-02-02 11:17:02,251 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,252 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,254 - DEBUG - GUI updated
+2025-02-02 11:17:02,285 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,285 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,287 - DEBUG - GUI updated
+2025-02-02 11:17:02,319 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,322 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,324 - DEBUG - GUI updated
+2025-02-02 11:17:02,352 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,353 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,355 - DEBUG - GUI updated
+2025-02-02 11:17:02,386 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,387 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,389 - DEBUG - GUI updated
+2025-02-02 11:17:02,421 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,421 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,423 - DEBUG - GUI updated
+2025-02-02 11:17:02,456 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,459 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,461 - DEBUG - GUI updated
+2025-02-02 11:17:02,490 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,490 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,493 - DEBUG - GUI updated
+2025-02-02 11:17:02,523 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,527 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,529 - DEBUG - GUI updated
+2025-02-02 11:17:02,557 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,559 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,561 - DEBUG - GUI updated
+2025-02-02 11:17:02,591 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,593 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,595 - DEBUG - GUI updated
+2025-02-02 11:17:02,626 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,627 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,628 - DEBUG - GUI updated
+2025-02-02 11:17:02,659 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,660 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,662 - DEBUG - GUI updated
+2025-02-02 11:17:02,694 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,696 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,698 - DEBUG - GUI updated
+2025-02-02 11:17:02,727 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,728 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,730 - DEBUG - GUI updated
+2025-02-02 11:17:02,761 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,764 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,766 - DEBUG - GUI updated
+2025-02-02 11:17:02,795 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,796 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,798 - DEBUG - GUI updated
+2025-02-02 11:17:02,830 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,830 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,832 - DEBUG - GUI updated
+2025-02-02 11:17:02,864 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,865 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,867 - DEBUG - GUI updated
+2025-02-02 11:17:02,898 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,900 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,902 - DEBUG - GUI updated
+2025-02-02 11:17:02,932 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,933 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,935 - DEBUG - GUI updated
+2025-02-02 11:17:02,966 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,968 - DEBUG - LogWindow updated
+2025-02-02 11:17:02,970 - DEBUG - GUI updated
+2025-02-02 11:17:02,999 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:02,999 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,001 - DEBUG - GUI updated
+2025-02-02 11:17:03,034 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,036 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,038 - DEBUG - GUI updated
+2025-02-02 11:17:03,067 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,069 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,071 - DEBUG - GUI updated
+2025-02-02 11:17:03,102 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,103 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,105 - DEBUG - GUI updated
+2025-02-02 11:17:03,136 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,138 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,140 - DEBUG - GUI updated
+2025-02-02 11:17:03,170 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,172 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,174 - DEBUG - GUI updated
+2025-02-02 11:17:03,203 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,204 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,206 - DEBUG - GUI updated
+2025-02-02 11:17:03,237 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,240 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,242 - DEBUG - GUI updated
+2025-02-02 11:17:03,272 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,273 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,275 - DEBUG - GUI updated
+2025-02-02 11:17:03,305 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,306 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,308 - DEBUG - GUI updated
+2025-02-02 11:17:03,339 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,341 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,343 - DEBUG - GUI updated
+2025-02-02 11:17:03,373 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,376 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,379 - DEBUG - GUI updated
+2025-02-02 11:17:03,407 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,410 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,412 - DEBUG - GUI updated
+2025-02-02 11:17:03,442 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,445 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,447 - DEBUG - GUI updated
+2025-02-02 11:17:03,475 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,476 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,478 - DEBUG - GUI updated
+2025-02-02 11:17:03,509 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,510 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,512 - DEBUG - GUI updated
+2025-02-02 11:17:03,543 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,544 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,546 - DEBUG - GUI updated
+2025-02-02 11:17:03,578 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,581 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,583 - DEBUG - GUI updated
+2025-02-02 11:17:03,612 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,613 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,615 - DEBUG - GUI updated
+2025-02-02 11:17:03,647 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,650 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,651 - DEBUG - GUI updated
+2025-02-02 11:17:03,679 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,682 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,684 - DEBUG - GUI updated
+2025-02-02 11:17:03,714 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,715 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,717 - DEBUG - GUI updated
+2025-02-02 11:17:03,748 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,748 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,751 - DEBUG - GUI updated
+2025-02-02 11:17:03,780 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,784 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,785 - DEBUG - GUI updated
+2025-02-02 11:17:03,814 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,815 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,817 - DEBUG - GUI updated
+2025-02-02 11:17:03,848 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,850 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,852 - DEBUG - GUI updated
+2025-02-02 11:17:03,882 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,883 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,885 - DEBUG - GUI updated
+2025-02-02 11:17:03,918 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,918 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,920 - DEBUG - GUI updated
+2025-02-02 11:17:03,951 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,952 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,954 - DEBUG - GUI updated
+2025-02-02 11:17:03,986 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:03,987 - DEBUG - LogWindow updated
+2025-02-02 11:17:03,989 - DEBUG - GUI updated
+2025-02-02 11:17:04,020 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,021 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,023 - DEBUG - GUI updated
+2025-02-02 11:17:04,053 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,053 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,056 - DEBUG - GUI updated
+2025-02-02 11:17:04,087 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,087 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,089 - DEBUG - GUI updated
+2025-02-02 11:17:04,120 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,121 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,122 - DEBUG - GUI updated
+2025-02-02 11:17:04,163 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,164 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,168 - DEBUG - GUI updated
+2025-02-02 11:17:04,189 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,190 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,192 - DEBUG - GUI updated
+2025-02-02 11:17:04,221 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,223 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,224 - DEBUG - GUI updated
+2025-02-02 11:17:04,256 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,256 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,258 - DEBUG - GUI updated
+2025-02-02 11:17:04,290 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,291 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,293 - DEBUG - GUI updated
+2025-02-02 11:17:04,324 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,325 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,327 - DEBUG - GUI updated
+2025-02-02 11:17:04,357 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,358 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,360 - DEBUG - GUI updated
+2025-02-02 11:17:04,392 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,392 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,394 - DEBUG - GUI updated
+2025-02-02 11:17:04,426 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,427 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,429 - DEBUG - GUI updated
+2025-02-02 11:17:04,460 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,462 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,464 - DEBUG - GUI updated
+2025-02-02 11:17:04,494 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,495 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,497 - DEBUG - GUI updated
+2025-02-02 11:17:04,528 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,530 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,532 - DEBUG - GUI updated
+2025-02-02 11:17:04,562 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,564 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,566 - DEBUG - GUI updated
+2025-02-02 11:17:04,597 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,598 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,600 - DEBUG - GUI updated
+2025-02-02 11:17:04,631 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,633 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,636 - DEBUG - GUI updated
+2025-02-02 11:17:04,664 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,665 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,668 - DEBUG - GUI updated
+2025-02-02 11:17:04,699 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,699 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,701 - DEBUG - GUI updated
+2025-02-02 11:17:04,732 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,734 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,736 - DEBUG - GUI updated
+2025-02-02 11:17:04,766 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,767 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,769 - DEBUG - GUI updated
+2025-02-02 11:17:04,801 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,802 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,804 - DEBUG - GUI updated
+2025-02-02 11:17:04,833 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,836 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,838 - DEBUG - GUI updated
+2025-02-02 11:17:04,868 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,869 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,871 - DEBUG - GUI updated
+2025-02-02 11:17:04,902 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,903 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,905 - DEBUG - GUI updated
+2025-02-02 11:17:04,935 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,935 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,937 - DEBUG - GUI updated
+2025-02-02 11:17:04,969 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:04,970 - DEBUG - LogWindow updated
+2025-02-02 11:17:04,972 - DEBUG - GUI updated
+2025-02-02 11:17:05,003 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,005 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,007 - DEBUG - GUI updated
+2025-02-02 11:17:05,037 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,038 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,040 - DEBUG - GUI updated
+2025-02-02 11:17:05,071 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,072 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,074 - DEBUG - GUI updated
+2025-02-02 11:17:05,106 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,107 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,109 - DEBUG - GUI updated
+2025-02-02 11:17:05,140 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,142 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,144 - DEBUG - GUI updated
+2025-02-02 11:17:05,173 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,174 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,176 - DEBUG - GUI updated
+2025-02-02 11:17:05,208 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,208 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,210 - DEBUG - GUI updated
+2025-02-02 11:17:05,242 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,242 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,245 - DEBUG - GUI updated
+2025-02-02 11:17:05,276 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,277 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,279 - DEBUG - GUI updated
+2025-02-02 11:17:05,310 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,311 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,314 - DEBUG - GUI updated
+2025-02-02 11:17:05,344 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,344 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,346 - DEBUG - GUI updated
+2025-02-02 11:17:05,378 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,379 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,381 - DEBUG - GUI updated
+2025-02-02 11:17:05,412 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,413 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,415 - DEBUG - GUI updated
+2025-02-02 11:17:05,446 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,448 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,450 - DEBUG - GUI updated
+2025-02-02 11:17:05,480 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,481 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,483 - DEBUG - GUI updated
+2025-02-02 11:17:05,514 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,515 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,518 - DEBUG - GUI updated
+2025-02-02 11:17:05,547 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,548 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,550 - DEBUG - GUI updated
+2025-02-02 11:17:05,581 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,584 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,586 - DEBUG - GUI updated
+2025-02-02 11:17:05,615 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,616 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,618 - DEBUG - GUI updated
+2025-02-02 11:17:05,650 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,651 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,654 - DEBUG - GUI updated
+2025-02-02 11:17:05,683 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,685 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,687 - DEBUG - GUI updated
+2025-02-02 11:17:05,717 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,720 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,722 - DEBUG - GUI updated
+2025-02-02 11:17:05,751 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,753 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,755 - DEBUG - GUI updated
+2025-02-02 11:17:05,786 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,788 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,790 - DEBUG - GUI updated
+2025-02-02 11:17:05,820 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,820 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,822 - DEBUG - GUI updated
+2025-02-02 11:17:05,854 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,856 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,858 - DEBUG - GUI updated
+2025-02-02 11:17:05,887 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,888 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,890 - DEBUG - GUI updated
+2025-02-02 11:17:05,922 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,924 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,926 - DEBUG - GUI updated
+2025-02-02 11:17:05,955 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,956 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,958 - DEBUG - GUI updated
+2025-02-02 11:17:05,990 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:05,991 - DEBUG - LogWindow updated
+2025-02-02 11:17:05,993 - DEBUG - GUI updated
+2025-02-02 11:17:06,023 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,024 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,026 - DEBUG - GUI updated
+2025-02-02 11:17:06,058 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,059 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,062 - DEBUG - GUI updated
+2025-02-02 11:17:06,092 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,093 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,096 - DEBUG - GUI updated
+2025-02-02 11:17:06,125 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,126 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,129 - DEBUG - GUI updated
+2025-02-02 11:17:06,159 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,160 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,162 - DEBUG - GUI updated
+2025-02-02 11:17:06,193 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,194 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,195 - DEBUG - GUI updated
+2025-02-02 11:17:06,227 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,229 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,230 - DEBUG - GUI updated
+2025-02-02 11:17:06,261 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,262 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,264 - DEBUG - GUI updated
+2025-02-02 11:17:06,294 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,295 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,296 - DEBUG - GUI updated
+2025-02-02 11:17:06,329 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,330 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,332 - DEBUG - GUI updated
+2025-02-02 11:17:06,363 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,365 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,367 - DEBUG - GUI updated
+2025-02-02 11:17:06,398 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,399 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,401 - DEBUG - GUI updated
+2025-02-02 11:17:06,432 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,433 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,435 - DEBUG - GUI updated
+2025-02-02 11:17:06,467 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,467 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,469 - DEBUG - GUI updated
+2025-02-02 11:17:06,500 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,502 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,504 - DEBUG - GUI updated
+2025-02-02 11:17:06,534 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,535 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,537 - DEBUG - GUI updated
+2025-02-02 11:17:06,567 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,568 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,570 - DEBUG - GUI updated
+2025-02-02 11:17:06,602 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,604 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,606 - DEBUG - GUI updated
+2025-02-02 11:17:06,635 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,636 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,638 - DEBUG - GUI updated
+2025-02-02 11:17:06,670 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,670 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,672 - DEBUG - GUI updated
+2025-02-02 11:17:06,704 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,705 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,707 - DEBUG - GUI updated
+2025-02-02 11:17:06,736 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,739 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,741 - DEBUG - GUI updated
+2025-02-02 11:17:06,770 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,770 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,772 - DEBUG - GUI updated
+2025-02-02 11:17:06,804 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,804 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,806 - DEBUG - GUI updated
+2025-02-02 11:17:06,838 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,839 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,841 - DEBUG - GUI updated
+2025-02-02 11:17:06,872 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,873 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,875 - DEBUG - GUI updated
+2025-02-02 11:17:06,906 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,906 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,908 - DEBUG - GUI updated
+2025-02-02 11:17:06,939 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,940 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,942 - DEBUG - GUI updated
+2025-02-02 11:17:06,972 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:06,973 - DEBUG - LogWindow updated
+2025-02-02 11:17:06,975 - DEBUG - GUI updated
+2025-02-02 11:17:07,007 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,008 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,010 - DEBUG - GUI updated
+2025-02-02 11:17:07,041 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,041 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,043 - DEBUG - GUI updated
+2025-02-02 11:17:07,075 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,075 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,077 - DEBUG - GUI updated
+2025-02-02 11:17:07,113 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,113 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,115 - DEBUG - GUI updated
+2025-02-02 11:17:07,145 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,146 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,148 - DEBUG - GUI updated
+2025-02-02 11:17:07,179 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,180 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,183 - DEBUG - GUI updated
+2025-02-02 11:17:07,214 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,216 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,218 - DEBUG - GUI updated
+2025-02-02 11:17:07,247 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,248 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,250 - DEBUG - GUI updated
+2025-02-02 11:17:07,281 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,282 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,284 - DEBUG - GUI updated
+2025-02-02 11:17:07,316 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,316 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,319 - DEBUG - GUI updated
+2025-02-02 11:17:07,348 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,349 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,351 - DEBUG - GUI updated
+2025-02-02 11:17:07,382 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,383 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,384 - DEBUG - GUI updated
+2025-02-02 11:17:07,417 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,418 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,420 - DEBUG - GUI updated
+2025-02-02 11:17:07,451 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,451 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,454 - DEBUG - GUI updated
+2025-02-02 11:17:07,484 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,485 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,487 - DEBUG - GUI updated
+2025-02-02 11:17:07,518 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,519 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,521 - DEBUG - GUI updated
+2025-02-02 11:17:07,552 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,555 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,557 - DEBUG - GUI updated
+2025-02-02 11:17:07,585 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,587 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,588 - DEBUG - GUI updated
+2025-02-02 11:17:07,620 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,621 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,623 - DEBUG - GUI updated
+2025-02-02 11:17:07,654 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,655 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,657 - DEBUG - GUI updated
+2025-02-02 11:17:07,687 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,689 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,691 - DEBUG - GUI updated
+2025-02-02 11:17:07,722 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,723 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,725 - DEBUG - GUI updated
+2025-02-02 11:17:07,756 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,757 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,759 - DEBUG - GUI updated
+2025-02-02 11:17:07,789 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,790 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,792 - DEBUG - GUI updated
+2025-02-02 11:17:07,824 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,825 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,827 - DEBUG - GUI updated
+2025-02-02 11:17:07,858 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,858 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,860 - DEBUG - GUI updated
+2025-02-02 11:17:07,892 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,894 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,896 - DEBUG - GUI updated
+2025-02-02 11:17:07,925 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,926 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,928 - DEBUG - GUI updated
+2025-02-02 11:17:07,960 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,961 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,963 - DEBUG - GUI updated
+2025-02-02 11:17:07,993 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:07,996 - DEBUG - LogWindow updated
+2025-02-02 11:17:07,998 - DEBUG - GUI updated
+2025-02-02 11:17:08,027 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,028 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,030 - DEBUG - GUI updated
+2025-02-02 11:17:08,063 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,064 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,066 - DEBUG - GUI updated
+2025-02-02 11:17:08,096 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,097 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,100 - DEBUG - GUI updated
+2025-02-02 11:17:08,130 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,131 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,133 - DEBUG - GUI updated
+2025-02-02 11:17:08,164 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,166 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,168 - DEBUG - GUI updated
+2025-02-02 11:17:08,199 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,199 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,201 - DEBUG - GUI updated
+2025-02-02 11:17:08,232 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,234 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,236 - DEBUG - GUI updated
+2025-02-02 11:17:08,266 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,267 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,269 - DEBUG - GUI updated
+2025-02-02 11:17:08,301 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,303 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,305 - DEBUG - GUI updated
+2025-02-02 11:17:08,335 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,336 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,338 - DEBUG - GUI updated
+2025-02-02 11:17:08,369 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,370 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,372 - DEBUG - GUI updated
+2025-02-02 11:17:08,402 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,404 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,406 - DEBUG - GUI updated
+2025-02-02 11:17:08,436 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,439 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,441 - DEBUG - GUI updated
+2025-02-02 11:17:08,471 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,472 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,474 - DEBUG - GUI updated
+2025-02-02 11:17:08,505 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,507 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,509 - DEBUG - GUI updated
+2025-02-02 11:17:08,539 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,540 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,541 - DEBUG - GUI updated
+2025-02-02 11:17:08,573 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,574 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,575 - DEBUG - GUI updated
+2025-02-02 11:17:08,607 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,608 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,610 - DEBUG - GUI updated
+2025-02-02 11:17:08,641 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,643 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,645 - DEBUG - GUI updated
+2025-02-02 11:17:08,675 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,676 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,678 - DEBUG - GUI updated
+2025-02-02 11:17:08,708 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,710 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,713 - DEBUG - GUI updated
+2025-02-02 11:17:08,742 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,743 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,745 - DEBUG - GUI updated
+2025-02-02 11:17:08,777 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,778 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,780 - DEBUG - GUI updated
+2025-02-02 11:17:08,810 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,811 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,813 - DEBUG - GUI updated
+2025-02-02 11:17:08,844 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,846 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,848 - DEBUG - GUI updated
+2025-02-02 11:17:08,879 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,880 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,882 - DEBUG - GUI updated
+2025-02-02 11:17:08,912 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,913 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,915 - DEBUG - GUI updated
+2025-02-02 11:17:08,947 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,948 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,950 - DEBUG - GUI updated
+2025-02-02 11:17:08,980 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:08,980 - DEBUG - LogWindow updated
+2025-02-02 11:17:08,982 - DEBUG - GUI updated
+2025-02-02 11:17:09,015 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,015 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,017 - DEBUG - GUI updated
+2025-02-02 11:17:09,048 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,049 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,052 - DEBUG - GUI updated
+2025-02-02 11:17:09,083 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,084 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,086 - DEBUG - GUI updated
+2025-02-02 11:17:09,117 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,118 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,120 - DEBUG - GUI updated
+2025-02-02 11:17:09,150 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,151 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,153 - DEBUG - GUI updated
+2025-02-02 11:17:09,185 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,186 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,188 - DEBUG - GUI updated
+2025-02-02 11:17:09,219 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,221 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,223 - DEBUG - GUI updated
+2025-02-02 11:17:09,253 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,254 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,256 - DEBUG - GUI updated
+2025-02-02 11:17:09,287 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,289 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,291 - DEBUG - GUI updated
+2025-02-02 11:17:09,321 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,322 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,324 - DEBUG - GUI updated
+2025-02-02 11:17:09,354 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,355 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,357 - DEBUG - GUI updated
+2025-02-02 11:17:09,389 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,391 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,393 - DEBUG - GUI updated
+2025-02-02 11:17:09,423 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,424 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,426 - DEBUG - GUI updated
+2025-02-02 11:17:09,457 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,457 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,459 - DEBUG - GUI updated
+2025-02-02 11:17:09,490 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,491 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,493 - DEBUG - GUI updated
+2025-02-02 11:17:09,525 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,525 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,528 - DEBUG - GUI updated
+2025-02-02 11:17:09,559 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,561 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,563 - DEBUG - GUI updated
+2025-02-02 11:17:09,593 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,593 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,595 - DEBUG - GUI updated
+2025-02-02 11:17:09,626 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,627 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,629 - DEBUG - GUI updated
+2025-02-02 11:17:09,661 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,662 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,664 - DEBUG - GUI updated
+2025-02-02 11:17:09,695 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,697 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,699 - DEBUG - GUI updated
+2025-02-02 11:17:09,729 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,729 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,731 - DEBUG - GUI updated
+2025-02-02 11:17:09,763 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,764 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,766 - DEBUG - GUI updated
+2025-02-02 11:17:09,797 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,797 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,800 - DEBUG - GUI updated
+2025-02-02 11:17:09,830 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,831 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,833 - DEBUG - GUI updated
+2025-02-02 11:17:09,865 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,866 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,868 - DEBUG - GUI updated
+2025-02-02 11:17:09,897 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,898 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,900 - DEBUG - GUI updated
+2025-02-02 11:17:09,931 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,931 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,933 - DEBUG - GUI updated
+2025-02-02 11:17:09,964 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:09,965 - DEBUG - LogWindow updated
+2025-02-02 11:17:09,967 - DEBUG - GUI updated
+2025-02-02 11:17:10,002 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,004 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,006 - DEBUG - GUI updated
+2025-02-02 11:17:10,036 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,037 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,039 - DEBUG - GUI updated
+2025-02-02 11:17:10,070 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,071 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,074 - DEBUG - GUI updated
+2025-02-02 11:17:10,104 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,105 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,107 - DEBUG - GUI updated
+2025-02-02 11:17:10,138 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,139 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,142 - DEBUG - GUI updated
+2025-02-02 11:17:10,172 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,172 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,174 - DEBUG - GUI updated
+2025-02-02 11:17:10,206 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,208 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,210 - DEBUG - GUI updated
+2025-02-02 11:17:10,240 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,241 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,244 - DEBUG - GUI updated
+2025-02-02 11:17:10,274 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,275 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,277 - DEBUG - GUI updated
+2025-02-02 11:17:10,307 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,309 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,311 - DEBUG - GUI updated
+2025-02-02 11:17:10,341 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,342 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,344 - DEBUG - GUI updated
+2025-02-02 11:17:10,375 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,376 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,378 - DEBUG - GUI updated
+2025-02-02 11:17:10,408 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,409 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,411 - DEBUG - GUI updated
+2025-02-02 11:17:10,442 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,443 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,445 - DEBUG - GUI updated
+2025-02-02 11:17:10,477 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,479 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,481 - DEBUG - GUI updated
+2025-02-02 11:17:10,510 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,511 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,513 - DEBUG - GUI updated
+2025-02-02 11:17:10,544 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,545 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,546 - DEBUG - GUI updated
+2025-02-02 11:17:10,579 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,579 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,581 - DEBUG - GUI updated
+2025-02-02 11:17:10,612 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,614 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,616 - DEBUG - GUI updated
+2025-02-02 11:17:10,647 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,648 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,649 - DEBUG - GUI updated
+2025-02-02 11:17:10,682 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,683 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,685 - DEBUG - GUI updated
+2025-02-02 11:17:10,716 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,716 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,718 - DEBUG - GUI updated
+2025-02-02 11:17:10,751 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,751 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,754 - DEBUG - GUI updated
+2025-02-02 11:17:10,784 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,785 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,787 - DEBUG - GUI updated
+2025-02-02 11:17:10,818 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,819 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,821 - DEBUG - GUI updated
+2025-02-02 11:17:10,852 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,854 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,856 - DEBUG - GUI updated
+2025-02-02 11:17:10,885 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,886 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,888 - DEBUG - GUI updated
+2025-02-02 11:17:10,920 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,920 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,923 - DEBUG - GUI updated
+2025-02-02 11:17:10,954 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,955 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,957 - DEBUG - GUI updated
+2025-02-02 11:17:10,988 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:10,990 - DEBUG - LogWindow updated
+2025-02-02 11:17:10,992 - DEBUG - GUI updated
+2025-02-02 11:17:11,022 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,023 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,025 - DEBUG - GUI updated
+2025-02-02 11:17:11,056 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,057 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,059 - DEBUG - GUI updated
+2025-02-02 11:17:11,090 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,090 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,093 - DEBUG - GUI updated
+2025-02-02 11:17:11,124 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,126 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,128 - DEBUG - GUI updated
+2025-02-02 11:17:11,158 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,159 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,161 - DEBUG - GUI updated
+2025-02-02 11:17:11,192 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,193 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,195 - DEBUG - GUI updated
+2025-02-02 11:17:11,225 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,226 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,228 - DEBUG - GUI updated
+2025-02-02 11:17:11,261 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,262 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,264 - DEBUG - GUI updated
+2025-02-02 11:17:11,293 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,294 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,297 - DEBUG - GUI updated
+2025-02-02 11:17:11,328 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,329 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,331 - DEBUG - GUI updated
+2025-02-02 11:17:11,362 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,364 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,366 - DEBUG - GUI updated
+2025-02-02 11:17:11,395 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,396 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,398 - DEBUG - GUI updated
+2025-02-02 11:17:11,430 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,430 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,432 - DEBUG - GUI updated
+2025-02-02 11:17:11,464 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,464 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,467 - DEBUG - GUI updated
+2025-02-02 11:17:11,498 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,499 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,501 - DEBUG - GUI updated
+2025-02-02 11:17:11,532 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,532 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,534 - DEBUG - GUI updated
+2025-02-02 11:17:11,566 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,567 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,569 - DEBUG - GUI updated
+2025-02-02 11:17:11,600 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,601 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,603 - DEBUG - GUI updated
+2025-02-02 11:17:11,633 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,634 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,636 - DEBUG - GUI updated
+2025-02-02 11:17:11,667 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,669 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,671 - DEBUG - GUI updated
+2025-02-02 11:17:11,702 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,703 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,705 - DEBUG - GUI updated
+2025-02-02 11:17:11,736 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,737 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,739 - DEBUG - GUI updated
+2025-02-02 11:17:11,770 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,771 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,773 - DEBUG - GUI updated
+2025-02-02 11:17:11,804 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,806 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,808 - DEBUG - GUI updated
+2025-02-02 11:17:11,838 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,840 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,842 - DEBUG - GUI updated
+2025-02-02 11:17:11,872 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,873 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,875 - DEBUG - GUI updated
+2025-02-02 11:17:11,906 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,907 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,909 - DEBUG - GUI updated
+2025-02-02 11:17:11,941 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,943 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,945 - DEBUG - GUI updated
+2025-02-02 11:17:11,975 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:11,975 - DEBUG - LogWindow updated
+2025-02-02 11:17:11,977 - DEBUG - GUI updated
+2025-02-02 11:17:12,009 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,010 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,012 - DEBUG - GUI updated
+2025-02-02 11:17:12,043 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,044 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,047 - DEBUG - GUI updated
+2025-02-02 11:17:12,077 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,078 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,080 - DEBUG - GUI updated
+2025-02-02 11:17:12,110 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,111 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,113 - DEBUG - GUI updated
+2025-02-02 11:17:12,144 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,144 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,146 - DEBUG - GUI updated
+2025-02-02 11:17:12,179 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,180 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,182 - DEBUG - GUI updated
+2025-02-02 11:17:12,213 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,214 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,216 - DEBUG - GUI updated
+2025-02-02 11:17:12,246 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,247 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,249 - DEBUG - GUI updated
+2025-02-02 11:17:12,281 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,281 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,283 - DEBUG - GUI updated
+2025-02-02 11:17:12,315 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,317 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,318 - DEBUG - GUI updated
+2025-02-02 11:17:12,349 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,350 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,352 - DEBUG - GUI updated
+2025-02-02 11:17:12,383 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,384 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,386 - DEBUG - GUI updated
+2025-02-02 11:17:12,417 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,417 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,419 - DEBUG - GUI updated
+2025-02-02 11:17:12,451 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,452 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,453 - DEBUG - GUI updated
+2025-02-02 11:17:12,485 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,486 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,488 - DEBUG - GUI updated
+2025-02-02 11:17:12,519 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,519 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,521 - DEBUG - GUI updated
+2025-02-02 11:17:12,553 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,554 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,555 - DEBUG - GUI updated
+2025-02-02 11:17:12,587 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,588 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,590 - DEBUG - GUI updated
+2025-02-02 11:17:12,620 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,621 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,623 - DEBUG - GUI updated
+2025-02-02 11:17:12,654 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,655 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,656 - DEBUG - GUI updated
+2025-02-02 11:17:12,689 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,691 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,692 - DEBUG - GUI updated
+2025-02-02 11:17:12,724 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,725 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,726 - DEBUG - GUI updated
+2025-02-02 11:17:12,757 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,757 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,759 - DEBUG - GUI updated
+2025-02-02 11:17:12,790 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,791 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,792 - DEBUG - GUI updated
+2025-02-02 11:17:12,825 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,825 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,827 - DEBUG - GUI updated
+2025-02-02 11:17:12,859 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,860 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,861 - DEBUG - GUI updated
+2025-02-02 11:17:12,893 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,895 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,896 - DEBUG - GUI updated
+2025-02-02 11:17:12,927 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,928 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,929 - DEBUG - GUI updated
+2025-02-02 11:17:12,962 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,962 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,964 - DEBUG - GUI updated
+2025-02-02 11:17:12,996 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:12,997 - DEBUG - LogWindow updated
+2025-02-02 11:17:12,999 - DEBUG - GUI updated
+2025-02-02 11:17:13,030 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:13,030 - DEBUG - LogWindow updated
+2025-02-02 11:17:13,032 - DEBUG - GUI updated
+2025-02-02 11:17:13,064 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:13,065 - DEBUG - LogWindow updated
+2025-02-02 11:17:13,067 - DEBUG - GUI updated
+2025-02-02 11:17:13,099 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:13,100 - DEBUG - LogWindow updated
+2025-02-02 11:17:13,102 - DEBUG - GUI updated
+2025-02-02 11:17:13,132 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:13,134 - DEBUG - LogWindow updated
+2025-02-02 11:17:13,136 - DEBUG - GUI updated
+2025-02-02 11:17:13,166 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:13,168 - DEBUG - LogWindow updated
+2025-02-02 11:17:13,170 - DEBUG - GUI updated
+2025-02-02 11:17:13,199 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:13,200 - DEBUG - LogWindow updated
+2025-02-02 11:17:13,202 - DEBUG - GUI updated
+2025-02-02 11:17:13,234 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:13,234 - DEBUG - LogWindow updated
+2025-02-02 11:17:13,236 - DEBUG - GUI updated
+2025-02-02 11:17:13,269 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:13,271 - DEBUG - LogWindow updated
+2025-02-02 11:17:13,273 - DEBUG - GUI updated
+2025-02-02 11:17:13,302 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:13,303 - DEBUG - LogWindow updated
+2025-02-02 11:17:13,305 - DEBUG - GUI updated
+2025-02-02 11:17:13,337 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:13,337 - DEBUG - LogWindow updated
+2025-02-02 11:17:13,339 - DEBUG - GUI updated
+2025-02-02 11:17:13,369 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:13,370 - DEBUG - LogWindow updated
+2025-02-02 11:17:13,372 - DEBUG - GUI updated
+2025-02-02 11:17:13,406 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:13,407 - DEBUG - LogWindow updated
+2025-02-02 11:17:13,408 - DEBUG - GUI updated
+2025-02-02 11:17:13,437 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:13,438 - DEBUG - LogWindow updated
+2025-02-02 11:17:13,440 - DEBUG - GUI updated
+2025-02-02 11:17:13,472 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:13,473 - DEBUG - LogWindow updated
+2025-02-02 11:17:13,475 - DEBUG - GUI updated
+2025-02-02 11:17:13,691 - INFO - Game window closed by user
+2025-02-02 11:17:25,991 - INFO - NEW SESSION ID: 1738513045.991699
+2025-02-02 11:17:25,992 - DEBUG - Configuration loaded from YAML
+2025-02-02 11:17:26,091 - DEBUG - LogWindow initialized
+2025-02-02 11:17:26,091 - DEBUG - GameEngine initialized
+2025-02-02 11:17:26,091 - INFO - GameEngine instance created
+2025-02-02 11:17:26,091 - DEBUG - Starting battle round
+2025-02-02 11:17:32,602 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:17:32,602 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Phoenix -> Attack
+2025-02-02 11:17:32,602 - INFO - Moves this turn: Draco -> Special Attack, Phoenix -> Attack
+2025-02-02 11:17:32,602 - DEBUG - Processing moves: Draco -> Special Attack, Phoenix -> Attack
+2025-02-02 11:17:32,602 - DEBUG - Message added to LogWindow: Draco uses a special attack on Phoenix for 50 damage!
+2025-02-02 11:17:32,602 - INFO - Draco uses a special attack on Phoenix for 50 damage!
+2025-02-02 11:17:32,603 - DEBUG - Message added to LogWindow: Phoenix attacks Draco for 15 damage!
+2025-02-02 11:17:32,603 - INFO - Phoenix attacks Draco for 15 damage!
+2025-02-02 11:17:32,607 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:32,612 - DEBUG - LogWindow updated
+2025-02-02 11:17:32,613 - DEBUG - GUI updated
+2025-02-02 11:17:32,627 - DEBUG - Battle round completed
+2025-02-02 11:17:37,629 - DEBUG - Starting battle round
+2025-02-02 11:17:44,048 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:17:44,048 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Phoenix -> Attack
+2025-02-02 11:17:44,048 - INFO - Moves this turn: Draco -> Special Attack, Phoenix -> Attack
+2025-02-02 11:17:44,048 - DEBUG - Processing moves: Draco -> Special Attack, Phoenix -> Attack
+2025-02-02 11:17:44,048 - DEBUG - Message added to LogWindow: Draco tried to use a special attack but didn't have enough mana!
+2025-02-02 11:17:44,048 - INFO - Draco tried to use a special attack but didn't have enough mana!
+2025-02-02 11:17:44,051 - DEBUG - Message added to LogWindow: Phoenix attacks Draco for 15 damage!
+2025-02-02 11:17:44,052 - INFO - Phoenix attacks Draco for 15 damage!
+2025-02-02 11:17:44,056 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:44,057 - DEBUG - LogWindow updated
+2025-02-02 11:17:44,058 - DEBUG - GUI updated
+2025-02-02 11:17:44,061 - DEBUG - Battle round completed
+2025-02-02 11:17:49,063 - DEBUG - Starting battle round
+2025-02-02 11:17:55,467 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:17:55,467 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Phoenix -> Attack
+2025-02-02 11:17:55,467 - INFO - Moves this turn: Draco -> Special Attack, Phoenix -> Attack
+2025-02-02 11:17:55,467 - DEBUG - Processing moves: Draco -> Special Attack, Phoenix -> Attack
+2025-02-02 11:17:55,467 - DEBUG - Message added to LogWindow: Draco tried to use a special attack but didn't have enough mana!
+2025-02-02 11:17:55,467 - INFO - Draco tried to use a special attack but didn't have enough mana!
+2025-02-02 11:17:55,468 - DEBUG - Message added to LogWindow: Phoenix attacks Draco for 15 damage!
+2025-02-02 11:17:55,468 - INFO - Phoenix attacks Draco for 15 damage!
+2025-02-02 11:17:55,472 - DEBUG - Camera view updated with new frame
+2025-02-02 11:17:55,474 - DEBUG - LogWindow updated
+2025-02-02 11:17:55,475 - DEBUG - GUI updated
+2025-02-02 11:17:55,478 - DEBUG - Battle round completed
+2025-02-02 11:18:00,480 - DEBUG - Starting battle round
+2025-02-02 11:18:06,896 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:18:06,897 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Phoenix -> Attack
+2025-02-02 11:18:06,897 - INFO - Moves this turn: Draco -> Special Attack, Phoenix -> Attack
+2025-02-02 11:18:06,897 - DEBUG - Processing moves: Draco -> Special Attack, Phoenix -> Attack
+2025-02-02 11:18:06,897 - DEBUG - Message added to LogWindow: Draco tried to use a special attack but didn't have enough mana!
+2025-02-02 11:18:06,897 - INFO - Draco tried to use a special attack but didn't have enough mana!
+2025-02-02 11:18:06,898 - DEBUG - Message added to LogWindow: Phoenix attacks Draco for 15 damage!
+2025-02-02 11:18:06,898 - INFO - Phoenix attacks Draco for 15 damage!
+2025-02-02 11:18:06,901 - DEBUG - Camera view updated with new frame
+2025-02-02 11:18:06,903 - DEBUG - LogWindow updated
+2025-02-02 11:18:06,904 - DEBUG - GUI updated
+2025-02-02 11:18:06,912 - DEBUG - Battle round completed
+2025-02-02 11:18:11,914 - DEBUG - Starting battle round
+2025-02-02 11:18:18,327 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:18:18,327 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Phoenix -> Attack
+2025-02-02 11:18:18,327 - INFO - Moves this turn: Draco -> Special Attack, Phoenix -> Attack
+2025-02-02 11:18:18,327 - DEBUG - Processing moves: Draco -> Special Attack, Phoenix -> Attack
+2025-02-02 11:18:18,327 - DEBUG - Message added to LogWindow: Draco tried to use a special attack but didn't have enough mana!
+2025-02-02 11:18:18,327 - INFO - Draco tried to use a special attack but didn't have enough mana!
+2025-02-02 11:18:18,328 - DEBUG - Message added to LogWindow: Phoenix tried to attack but didn't have enough mana!
+2025-02-02 11:18:18,328 - INFO - Phoenix tried to attack but didn't have enough mana!
+2025-02-02 11:18:18,332 - DEBUG - Camera view updated with new frame
+2025-02-02 11:18:18,333 - DEBUG - LogWindow updated
+2025-02-02 11:18:18,334 - DEBUG - GUI updated
+2025-02-02 11:18:18,345 - DEBUG - Battle round completed
+2025-02-02 11:18:23,346 - DEBUG - Starting battle round
+2025-02-02 11:18:29,776 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:18:29,776 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Phoenix -> Attack
+2025-02-02 11:18:29,776 - INFO - Moves this turn: Draco -> Special Attack, Phoenix -> Attack
+2025-02-02 11:18:29,776 - DEBUG - Processing moves: Draco -> Special Attack, Phoenix -> Attack
+2025-02-02 11:18:29,776 - DEBUG - Message added to LogWindow: Draco tried to use a special attack but didn't have enough mana!
+2025-02-02 11:18:29,777 - INFO - Draco tried to use a special attack but didn't have enough mana!
+2025-02-02 11:18:29,778 - DEBUG - Message added to LogWindow: Phoenix tried to attack but didn't have enough mana!
+2025-02-02 11:18:29,778 - INFO - Phoenix tried to attack but didn't have enough mana!
+2025-02-02 11:18:29,781 - DEBUG - Camera view updated with new frame
+2025-02-02 11:18:29,783 - DEBUG - LogWindow updated
+2025-02-02 11:18:29,784 - DEBUG - GUI updated
+2025-02-02 11:18:29,794 - DEBUG - Battle round completed
+2025-02-02 11:18:34,796 - DEBUG - Starting battle round
+2025-02-02 11:19:54,212 - INFO - NEW SESSION ID: 1738513194.212645
+2025-02-02 11:19:54,213 - DEBUG - Configuration loaded from YAML
+2025-02-02 11:19:54,301 - DEBUG - LogWindow initialized
+2025-02-02 11:19:54,302 - DEBUG - GameEngine initialized
+2025-02-02 11:19:54,302 - INFO - GameEngine instance created
+2025-02-02 11:19:54,302 - DEBUG - Starting battle round
+2025-02-02 11:20:00,772 - DEBUG - Scanned moves: Defending
+2025-02-02 11:20:00,772 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Defending, Centaurus -> Attack
+2025-02-02 11:20:00,772 - INFO - Moves this turn: Draco -> Defending, Centaurus -> Attack
+2025-02-02 11:20:00,772 - DEBUG - Processing moves: Draco -> Defending, Centaurus -> Attack
+2025-02-02 11:20:00,772 - DEBUG - Message added to LogWindow: Draco is defending this turn!
+2025-02-02 11:20:00,772 - INFO - Draco is defending this turn!
+2025-02-02 11:20:00,774 - DEBUG - Defense efficiency calculated: fully_efficient=True, reduction=0.5525020627835877
+2025-02-02 11:20:00,774 - DEBUG - Message added to LogWindow: Draco defended fully against Centaurus's attack!
+2025-02-02 11:20:00,774 - INFO - Draco defended fully against Centaurus's attack!
+2025-02-02 11:20:00,774 - DEBUG - Message added to LogWindow: Centaurus attacks Draco for 0 damage!
+2025-02-02 11:20:00,774 - INFO - Centaurus attacks Draco for 0 damage!
+2025-02-02 11:20:00,777 - DEBUG - Camera view updated with new frame
+2025-02-02 11:20:00,781 - DEBUG - LogWindow updated
+2025-02-02 11:20:00,782 - DEBUG - GUI updated
+2025-02-02 11:20:00,795 - DEBUG - Battle round completed
+2025-02-02 11:20:05,796 - DEBUG - Starting battle round
+2025-02-02 11:20:40,258 - INFO - NEW SESSION ID: 1738513240.2587972
+2025-02-02 11:20:40,260 - DEBUG - Configuration loaded from YAML
+2025-02-02 11:20:40,688 - DEBUG - LogWindow initialized
+2025-02-02 11:20:40,688 - DEBUG - GameEngine initialized
+2025-02-02 11:20:40,688 - INFO - GameEngine instance created
+2025-02-02 11:20:40,688 - DEBUG - Starting battle round
+2025-02-02 11:20:47,152 - DEBUG - Scanned moves: Resting
+2025-02-02 11:20:47,153 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Resting, Centaurus -> Attack
+2025-02-02 11:20:47,153 - INFO - Moves this turn: Draco -> Resting, Centaurus -> Attack
+2025-02-02 11:20:47,153 - DEBUG - Processing moves: Draco -> Resting, Centaurus -> Attack
+2025-02-02 11:20:47,153 - DEBUG - Message added to LogWindow: Draco rests and gains 23 mana!
+2025-02-02 11:20:47,153 - INFO - Draco rests and gains 23 mana!
+2025-02-02 11:20:47,155 - DEBUG - Message added to LogWindow: Centaurus attacks Draco for 49 damage!
+2025-02-02 11:20:47,155 - INFO - Centaurus attacks Draco for 49 damage!
+2025-02-02 11:20:47,159 - DEBUG - Camera view updated with new frame
+2025-02-02 11:20:47,164 - DEBUG - LogWindow updated
+2025-02-02 11:20:47,166 - DEBUG - GUI updated
+2025-02-02 11:20:47,178 - DEBUG - Battle round completed
+2025-02-02 11:20:52,180 - DEBUG - Starting battle round
+2025-02-02 11:21:41,793 - INFO - NEW SESSION ID: 1738513301.7932138
+2025-02-02 11:21:41,794 - DEBUG - Configuration loaded from YAML
+2025-02-02 11:21:41,797 - DEBUG - LogWindow initialized
+2025-02-02 11:21:41,797 - DEBUG - GameEngine initialized
+2025-02-02 11:21:41,797 - INFO - GameEngine instance created
+2025-02-02 11:21:41,797 - DEBUG - Starting battle round
+2025-02-02 11:21:48,233 - DEBUG - Scanned moves: Defending
+2025-02-02 11:21:48,234 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Defending, Andromeda -> Attack
+2025-02-02 11:21:48,234 - INFO - Moves this turn: Draco -> Defending, Andromeda -> Attack
+2025-02-02 11:21:48,234 - DEBUG - Processing moves: Draco -> Defending, Andromeda -> Attack
+2025-02-02 11:21:48,234 - DEBUG - Message added to LogWindow: Draco is defending this turn!
+2025-02-02 11:21:48,234 - INFO - Draco is defending this turn!
+2025-02-02 11:21:48,235 - DEBUG - Defense efficiency calculated: fully_efficient=False, reduction=0.6190382395267722
+2025-02-02 11:21:48,235 - DEBUG - Message added to LogWindow: Draco defended inefficiently, reducing damage by 61%!
+2025-02-02 11:21:48,235 - INFO - Draco defended inefficiently, reducing damage by 61%!
+2025-02-02 11:21:48,235 - DEBUG - Message added to LogWindow: Andromeda attacks Draco for 12 damage!
+2025-02-02 11:21:48,235 - INFO - Andromeda attacks Draco for 12 damage!
+2025-02-02 11:21:48,239 - DEBUG - Camera view updated with new frame
+2025-02-02 11:21:48,241 - DEBUG - LogWindow updated
+2025-02-02 11:21:48,243 - DEBUG - GUI updated
+2025-02-02 11:21:48,248 - DEBUG - Battle round completed
+2025-02-02 11:21:53,249 - DEBUG - Starting battle round
+2025-02-02 11:21:59,676 - DEBUG - Scanned moves: Resting
+2025-02-02 11:21:59,677 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Resting, Andromeda -> Attack
+2025-02-02 11:21:59,677 - INFO - Moves this turn: Draco -> Resting, Andromeda -> Attack
+2025-02-02 11:21:59,677 - DEBUG - Processing moves: Draco -> Resting, Andromeda -> Attack
+2025-02-02 11:21:59,677 - DEBUG - Message added to LogWindow: Draco rests and gains 23 mana!
+2025-02-02 11:21:59,677 - INFO - Draco rests and gains 23 mana!
+2025-02-02 11:21:59,678 - DEBUG - Message added to LogWindow: Andromeda attacks Draco for 55 damage!
+2025-02-02 11:21:59,678 - INFO - Andromeda attacks Draco for 55 damage!
+2025-02-02 11:21:59,681 - DEBUG - Camera view updated with new frame
+2025-02-02 11:21:59,684 - DEBUG - LogWindow updated
+2025-02-02 11:21:59,685 - DEBUG - GUI updated
+2025-02-02 11:21:59,696 - DEBUG - Battle round completed
+2025-02-02 11:22:04,698 - DEBUG - Starting battle round
+2025-02-02 11:29:38,663 - INFO - NEW SESSION ID: 1738513778.6639428
+2025-02-02 11:29:38,664 - DEBUG - Configuration loaded from YAML
+2025-02-02 11:29:38,668 - DEBUG - LogWindow initialized
+2025-02-02 11:29:38,668 - DEBUG - GameEngine initialized
+2025-02-02 11:29:38,668 - INFO - GameEngine instance created
+2025-02-02 11:29:38,668 - DEBUG - Starting battle round
+2025-02-02 11:29:45,161 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:29:45,162 - DEBUG - Message added to LogWindow: Moves this turn: Phoenix -> Special Attack, Cassiopeia -> Attack
+2025-02-02 11:29:45,162 - INFO - Moves this turn: Phoenix -> Special Attack, Cassiopeia -> Attack
+2025-02-02 11:29:45,162 - DEBUG - Processing moves: Phoenix -> Special Attack, Cassiopeia -> Attack
+2025-02-02 11:29:45,162 - DEBUG - Message added to LogWindow: Phoenix uses a special attack on Cassiopeia for 30 damage!
+2025-02-02 11:29:45,162 - INFO - Phoenix uses a special attack on Cassiopeia for 30 damage!
+2025-02-02 11:29:45,163 - DEBUG - Message added to LogWindow: Cassiopeia attacks Phoenix for 36 damage!
+2025-02-02 11:29:45,163 - INFO - Cassiopeia attacks Phoenix for 36 damage!
+2025-02-02 11:29:45,167 - DEBUG - Camera view updated with new frame
+2025-02-02 11:29:45,171 - DEBUG - LogWindow updated
+2025-02-02 11:29:45,172 - DEBUG - GUI updated
+2025-02-02 11:29:45,182 - DEBUG - Battle round completed
+2025-02-02 11:29:50,183 - DEBUG - Starting battle round
+2025-02-02 11:29:56,574 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:29:56,574 - DEBUG - Message added to LogWindow: Moves this turn: Phoenix -> Special Attack, Cassiopeia -> Attack
+2025-02-02 11:29:56,574 - INFO - Moves this turn: Phoenix -> Special Attack, Cassiopeia -> Attack
+2025-02-02 11:29:56,574 - DEBUG - Processing moves: Phoenix -> Special Attack, Cassiopeia -> Attack
+2025-02-02 11:29:56,574 - DEBUG - Message added to LogWindow: Phoenix tried to use a special attack but didn't have enough mana!
+2025-02-02 11:29:56,574 - INFO - Phoenix tried to use a special attack but didn't have enough mana!
+2025-02-02 11:29:56,575 - DEBUG - Message added to LogWindow: Cassiopeia attacks Phoenix for 36 damage!
+2025-02-02 11:29:56,575 - INFO - Cassiopeia attacks Phoenix for 36 damage!
+2025-02-02 11:29:56,579 - DEBUG - Camera view updated with new frame
+2025-02-02 11:29:56,581 - DEBUG - LogWindow updated
+2025-02-02 11:29:56,582 - DEBUG - GUI updated
+2025-02-02 11:29:56,585 - DEBUG - Battle round completed
+2025-02-02 11:30:01,586 - DEBUG - Starting battle round
+2025-02-02 11:30:08,008 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:30:08,009 - DEBUG - Message added to LogWindow: Moves this turn: Phoenix -> Special Attack, Cassiopeia -> Attack
+2025-02-02 11:30:08,009 - INFO - Moves this turn: Phoenix -> Special Attack, Cassiopeia -> Attack
+2025-02-02 11:30:08,009 - DEBUG - Processing moves: Phoenix -> Special Attack, Cassiopeia -> Attack
+2025-02-02 11:30:08,009 - DEBUG - Message added to LogWindow: Phoenix tried to use a special attack but didn't have enough mana!
+2025-02-02 11:30:08,009 - INFO - Phoenix tried to use a special attack but didn't have enough mana!
+2025-02-02 11:30:08,010 - DEBUG - Message added to LogWindow: Cassiopeia attacks Phoenix for 36 damage!
+2025-02-02 11:30:08,010 - INFO - Cassiopeia attacks Phoenix for 36 damage!
+2025-02-02 11:30:08,014 - DEBUG - Camera view updated with new frame
+2025-02-02 11:30:08,016 - DEBUG - LogWindow updated
+2025-02-02 11:30:08,018 - DEBUG - GUI updated
+2025-02-02 11:30:08,032 - DEBUG - Battle round completed
+2025-02-02 11:30:13,033 - DEBUG - Starting battle round
+2025-02-02 11:32:43,071 - INFO - NEW SESSION ID: 1738513963.071032
+2025-02-02 11:32:43,071 - DEBUG - Configuration loaded from YAML
+2025-02-02 11:32:43,075 - DEBUG - LogWindow initialized
+2025-02-02 11:32:43,075 - DEBUG - GameEngine initialized
+2025-02-02 11:32:43,075 - INFO - GameEngine instance created
+2025-02-02 11:32:43,075 - DEBUG - Starting battle round
+2025-02-02 11:32:49,538 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:32:49,539 - DEBUG - Message added to LogWindow: Moves this turn: Orion -> Special Attack, Andromeda -> Attack
+2025-02-02 11:32:49,539 - INFO - Moves this turn: Orion -> Special Attack, Andromeda -> Attack
+2025-02-02 11:32:49,539 - DEBUG - Processing moves: Orion -> Special Attack, Andromeda -> Attack
+2025-02-02 11:32:49,539 - DEBUG - Message added to LogWindow: Orion uses a special attack on Andromeda for 56 damage!
+2025-02-02 11:32:49,539 - INFO - Orion uses a special attack on Andromeda for 56 damage!
+2025-02-02 11:32:49,541 - DEBUG - Message added to LogWindow: Andromeda attacks Orion for 37 damage!
+2025-02-02 11:32:49,541 - INFO - Andromeda attacks Orion for 37 damage!
+2025-02-02 11:32:49,545 - DEBUG - Camera view updated with new frame
+2025-02-02 11:32:49,549 - DEBUG - LogWindow updated
+2025-02-02 11:32:49,551 - DEBUG - GUI updated
+2025-02-02 11:32:49,567 - DEBUG - Battle round completed
+2025-02-02 11:32:54,568 - DEBUG - Starting battle round
+2025-02-02 11:33:00,996 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:33:00,996 - DEBUG - Message added to LogWindow: Moves this turn: Orion -> Special Attack, Andromeda -> Attack
+2025-02-02 11:33:00,996 - INFO - Moves this turn: Orion -> Special Attack, Andromeda -> Attack
+2025-02-02 11:33:00,996 - DEBUG - Processing moves: Orion -> Special Attack, Andromeda -> Attack
+2025-02-02 11:33:00,996 - DEBUG - Message added to LogWindow: Orion tried to use a special attack but didn't have enough mana!
+2025-02-02 11:33:00,996 - INFO - Orion tried to use a special attack but didn't have enough mana!
+2025-02-02 11:33:00,998 - DEBUG - Message added to LogWindow: Andromeda attacks Orion for 37 damage!
+2025-02-02 11:33:00,998 - INFO - Andromeda attacks Orion for 37 damage!
+2025-02-02 11:33:01,001 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:01,004 - DEBUG - LogWindow updated
+2025-02-02 11:33:01,005 - DEBUG - GUI updated
+2025-02-02 11:33:01,017 - DEBUG - Battle round completed
+2025-02-02 11:33:06,018 - DEBUG - Starting battle round
+2025-02-02 11:33:12,433 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:33:12,434 - DEBUG - Message added to LogWindow: Moves this turn: Orion -> Special Attack, Andromeda -> Attack
+2025-02-02 11:33:12,434 - INFO - Moves this turn: Orion -> Special Attack, Andromeda -> Attack
+2025-02-02 11:33:12,434 - DEBUG - Processing moves: Orion -> Special Attack, Andromeda -> Attack
+2025-02-02 11:33:12,434 - DEBUG - Message added to LogWindow: Orion tried to use a special attack but didn't have enough mana!
+2025-02-02 11:33:12,434 - INFO - Orion tried to use a special attack but didn't have enough mana!
+2025-02-02 11:33:12,435 - DEBUG - Message added to LogWindow: Andromeda attacks Orion for 37 damage!
+2025-02-02 11:33:12,435 - INFO - Andromeda attacks Orion for 37 damage!
+2025-02-02 11:33:12,439 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:12,441 - DEBUG - LogWindow updated
+2025-02-02 11:33:12,442 - DEBUG - GUI updated
+2025-02-02 11:33:12,452 - DEBUG - Battle round completed
+2025-02-02 11:33:17,453 - DEBUG - Game over condition met
+2025-02-02 11:33:17,454 - DEBUG - Message added to LogWindow: Andromeda wins!
+2025-02-02 11:33:17,454 - INFO - Andromeda wins!
+2025-02-02 11:33:17,454 - INFO - Game ended, winner declared
+2025-02-02 11:33:17,645 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:17,646 - DEBUG - LogWindow updated
+2025-02-02 11:33:17,647 - DEBUG - GUI updated
+2025-02-02 11:33:17,653 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:17,654 - DEBUG - LogWindow updated
+2025-02-02 11:33:17,655 - DEBUG - GUI updated
+2025-02-02 11:33:17,688 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:17,689 - DEBUG - LogWindow updated
+2025-02-02 11:33:17,692 - DEBUG - GUI updated
+2025-02-02 11:33:17,722 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:17,723 - DEBUG - LogWindow updated
+2025-02-02 11:33:17,725 - DEBUG - GUI updated
+2025-02-02 11:33:17,755 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:17,757 - DEBUG - LogWindow updated
+2025-02-02 11:33:17,759 - DEBUG - GUI updated
+2025-02-02 11:33:17,790 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:17,791 - DEBUG - LogWindow updated
+2025-02-02 11:33:17,793 - DEBUG - GUI updated
+2025-02-02 11:33:17,824 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:17,825 - DEBUG - LogWindow updated
+2025-02-02 11:33:17,827 - DEBUG - GUI updated
+2025-02-02 11:33:17,859 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:17,861 - DEBUG - LogWindow updated
+2025-02-02 11:33:17,863 - DEBUG - GUI updated
+2025-02-02 11:33:17,893 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:17,894 - DEBUG - LogWindow updated
+2025-02-02 11:33:17,896 - DEBUG - GUI updated
+2025-02-02 11:33:17,927 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:17,928 - DEBUG - LogWindow updated
+2025-02-02 11:33:17,930 - DEBUG - GUI updated
+2025-02-02 11:33:17,961 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:17,963 - DEBUG - LogWindow updated
+2025-02-02 11:33:17,965 - DEBUG - GUI updated
+2025-02-02 11:33:17,995 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:17,996 - DEBUG - LogWindow updated
+2025-02-02 11:33:17,998 - DEBUG - GUI updated
+2025-02-02 11:33:18,029 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,030 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,032 - DEBUG - GUI updated
+2025-02-02 11:33:18,063 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,064 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,066 - DEBUG - GUI updated
+2025-02-02 11:33:18,097 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,100 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,104 - DEBUG - GUI updated
+2025-02-02 11:33:18,132 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,133 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,136 - DEBUG - GUI updated
+2025-02-02 11:33:18,165 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,167 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,170 - DEBUG - GUI updated
+2025-02-02 11:33:18,199 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,201 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,204 - DEBUG - GUI updated
+2025-02-02 11:33:18,233 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,235 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,238 - DEBUG - GUI updated
+2025-02-02 11:33:18,268 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,269 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,271 - DEBUG - GUI updated
+2025-02-02 11:33:18,302 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,303 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,306 - DEBUG - GUI updated
+2025-02-02 11:33:18,336 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,337 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,339 - DEBUG - GUI updated
+2025-02-02 11:33:18,369 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,370 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,372 - DEBUG - GUI updated
+2025-02-02 11:33:18,403 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,404 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,406 - DEBUG - GUI updated
+2025-02-02 11:33:18,437 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,438 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,440 - DEBUG - GUI updated
+2025-02-02 11:33:18,471 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,472 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,474 - DEBUG - GUI updated
+2025-02-02 11:33:18,505 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,507 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,509 - DEBUG - GUI updated
+2025-02-02 11:33:18,539 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,541 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,543 - DEBUG - GUI updated
+2025-02-02 11:33:18,573 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,575 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,576 - DEBUG - GUI updated
+2025-02-02 11:33:18,607 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,608 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,610 - DEBUG - GUI updated
+2025-02-02 11:33:18,641 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,642 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,644 - DEBUG - GUI updated
+2025-02-02 11:33:18,675 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,676 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,678 - DEBUG - GUI updated
+2025-02-02 11:33:18,710 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,711 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,713 - DEBUG - GUI updated
+2025-02-02 11:33:18,743 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,744 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,747 - DEBUG - GUI updated
+2025-02-02 11:33:18,776 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,777 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,779 - DEBUG - GUI updated
+2025-02-02 11:33:18,810 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,812 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,814 - DEBUG - GUI updated
+2025-02-02 11:33:18,844 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,846 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,848 - DEBUG - GUI updated
+2025-02-02 11:33:18,879 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,880 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,882 - DEBUG - GUI updated
+2025-02-02 11:33:18,912 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,915 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,917 - DEBUG - GUI updated
+2025-02-02 11:33:18,947 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,948 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,950 - DEBUG - GUI updated
+2025-02-02 11:33:18,981 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:18,982 - DEBUG - LogWindow updated
+2025-02-02 11:33:18,984 - DEBUG - GUI updated
+2025-02-02 11:33:19,015 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:19,017 - DEBUG - LogWindow updated
+2025-02-02 11:33:19,019 - DEBUG - GUI updated
+2025-02-02 11:33:19,049 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:19,051 - DEBUG - LogWindow updated
+2025-02-02 11:33:19,053 - DEBUG - GUI updated
+2025-02-02 11:33:19,083 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:19,085 - DEBUG - LogWindow updated
+2025-02-02 11:33:19,087 - DEBUG - GUI updated
+2025-02-02 11:33:19,118 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:19,120 - DEBUG - LogWindow updated
+2025-02-02 11:33:19,123 - DEBUG - GUI updated
+2025-02-02 11:33:19,152 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:19,155 - DEBUG - LogWindow updated
+2025-02-02 11:33:19,157 - DEBUG - GUI updated
+2025-02-02 11:33:19,186 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:19,187 - DEBUG - LogWindow updated
+2025-02-02 11:33:19,189 - DEBUG - GUI updated
+2025-02-02 11:33:19,219 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:19,222 - DEBUG - LogWindow updated
+2025-02-02 11:33:19,224 - DEBUG - GUI updated
+2025-02-02 11:33:19,254 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:19,256 - DEBUG - LogWindow updated
+2025-02-02 11:33:19,259 - DEBUG - GUI updated
+2025-02-02 11:33:19,293 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:19,295 - DEBUG - LogWindow updated
+2025-02-02 11:33:19,298 - DEBUG - GUI updated
+2025-02-02 11:33:19,321 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:19,323 - DEBUG - LogWindow updated
+2025-02-02 11:33:19,326 - DEBUG - GUI updated
+2025-02-02 11:33:19,355 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:19,356 - DEBUG - LogWindow updated
+2025-02-02 11:33:19,358 - DEBUG - GUI updated
+2025-02-02 11:33:19,389 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:19,390 - DEBUG - LogWindow updated
+2025-02-02 11:33:19,392 - DEBUG - GUI updated
+2025-02-02 11:33:19,422 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:19,424 - DEBUG - LogWindow updated
+2025-02-02 11:33:19,426 - DEBUG - GUI updated
+2025-02-02 11:33:19,744 - INFO - Game window closed by user

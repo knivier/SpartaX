@@ -1,6 +1,5 @@
 import random
 import pygame
-from particles import ParticleEffect
 
 from Player_List import (
     Draco,
@@ -85,22 +84,22 @@ class GameEngine:
         self.player1 = player1
         self.player2 = player2
         # Create a display of 1368x720.
-        self.screen = pygame.display.set_mode((1368, 720))
-        # self.screen = pygame.display.get_surface()
+        # self.screen = pygame.display.set_mode((1920, 1080))
+        self.screen = pygame.display.get_surface()
         # pygame.display.set_caption("Wizard Duel")
         self.clock = pygame.time.Clock()
         self.running = True
 
         # Set up a dedicated GUI surface for the right half.
         # Right half occupies x = 684 to 1368.
-        self.gui_surface = pygame.Surface((1368 // 2, 720))
+        self.gui_surface = pygame.Surface((1920 // 2, 1080))
         # Positions for health/mana bars (relative to the GUI surface).
         self.p1_health_rect = pygame.Rect(16, 50, 200, 20)
         self.p1_mana_rect = pygame.Rect(16, 80, 200, 20)
         self.p2_health_rect = pygame.Rect(16, 150, 200, 20)
         self.p2_mana_rect = pygame.Rect(16, 180, 200, 20)
         # Log window area on the GUI surface.
-        self.log_rect = pygame.Rect(16, 250, 652, 400)
+        self.log_rect = pygame.Rect(16, 250, (1920 - 100) // 2, (1080 - 100))
         self.log_window = LogWindow(self.log_rect)
         logging.debug("GameEngine initialized")
 
@@ -116,11 +115,11 @@ class GameEngine:
                 # Create a Pygame surface from the numpy array.
                 frame_surface = pygame.surfarray.make_surface(frame_rgb.swapaxes(0, 1))
                 # Scale frame to fill the left half (684x720).
-                frame_surface = pygame.transform.scale(frame_surface, (684, 720))
+                frame_surface = pygame.transform.scale(frame_surface, (1920 // 2, 1080))
                 self.screen.blit(frame_surface, (0, 0))
                 logging.debug("Camera view updated with new frame")
             else:
-                pygame.draw.rect(self.screen, (0, 0, 0), (0, 0, 684, 720))
+                pygame.draw.rect(self.screen, (0, 0, 0), (0, 0, 1920 // 2, 1080))
                 logging.debug("Camera view updated with black screen")
         except pygame.error as e:
             logging.error(f"Pygame error in update_camera_view: {e}")
@@ -187,7 +186,7 @@ class GameEngine:
         self.log_window.update(self.gui_surface)
 
         # Blit the GUI surface onto the right half of the main screen
-        self.screen.blit(self.gui_surface, (684, 0))
+        self.screen.blit(self.gui_surface, (1920 // 2, 0))
 
     # Update the display
         pygame.display.update()
