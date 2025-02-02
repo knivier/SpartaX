@@ -118,7 +118,7 @@ def main_menu():
                 elif buttons["Quit"].collidepoint(event.pos):
                     pygame.quit()
                     sys.exit()
-
+            
         pygame.display.flip()
 
 
@@ -265,20 +265,20 @@ def start_game():
                 f"Select Player {player_num}", True, DARK_GRAY
             )
             screen.blit(
-                title_text, (((SCREEN_WIDTH - title_text.get_width()) // 2), ((y_offset * SCREEN_HEIGHT) / 15))
+                title_text, (((SCREEN_WIDTH - title_text.get_width()) // 2), ((y_offset * SCREEN_HEIGHT) / 13))
             )
-            y_offset += 1.5
+            y_offset += 2
 
             player_rects = {}
 
             for name in player_names:
                 player_rects[name] = draw_button(
-                    name, ((SCREEN_WIDTH - 400) // 2), ((y_offset * SCREEN_HEIGHT) / 15), 400, 50, GRAY, LIGHT_BLUE, mouse_pos
+                    name, ((SCREEN_WIDTH - 400) // 2), ((y_offset * SCREEN_HEIGHT) / 13), 400, 50, GRAY, LIGHT_BLUE, mouse_pos
                 )
                 y_offset += 1
 
             cancel_button = draw_button(
-                "Cancel", ((SCREEN_WIDTH - 400) // 2), ((y_offset * SCREEN_HEIGHT) / 15), 400, 50, RED, LIGHT_BLUE, mouse_pos
+                "Cancel", ((SCREEN_WIDTH - 400) // 2), ((y_offset * SCREEN_HEIGHT) / 13), 400, 50, RED, LIGHT_BLUE, mouse_pos
             )
             y_offset += 1
 
@@ -330,7 +330,12 @@ def start_game():
     save_options(options)
 
     def countdown():
+        background_image = pygame.image.load(r"src/background.png").convert()
+        screen_width, screen_height = screen.get_size()
+        #background_image = pygame.transform.scale(background_image, (1368, 720))
+        a = pygame.transform.scale(background_image, (screen_width, screen_height))
         for i in range(3, 0, -1):
+            screen.blit(a, (0, 0))
             #screen.fill(WHITE)
             countdown_text = TITLE_FONT.render(str(i), True, DARK_GRAY)
             screen.blit(
