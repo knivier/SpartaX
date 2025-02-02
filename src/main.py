@@ -45,11 +45,11 @@ WHITE, BLACK, GRAY, LIGHT_GRAY = (
     (255, 255, 255),
     (0, 0, 0),
     (200, 200, 200),
-    (255, 250, 205),
+    (220, 220, 220),
 )
 BLUE, LIGHT_BLUE, DARK_GRAY, GREEN, RED = (
     (0, 0, 255),
-    (255, 255, 224),
+    (173, 216, 230),
     (50, 50, 50),
     (0, 255, 0),
     (255, 0, 0),
@@ -88,10 +88,11 @@ def main_menu():
     screen_width, screen_height = screen.get_size()
     #background_image = pygame.transform.scale(background_image, (1368, 720))
     a = pygame.transform.scale(background_image, (screen_width, screen_height))
-
-    screen.blit(a, (0, 0))
     pygame.display.flip()
+    
     while running:
+        #screen.fill(WHITE)
+        screen.blit(a, (0, 0))
         mouse_pos = pygame.mouse.get_pos()
 
         title_text = TITLE_FONT.render("WizViz", True, DARK_GRAY)
@@ -125,11 +126,13 @@ def main_menu():
 def options_menu():
     running = True
     var = True
-    # background_image = pygame.image.load(r"src/background.png")
-    # background_image = pygame.transform.scale(background_image, (1368, 720))
-    # screen.blit(background_image, (0, 0))
-    # pygame.display.flip()
+    background_image = pygame.image.load(r"src/background.png").convert()
+    screen_width, screen_height = screen.get_size()
+    #background_image = pygame.transform.scale(background_image, (1368, 720))
+    a = pygame.transform.scale(background_image, (screen_width, screen_height))
     while running:
+        #screen.fill(WHITE)
+        screen.blit(a, (0, 0))
         mouse_pos = pygame.mouse.get_pos()
         
         y_offset = 3
@@ -245,17 +248,17 @@ def start_game():
             Player_List.Cassiopeia(),
         ]
         player_names = [player.get_name() for player in players]
-        # background_image = pygame.image.load(r"src\background.png")
-        # background_image = pygame.transform.scale(background_image, (1920, 1080))
-        # screen.blit(background_image, (0, 0))
-        # pygame.display.flip()
-        # background_image = pygame.image.load(r"src/background.png")
-        # background_image = pygame.transform.scale(background_image, (1368, 720))
-        # screen.blit(background_image, (0, 0))
-        # pygame.display.flip()
+
+        background_image = pygame.image.load(r"src/background.png").convert()
+        screen_width, screen_height = screen.get_size()
+        #background_image = pygame.transform.scale(background_image, (1368, 720))
+        a = pygame.transform.scale(background_image, (screen_width, screen_height))
         while running:
-            #loading background
+        #screen.fill(WHITE)
+            screen.blit(a, (0, 0))
+            #screen.fill(WHITE)
             mouse_pos = pygame.mouse.get_pos()
+
             y_offset = 1
 
             title_text = TITLE_FONT.render(
@@ -328,10 +331,7 @@ def start_game():
 
     def countdown():
         for i in range(3, 0, -1):
-            # background_image = pygame.image.load(r"src/background.png")
-            # background_image = pygame.transform.scale(background_image, (1368, 720))
-            # screen.blit(background_image, (0, 0))
-            # pygame.display.flip()
+            #screen.fill(WHITE)
             countdown_text = TITLE_FONT.render(str(i), True, DARK_GRAY)
             screen.blit(
                 countdown_text,
