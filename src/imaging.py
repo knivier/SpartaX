@@ -8,11 +8,11 @@ import numpy as np
 
 WIDTH, HEIGHT = 1920, 1080
 """Width and height of the Pygame screen"""
-MIN_DETECTION_CONFIDENCE = 0.2
+MIN_DETECTION_CONFIDENCE = 0.5
 """Confidence level required to establish a pose detection"""
-MIN_TRACKING_CONFIDENCE = 0.2
+MIN_TRACKING_CONFIDENCE = 0.8
 """Confidence level required to establish pose tracking"""
-MIN_PRESENCE_CONFIDENCE = 0.2
+MIN_PRESENCE_CONFIDENCE = 0.4
 """Confidence level required to establish a pose presence"""
 NUM_POSES = 2
 """Number of poses to detect"""
@@ -140,6 +140,7 @@ options = vision.PoseLandmarkerOptions(
 def draw_landmarks_on_image(rgb_image, detection_result):
     if (rgb_image is None) or (detection_result is None):
         return
+    
     pose_object_list = detection_result.pose_landmarks
     annotated_image = rgb_image.copy()
 
@@ -167,30 +168,24 @@ def draw_landmarks_on_image(rgb_image, detection_result):
         nose_pose = pose_landmarks[mp.solutions.pose.PoseLandmark.NOSE]
         # print(f"RGB Image Shape: {rgb_image.shape}")
 
-        if detection_result is not None:
-            for pose_landmarks in detection_result.pose_landmarks:
-                action = define_action(pose_landmarks)
+        # for pose_landmarks in detection_result.pose_landmarks:
+        action = define_action(pose_landmarks)
 
-                cv2.putText(
-                    annotated_image,
-                    f"Player {action[0]}: {action[1]}",
-                    (
-                        int(nose_pose.x * WIDTH),
-                        int(nose_pose.y * HEIGHT),
-                    ),
-                    cv2.FONT_HERSHEY_SIMPLEX,
-                    1,
-                    (255, 255, 255),
-                    2,
-                    cv2.LINE_AA,
-                )
-        # print(action)
+        cv2.putText(
+            annotated_image,
+            f"Player {action[0]}: {action[1]}",
+            (
+                int(nose_pose.x * WIDTH),
+                int(nose_pose.y * HEIGHT),
+            ),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            1,
+            (255, 255, 255),
+            2,
+            cv2.LINE_AA,
+        )
 
-        # print("Pose landmarks:", detection_result.pose_landmarks)
-        # if detection_result.pose_landmarks:
-        #     print("Pose landmarks[0]:", detection_result.pose_landmarks[0])
-
-        if detection_result.pose_landmarks and True:  # Disable for now
+        if True:  # ! Disable for production
             left_wrist = pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_WRIST]
             right_wrist = pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_WRIST]
 
