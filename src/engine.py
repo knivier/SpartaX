@@ -41,8 +41,6 @@ class LogWindow:
         """
         rect: pygame.Rect defining where the log is drawn on the GUI surface.
         """
-        if not pygame.get_init():
-            pygame.init()
         self.rect = rect
         self.font = pygame.font.Font(None, 24)
         self.messages = []
@@ -54,8 +52,6 @@ class LogWindow:
             self.messages.pop(0)
 
     def update(self, surface):
-        if not pygame.get_init():
-            pygame.init()
         # Draw a background for the log area.
         pygame.draw.rect(surface, (30, 30, 30), self.rect)
         y = self.rect.y + 10
@@ -67,8 +63,6 @@ class LogWindow:
 
 class GameEngine:
     def __init__(self, player1, player2):
-        if not pygame.get_init():
-            pygame.init()
         self.player1 = player1
         self.player2 = player2
         # Create a display of 1368x720.
@@ -94,8 +88,6 @@ class GameEngine:
         Update the left half of the window with the latest camera frame.
         Assumes that imaging.to_window (global) is a BGR numpy array.
         """
-        if not pygame.get_init():
-            pygame.init()
         try:
             if imaging.to_window is not None:
                 # Convert BGR to RGB.
@@ -114,9 +106,6 @@ class GameEngine:
         """
         Draw the GUI on the right half: background, health/mana bars, and log window.
         """
-        if not pygame.get_init():
-            pygame.init()
-
         self.gui_surface.fill((50, 50, 50))
         # Draw health/mana bars for player1.
         p1_health_width = int((self.player1.get_health() / 100) * 200)
@@ -293,8 +282,6 @@ class GameEngine:
         self.clock.tick(30)
 
     def declare_winner(self):
-        if not pygame.get_init():
-            pygame.init()
         if self.player1.get_health() > self.player2.get_health():
             self.log(f"{self.player1.get_name()} wins!")
         elif self.player2.get_health() > self.player1.get_health():
@@ -319,8 +306,6 @@ class GameEngine:
 
 
 def run():
-    if not pygame.get_init():
-        pygame.init()
     # Load configuration from YAML.
     yaml_path = os.path.join(os.path.dirname(__file__), "../properties.yaml")
     with open(yaml_path, "r") as file:
@@ -355,7 +340,9 @@ def run():
     # game.battle_round()
     while not game.gameOver():
         game.battle_round()
-        
+        pygame.time.wait(5000)
+        # ? Logic for pausing game and resuming to let user see stats
+
     game.declare_winner()
     
 
