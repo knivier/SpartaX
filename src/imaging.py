@@ -290,15 +290,23 @@ def scan(seconds, solo_play) -> any:
                             p1_actions[0] += 1
                         elif action[1] == "Defending":
                             p1_actions[1] += 1
-                        else:
+                        elif action[1] == "Resting":
                             p1_actions[2] += 1
+                        elif action[1] == "Healing":
+                            p1_actions[3] += 1
+                        else:
+                            p1_actions[4] += 1
                     elif action[0] == 2:
                         if action[1] == "Attack":
                             p2_actions[0] += 1
                         elif action[1] == "Defending":
                             p2_actions[1] += 1
-                        else:
+                        elif action[1] == "Resting":
                             p2_actions[2] += 1
+                        elif action[1] == "Healing":
+                            p2_actions[3] += 1
+                        else:
+                            p2_actions[4] += 1
                     else:
                         continue
 
@@ -324,7 +332,11 @@ def scan(seconds, solo_play) -> any:
 
     max_action_index_p1 = np.argmax(p1_actions)
     max_action_index_p2 = np.argmax(p2_actions)
-    return tuple([actions[max_action_index_p1], actions[max_action_index_p2]])
+    if (SOLO_PLAY):
+        return actions[max_action_index_p1]
+    
+    else:
+        return tuple([actions[max_action_index_p1], actions[max_action_index_p2]])
 
 
-# scan(10, True)
+print(scan(5, True))
