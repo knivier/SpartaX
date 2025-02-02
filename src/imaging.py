@@ -350,4 +350,4 @@ def scan(seconds, solo_play):
     else:
         return tuple([actions[max_action_index_p1], actions[max_action_index_p2]])
 
-print(scan(5, True))
+# print(scan(5, True))
