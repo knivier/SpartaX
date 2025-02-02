@@ -83,14 +83,15 @@ class GameEngine:
         self.player1 = player1
         self.player2 = player2
         # Create a display of 1368x720.
-        self.screen = pygame.display.set_mode((1368, 720))
-        pygame.display.set_caption("Wizard Duel")
+        # self.screen = pygame.display.set_mode((1368, 720))
+        self.screen = pygame.display.get_surface()
+        # pygame.display.set_caption("Wizard Duel")
         self.clock = pygame.time.Clock()
         self.running = True
 
         # Set up a dedicated GUI surface for the right half.
         # Right half occupies x = 684 to 1368.
-        self.gui_surface = pygame.Surface((684, 720))
+        self.gui_surface = pygame.Surface((1920 // 2, 1080))
         # Positions for health/mana bars (relative to the GUI surface).
         self.p1_health_rect = pygame.Rect(16, 50, 200, 20)
         self.p1_mana_rect = pygame.Rect(16, 80, 200, 20)

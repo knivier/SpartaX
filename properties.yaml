@@ -10,9 +10,9 @@ game_options:
     health: 40
     mana: 5
   player1:
-    name: null
+    name: Hydra
   player2:
-    name: Centaurus
+    name: Pegasus
 temp_game_options:
   player1: ''
   player2: ''

@@ -257,8 +257,10 @@ def scan(seconds, solo_play):
     cap = cv2.VideoCapture(0)
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, WIDTH)
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, HEIGHT)
-    screen = pygame.display.set_mode((WIDTH, HEIGHT))
-    pygame.display.set_caption("WizViz Pose Detection")
+    screen = pygame.display.get_surface()
+    if screen is None:
+        screen = pygame.display.set_mode((WIDTH, HEIGHT), pygame.FULLSCREEN)    
+        pygame.display.set_caption("WizViz Pose Detection")
 
 
     def timer_callback():
@@ -283,6 +285,7 @@ def scan(seconds, solo_play):
         while running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
+                    pygame.quit()
                     running = False
 
             ret, frame = cap.read()
@@ -342,7 +345,7 @@ def scan(seconds, solo_play):
                 break
 
         cap.release()
-        pygame.display.quit()
+        # pygame.display.quit()
         
     max_action_index_p1 = np.argmax(p1_actions)
     max_action_index_p2 = np.argmax(p2_actions)
