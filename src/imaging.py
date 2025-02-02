@@ -21,8 +21,8 @@ SOLO_PLAY = False
 """Whether the player is playing alone"""
 NUM_POSES = 2
 """Number of poses to detect"""
-MODEL_PATH = "/Users/ankur/Coding-Projects/Hackathon/SpartahackX/SpartaX/src/pose_landmarker_full.task"
-MODEL_PATH_ALT = "C:\\Users\\agniv\\Documents\\Code\\spartax\\src\\pose_landmarker_full.task"
+MODEL_PATH_ALT = "/Users/ankur/Coding-Projects/Hackathon/SpartahackX/SpartaX/src/pose_landmarker_full.task"
+MODEL_PATH = "C:\\Users\\agniv\\Documents\\Code\\spartax\\src\\pose_landmarker_full.task"
 
 # MODEL_PATH = "./src/pose_landmarker_full.task"
 """Path to the pose landmarker model"""
