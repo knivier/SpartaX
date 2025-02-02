@@ -58,6 +58,8 @@ def wizard_bot_turn(bot, player):
     #safety
     if difficulty < 0:
         difficulty = 0
+    if difficulty > 5: 
+        difficulty = 5
     #easy/medium mode 
     if(difficulty <= 3):
         number = random.randint(1,4)
@@ -73,7 +75,7 @@ def wizard_bot_turn(bot, player):
     # FSM - finite state machine to determine the wizard's action
     if bot.get_mana() == 0:
         bot.set_state("Rest")
-    elif player.get_health() <= (difficult * 10) and bot.has_enough_mana(10):
+    elif player.get_health() <= bot.get_attack() and bot.has_enough_mana(10):
         bot.set_state("Attack")
     elif bot.get_health() <= player.get_attack() and bot.has_enough_mana(20):
         bot.set_state("Defend")
@@ -82,4 +84,3 @@ def wizard_bot_turn(bot, player):
     else:
         bot.set_state("Attack")
     return 
-
