@@ -5,6 +5,7 @@ from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 from mediapipe.framework.formats import landmark_pb2
 import numpy as np
+import threading
 
 WIDTH, HEIGHT = 1920, 1080
 """Width and height of the Pygame screen"""
@@ -32,7 +33,7 @@ to_window = None
 last_timestamp_ms = 0
 
 
-# detection_result = None
+detection_result = None
 
 
 def print_result(
@@ -100,8 +101,6 @@ def define_action(pose_landmarks):
             ]
         )
 
-    # shoulder_width = np.abs(right_shoulder_x - left_shoulder_x)
-
     player_number = 0
     player_move = "Resting"
 
@@ -115,17 +114,6 @@ def define_action(pose_landmarks):
     ):
         return tuple([player_number, player_move])
 
-    # print(f"Distance from right wrist to center: {abs(right_wrist_x - human_center_x)}")
-    # print(f"Distance from left wrist to center: {abs(left_wrist_x - human_center_x)}")
-    # print("Right wrist y between shoulder and hip: ", right_wrist_y > right_hip_y and right_wrist_y < right_shoulder_y)
-    print("Right wrist y above hip: ", right_wrist_y > right_hip_y)
-    print("Right wrist y below shoulder: ", right_wrist_y < right_shoulder_y)
-    print("Left wrist y below hip: ", left_wrist_y > left_hip_y)
-    print("Left wrist y above shoulder: ", left_wrist_y < left_shoulder_y)
-    # print(f"Right wrist y: {right_wrist_y}")
-    # print(f"Right hip y: {right_hip_y}")
-    # print(f"Right shoulder y: {right_shoulder_y}")
-
     if (
         abs(right_wrist_x - human_center_x) > TORSO_LENGTH_ARM_RATIO * torso_length
         or abs(left_wrist_x - human_center_x) > TORSO_LENGTH_ARM_RATIO * torso_length
@@ -133,30 +121,11 @@ def define_action(pose_landmarks):
         player_move = "Attack"
 
     elif (
-        # abs(
-        #     pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_WRIST].x
-        #     - pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_WRIST].x
-        # )
-        # < shoulder_width
-        # and right_wrist_x > min(right_shoulder_x, right_hip_x)
-        # and right_wrist_x < max(right_shoulder_x, right_hip_x)
-        # and left_wrist_x > min(left_shoulder_x, left_hip_x)
-        # and left_wrist_x < max(left_shoulder_x, left_hip_x)
-        # not (
-        (
-            right_wrist_y < (right_hip_y + 0.2 * (right_shoulder_y - right_hip_y))
-            and right_wrist_y > right_shoulder_y
-        )
-        or (
-            left_wrist_y < (left_hip_y + 0.2 * (left_shoulder_y - left_hip_y))
-            and left_wrist_y > left_shoulder_y
-        )
-        # )
-        # and abs(
-        #     pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_WRIST].y
-        #     - pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_WRIST].y
-        # )
-        # < shoulder_width
+        right_wrist_y < (right_hip_y + 0.2 * (right_shoulder_y - right_hip_y))
+        and right_wrist_y > right_shoulder_y
+    ) or (
+        left_wrist_y < (left_hip_y + 0.2 * (left_shoulder_y - left_hip_y))
+        and left_wrist_y > left_shoulder_y
     ):
         player_move = "Defending"
 
@@ -202,24 +171,24 @@ def draw_landmarks_on_image(rgb_image, detection_result):
             mp.solutions.drawing_styles.get_default_pose_landmarks_style(),
         )
 
-        nose_pose = pose_landmarks[mp.solutions.pose.PoseLandmark.NOSE]
-        action = define_action(pose_landmarks)
+        if False:  # ! Disable for production
+            nose_pose = pose_landmarks[mp.solutions.pose.PoseLandmark.NOSE]
+            action = define_action(pose_landmarks)
 
-        cv2.putText(
-            annotated_image,
-            f"Player {action[0]}: {action[1]}",
-            (
-                int(nose_pose.x * WIDTH),
-                int(nose_pose.y * HEIGHT),
-            ),
-            cv2.FONT_HERSHEY_SIMPLEX,
-            1,
-            (255, 255, 255),
-            2,
-            cv2.LINE_AA,
-        )
-
-        if True:  # ! Disable for production
+            cv2.putText(
+                annotated_image,
+                f"Player {action[0]}: {action[1]}",
+                (
+                    int(nose_pose.x * WIDTH),
+                    int(nose_pose.y * HEIGHT),
+                ),
+                cv2.FONT_HERSHEY_SIMPLEX,
+                1,
+                (255, 255, 255),
+                2,
+                cv2.LINE_AA,
+            )
+            
             left_wrist = pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_WRIST]
             right_wrist = pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_WRIST]
 
@@ -256,7 +225,20 @@ def draw_landmarks_on_image(rgb_image, detection_result):
     return annotated_image
 
 
-def scan() -> any:
+def scan(seconds) -> any:
+    def timer_callback():
+        nonlocal running
+        running = False
+    timer = threading.Timer(seconds, timer_callback)
+    timer.start()
+    
+    p1_actions = [0, 0, 0]
+    """[Attacking, Defending, Resting]"""
+    p2_actions = [0, 0, 0]
+    """[Attacking, Defending, Resting]"""
+    
+    actions = ["Attack", "Defending", "Resting"]
+    
     with vision.PoseLandmarker.create_from_options(options) as landmarker:
         global to_window
         running = True
@@ -274,6 +256,27 @@ def scan() -> any:
             timestamp_ms = int(cv2.getTickCount() / cv2.getTickFrequency() * 1000)
 
             landmarker.detect_async(mp_image, timestamp_ms)
+            
+            if detection_result is not None:
+                for pose_landmarks in detection_result.pose_landmarks:
+                    action = define_action(pose_landmarks)
+                    print(f"Player {action[0]}: {action[1]}")
+                    if action[0] == 1:
+                        if action[1] == "Attack":
+                            p1_actions[0] += 1
+                        elif action[1] == "Defending":
+                            p1_actions[1] += 1
+                        else:
+                            p1_actions[2] += 1
+                    else:
+                        if action[1] == "Attack":
+                            p2_actions[0] += 1
+                        elif action[1] == "Defending":
+                            p2_actions[1] += 1
+                        else:
+                            p2_actions[2] += 1
+                    
+
 
             if to_window is not None:
                 # Flip the frame horizontally
@@ -294,6 +297,9 @@ def scan() -> any:
 
         cap.release()
         pygame.quit()
+        
+    max_action_index_p1 = np.argmax(p1_actions)
+    max_action_index_p2 = np.argmax(p2_actions)
+    return tuple([actions[max_action_index_p1], actions[max_action_index_p2]])
 
-
-scan()
+print(scan(5))
