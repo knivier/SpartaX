@@ -133,12 +133,15 @@ class GameEngine:
             self.gui_surface,
             (255, 0, 0),
             (
-                self.p1_health_rect.x,
-                self.p1_health_rect.y,
-                p1_health_width,
-                self.p1_health_rect.height,
+            self.p1_health_rect.x,
+            self.p1_health_rect.y,
+            p1_health_width,
+            self.p1_health_rect.height,
             ),
         )
+        # Draw player1's name above the health bar
+        player1_name_surface = self.log_window.font.render(self.player1.get_name(), True, (255, 255, 255))
+        self.gui_surface.blit(player1_name_surface, (self.p1_health_rect.x, self.p1_health_rect.y - 25))
         p1_mana_width = int((self.player1.get_mana() / 100) * 200)
         pygame.draw.rect(
             self.gui_surface,
@@ -156,21 +159,24 @@ class GameEngine:
             self.gui_surface,
             (255, 0, 0),
             (
-                self.p2_health_rect.x,
-                self.p2_health_rect.y,
-                p2_health_width,
-                self.p2_health_rect.height,
+            self.p2_health_rect.x,
+            self.p2_health_rect.y,
+            p2_health_width,
+            self.p2_health_rect.height,
             ),
         )
+        # Draw player2's name above the health bar
+        player2_name_surface = self.log_window.font.render(self.player2.get_name(), True, (255, 255, 255))
+        self.gui_surface.blit(player2_name_surface, (self.p2_health_rect.x, self.p2_health_rect.y - 25))
         p2_mana_width = int((self.player2.get_mana() / 100) * 200)
         pygame.draw.rect(
             self.gui_surface,
             (0, 0, 255),
             (
-                self.p2_mana_rect.x,
-                self.p2_mana_rect.y,
-                p2_mana_width,
-                self.p2_mana_rect.height,
+            self.p2_mana_rect.x,
+            self.p2_mana_rect.y,
+            p2_mana_width,
+            self.p2_mana_rect.height,
             ),
         )
         # Update log window on the GUI surface.
@@ -298,7 +304,7 @@ class GameEngine:
         if not single_player:
             move_p1, move_p2 = moves
         else:
-            move_p1 = moves[0]
+            move_p1 = moves
             if bot is None:
                 logging.error("Bot is not defined in single player mode")
                 raise ValueError("Bot is not defined in single player mode")

@@ -1,6 +1,6 @@
 base_options:
   debug_mode: true
-  difficulty: 3
+  difficulty: 5
   mode: player_vs_ai
   skeleton: true
   splitscreen: true
@@ -10,9 +10,9 @@ game_options:
     health: 40
     mana: 5
   player1:
-    name: Draco
+    name: null
   player2:
-    name: Hydra
+    name: Centaurus
 temp_game_options:
   player1: ''
   player2: ''

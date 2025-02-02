@@ -342,7 +342,7 @@ def scan(seconds, solo_play):
                 break
 
         cap.release()
-        # pygame.display.quit()
+        pygame.display.quit()
         
     max_action_index_p1 = np.argmax(p1_actions)
     max_action_index_p2 = np.argmax(p2_actions)

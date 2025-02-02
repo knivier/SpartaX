@@ -36,8 +36,8 @@ def save_options(options):
 pygame.init()
 
 # Screen dimensions
-SCREEN_WIDTH, SCREEN_HEIGHT = 800, 600  # Init heights, can change to 1020x1080rez
-screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+SCREEN_WIDTH, SCREEN_HEIGHT = 1920, 1080  # Init heights, can change to 1020x1080rez
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.FULLSCREEN)
 pygame.display.set_caption("WizViz")
 
 # Colors
@@ -58,7 +58,7 @@ BLUE, LIGHT_BLUE, DARK_GRAY, GREEN, RED = (
 # Fonts
 FONT, TITLE_FONT, TOOLTIP_FONT = (
     pygame.font.Font(None, 36),
-    pygame.font.Font(None, 72),
+    pygame.font.Font(None, 120),
     pygame.font.Font(None, 24),
 )
 
@@ -89,14 +89,14 @@ def main_menu():
         mouse_pos = pygame.mouse.get_pos()
 
         title_text = TITLE_FONT.render("WizViz", True, DARK_GRAY)
-        screen.blit(title_text, (SCREEN_WIDTH // 2 - title_text.get_width() // 2, 100))
+        screen.blit(title_text, (SCREEN_WIDTH // 2 - title_text.get_width() // 2, (SCREEN_HEIGHT / 6)))
 
         buttons = {
-            "Play": draw_button("Play", 350, 250, 100, 50, GRAY, LIGHT_BLUE, mouse_pos),
+            "Play": draw_button("Play", ((SCREEN_WIDTH - 300) // 2), (2 * SCREEN_HEIGHT / 6), 300, 75, GRAY, LIGHT_BLUE, mouse_pos),
             "Options": draw_button(
-                "Options", 350, 320, 100, 50, GRAY, LIGHT_BLUE, mouse_pos
+                "Options", ((SCREEN_WIDTH - 300) // 2), (3 * SCREEN_HEIGHT / 6), 300, 75, GRAY, LIGHT_BLUE, mouse_pos
             ),
-            "Quit": draw_button("Quit", 350, 390, 100, 50, GRAY, LIGHT_BLUE, mouse_pos),
+            "Quit": draw_button("Quit", ((SCREEN_WIDTH - 300) // 2), (4 * SCREEN_HEIGHT / 6), 300, 75, GRAY, LIGHT_BLUE, mouse_pos),
         }
 
         for event in pygame.event.get():
@@ -122,13 +122,17 @@ def options_menu():
     while running:
         screen.fill(WHITE)
         mouse_pos = pygame.mouse.get_pos()
+        
+        y_offset = 3
+        
+        title_text = TITLE_FONT.render("Options", True, DARK_GRAY)
+        screen.blit(title_text, (SCREEN_WIDTH // 2 - title_text.get_width() // 2, (SCREEN_HEIGHT / 12)))
 
         option_keys = list(options["base_options"].keys())
         if var:
             print(option_keys)
             var = not var
 
-        y_offset = 20
         option_rects = {}
 
         for key in option_keys:
@@ -136,30 +140,30 @@ def options_menu():
             if key == "difficulty":
                 option_text = f"{key.capitalize()}: {options['base_options'][key]}"
                 option_rects[key] = draw_button(
-                    option_text, 200, y_offset, 400, 40, GRAY, LIGHT_BLUE, mouse_pos
+                    option_text, ((SCREEN_WIDTH - 400) // 2), (y_offset * SCREEN_HEIGHT // 12), 400, 50, GRAY, LIGHT_BLUE, mouse_pos
                 )
-                y_offset += 60
+                y_offset += 1
             else:
                 option_text = f"{key.capitalize()}: {options['base_options'][key]}"
                 option_rects[key] = draw_button(
-                    option_text, 200, y_offset, 400, 40, GRAY, LIGHT_BLUE, mouse_pos
+                    option_text, ((SCREEN_WIDTH - 400) // 2), (y_offset * SCREEN_HEIGHT // 12), 400, 50, GRAY, LIGHT_BLUE, mouse_pos
                 )
-                y_offset += 60
+                y_offset += 1
 
         ai_keys = list(options["game_options"]["ai"].keys())
         for key in ai_keys:
             option_text = f"AI {key.capitalize()}: {options['game_options']['ai'][key]}"
             option_rects[key] = draw_button(
-                option_text, 200, y_offset, 400, 40, GRAY, LIGHT_BLUE, mouse_pos
+                option_text, ((SCREEN_WIDTH - 400) // 2), (y_offset * SCREEN_HEIGHT // 12), 400, 50, GRAY, LIGHT_BLUE, mouse_pos
             )
-            y_offset += 60
+            y_offset += 1
 
         buttons = {
             "Save": draw_button(
                 "Save",
-                SCREEN_WIDTH // 2 + 100,
-                500,
-                150,
+                ((SCREEN_WIDTH - 175) // 2 + 112.5),
+                (y_offset * SCREEN_HEIGHT // 12),
+                175,
                 50,
                 GREEN,
                 LIGHT_BLUE,
@@ -167,9 +171,9 @@ def options_menu():
             ),
             "Back": draw_button(
                 "Back",
-                SCREEN_WIDTH // 2 - 250,
-                500,
-                150,
+                ((SCREEN_WIDTH - 175) // 2 - 112.5),
+                (y_offset * SCREEN_HEIGHT // 12),
+                175,
                 50,
                 RED,
                 LIGHT_BLUE,
@@ -237,21 +241,28 @@ def start_game():
             screen.fill(WHITE)
             mouse_pos = pygame.mouse.get_pos()
 
+            y_offset = 1
+
             title_text = TITLE_FONT.render(
                 f"Select Player {player_num}", True, DARK_GRAY
             )
             screen.blit(
-                title_text, (SCREEN_WIDTH // 2 - title_text.get_width() // 2, 50)
+                title_text, (((SCREEN_WIDTH - title_text.get_width()) // 2), ((y_offset * SCREEN_HEIGHT) / 13))
             )
+            y_offset += 2
 
-            y_offset = 150
             player_rects = {}
 
             for name in player_names:
                 player_rects[name] = draw_button(
-                    name, 300, y_offset, 200, 50, GRAY, LIGHT_BLUE, mouse_pos
+                    name, ((SCREEN_WIDTH - 400) // 2), ((y_offset * SCREEN_HEIGHT) / 13), 400, 50, GRAY, LIGHT_BLUE, mouse_pos
                 )
-                y_offset += 70
+                y_offset += 1
+
+            cancel_button = draw_button(
+                "Cancel", ((SCREEN_WIDTH - 400) // 2), ((y_offset * SCREEN_HEIGHT) / 13), 400, 50, RED, LIGHT_BLUE, mouse_pos
+            )
+            y_offset += 1
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -262,6 +273,9 @@ def start_game():
                         if rect.collidepoint(event.pos):
                             selected_player = name
                             running = False
+                    if cancel_button.collidepoint(event.pos):
+                        running = False
+                        main_menu()
 
             pygame.display.flip()
 
