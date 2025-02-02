@@ -1,406 +1,352 @@
-import random
 import pygame
-from Player_List import (
-    Draco,
-    Hydra,
-    Phoenix,
-    Lyra,
-    Orion,
-    Pegasus,
-    Andromeda,
-    Centaurus,
-    Cassiopeia,
-)
-import imaging
 import yaml
+import sys
 import os
-import cv2  # For color conversion
-import logging
-import time
-import ai
+import Player_List
+import random
 
-# Ensure Pygame is initialized before anything else
+
+# Load game options from YAML file, defaults are preset if yaml is errored
+def load_options():
+    try:
+        yaml_path = os.path.join(os.path.dirname(__file__), "../properties.yaml")
+        with open(yaml_path, "r") as file:
+            return yaml.safe_load(file)
+    except FileNotFoundError:
+        return {
+            "base_options": {
+                "mode": "two_player",
+                "debug_mode": False,
+                "splitscreen": False,
+                "skeleton": False,
+                "difficulty": 2,  # Ensure difficulty is included here
+            },
+            "game_options": {"ai": {"attack": 0, "health": 0, "mana": 0}},
+        }
+
+
+# Save game options to YAML file
+def save_options(options):
+    yaml_path = os.path.join(os.path.dirname(__file__), "../properties.yaml")
+    with open(yaml_path, "w") as file:
+        yaml.dump(options, file)
+
+
+# Initialize Pygame
 pygame.init()
-pygame.font.init()  # Explicitly initialize the font module
 
-# Game Constants
-ROUND_TIME = 60  # Total time for the entire battle (seconds)
-TURN_TIME = 5  # Each turn lasts 5 seconds
+# Screen dimensions
+SCREEN_WIDTH, SCREEN_HEIGHT = 1920, 1080  # Init heights, can change to 1020x1080rez
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.FULLSCREEN)
+pygame.display.set_caption("WizViz")
 
-# Set up logging
-logging.basicConfig(
-    filename="logs.log",
-    level=logging.DEBUG,
-    format="%(asctime)s - %(levelname)s - %(message)s",
+# Colors
+WHITE, BLACK, GRAY, LIGHT_GRAY = (
+    (255, 255, 255),
+    (0, 0, 0),
+    (200, 200, 200),
+    (220, 220, 220),
+)
+BLUE, LIGHT_BLUE, DARK_GRAY, GREEN, RED = (
+    (0, 0, 255),
+    (173, 216, 230),
+    (50, 50, 50),
+    (0, 255, 0),
+    (255, 0, 0),
 )
 
-# Log new session
-logging.info(f"NEW SESSION ID: {time.time()}")
+# Fonts
+FONT, TITLE_FONT, TOOLTIP_FONT = (
+    pygame.font.Font(None, 36),
+    pygame.font.Font(None, 120),
+    pygame.font.Font(None, 24),
+)
+
+# Load options
+options = load_options()
+print(options)
 
 
-def calculate_defense_efficiency():
-    """Return a tuple (fully_efficient, reduction).
-    - fully_efficient is True 50% of the time.
-    - If not fully efficient, reduction is between 40% and 80% (as a fraction)."""
-    fully_efficient = random.choice([True, False])
-    reduction = random.uniform(0.4, 0.8)
-    logging.debug(
-        f"Defense efficiency calculated: fully_efficient={fully_efficient}, reduction={reduction}"
+# Button class for UI
+def draw_button(text, x, y, width, height, color, hover_color, mouse_pos):
+    rect = pygame.Rect(x, y, width, height)
+    pygame.draw.rect(
+        screen,
+        hover_color if rect.collidepoint(mouse_pos) else color,
+        rect,
+        border_radius=10,
     )
-    return fully_efficient, reduction
+    text_surface = FONT.render(text, True, BLACK)
+    screen.blit(text_surface, text_surface.get_rect(center=rect.center))
+    return rect
 
 
-class LogWindow:
-    def __init__(self, rect):
-        """
-        rect: pygame.Rect defining where the log is drawn on the GUI surface.
-        """
-        self.rect = rect
-        self.font = pygame.font.Font(None, 24)
-        self.messages = []
-        self.max_lines = 20
-        logging.debug("LogWindow initialized")
+# Main menu
+def main_menu():
+    running = True
+    while running:
+        background_image = pygame.image.load(r"src\background.png")
+        background_image = pygame.transform.scale(background_image, (1920, 1080))
+        screen.blit(background_image, (0, 0))
+        pygame.display.flip()
+        mouse_pos = pygame.mouse.get_pos()
 
-    def add_message(self, message):
-        self.messages.append(message)
-        if len(self.messages) > self.max_lines:
-            self.messages.pop(0)
-        logging.debug(f"Message added to LogWindow: {message}")
+        title_text = TITLE_FONT.render("WizViz", True, DARK_GRAY)
+        screen.blit(title_text, (SCREEN_WIDTH // 2 - title_text.get_width() // 2, (SCREEN_HEIGHT / 6)))
 
-    def update(self, surface):
-        # Draw a background for the log area.
-        pygame.draw.rect(surface, (30, 30, 30), self.rect)
-        y = self.rect.y + 10
-        for message in self.messages:
-            text_surface = self.font.render(message, True, (255, 255, 255))
-            surface.blit(text_surface, (self.rect.x + 10, y))
-            y += 30
-        logging.debug("LogWindow updated")
-
-
-class GameEngine:
-    def __init__(self, player1, player2):
-        self.player1 = player1
-        self.player2 = player2
-        # Create a display of 1368x720.
-        # self.screen = pygame.display.set_mode((1368, 720))
-        self.screen = pygame.display.get_surface()
-        # pygame.display.set_caption("Wizard Duel")
-        self.clock = pygame.time.Clock()
-        self.running = True
-
-        # Set up a dedicated GUI surface for the right half.
-        # Right half occupies x = 684 to 1368.
-        self.gui_surface = pygame.Surface((1920 // 2, 1080))
-        # Positions for health/mana bars (relative to the GUI surface).
-        self.p1_health_rect = pygame.Rect(16, 50, 200, 20)
-        self.p1_mana_rect = pygame.Rect(16, 80, 200, 20)
-        self.p2_health_rect = pygame.Rect(16, 150, 200, 20)
-        self.p2_mana_rect = pygame.Rect(16, 180, 200, 20)
-        # Log window area on the GUI surface.
-        self.log_rect = pygame.Rect(16, 250, 652, 400)
-        self.log_window = LogWindow(self.log_rect)
-        logging.debug("GameEngine initialized")
-
-    def update_camera_view(self):
-        """
-        Update the left half of the window with the latest camera frame.
-        Assumes that imaging.to_window (global) is a BGR numpy array.
-        """
-        try:
-            if imaging.to_window is not None:
-                # Convert BGR to RGB.
-                frame_rgb = cv2.cvtColor(imaging.to_window, cv2.COLOR_BGR2RGB)
-                # Create a Pygame surface from the numpy array.
-                frame_surface = pygame.surfarray.make_surface(frame_rgb.swapaxes(0, 1))
-                # Scale frame to fill the left half (684x720).
-                frame_surface = pygame.transform.scale(frame_surface, (684, 720))
-                self.screen.blit(frame_surface, (0, 0))
-                logging.debug("Camera view updated with new frame")
-            else:
-                pygame.draw.rect(self.screen, (0, 0, 0), (0, 0, 684, 720))
-                logging.debug("Camera view updated with black screen")
-        except pygame.error as e:
-            logging.error(f"Pygame error in update_camera_view: {e}")
-
-    def update_gui(self):
-        """
-        Draw the GUI on the right half: background, health/mana bars, and log window.
-        """
-        self.gui_surface.fill((50, 50, 50))
-        # Draw health/mana bars for player1.
-        p1_health_width = int((self.player1.get_health() / 100) * 200)
-        pygame.draw.rect(
-            self.gui_surface,
-            (255, 0, 0),
-            (
-            self.p1_health_rect.x,
-            self.p1_health_rect.y,
-            p1_health_width,
-            self.p1_health_rect.height,
+        buttons = {
+            "Play": draw_button("Play", ((SCREEN_WIDTH - 300) // 2), (2 * SCREEN_HEIGHT / 6), 300, 75, GRAY, LIGHT_BLUE, mouse_pos),
+            "Options": draw_button(
+                "Options", ((SCREEN_WIDTH - 300) // 2), (3 * SCREEN_HEIGHT / 6), 300, 75, GRAY, LIGHT_BLUE, mouse_pos
             ),
-        )
-        # Draw player1's name above the health bar
-        player1_name_surface = self.log_window.font.render(self.player1.get_name(), True, (255, 255, 255))
-        self.gui_surface.blit(player1_name_surface, (self.p1_health_rect.x, self.p1_health_rect.y - 25))
-        p1_mana_width = int((self.player1.get_mana() / 100) * 200)
-        pygame.draw.rect(
-            self.gui_surface,
-            (0, 0, 255),
-            (
-                self.p1_mana_rect.x,
-                self.p1_mana_rect.y,
-                p1_mana_width,
-                self.p1_mana_rect.height,
+            "Quit": draw_button("Quit", ((SCREEN_WIDTH - 300) // 2), (4 * SCREEN_HEIGHT / 6), 300, 75, GRAY, LIGHT_BLUE, mouse_pos),
+        }
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                if buttons["Play"].collidepoint(event.pos):
+                    start_game()  # Start game, ideally close this one after the next file starts
+                elif buttons["Options"].collidepoint(event.pos):
+                    options_menu()
+                elif buttons["Quit"].collidepoint(event.pos):
+                    pygame.quit()
+                    sys.exit()
+
+        pygame.display.flip()
+
+
+# Options menu
+def options_menu():
+    running = True
+    var = True
+    while running:
+        background_image = pygame.image.load(r"src\background.png")
+        background_image = pygame.transform.scale(background_image, (1920, 1080))
+        screen.blit(background_image, (0, 0))
+        pygame.display.flip()
+        mouse_pos = pygame.mouse.get_pos()
+        
+        y_offset = 3
+        
+        title_text = TITLE_FONT.render("Options", True, DARK_GRAY)
+        screen.blit(title_text, (SCREEN_WIDTH // 2 - title_text.get_width() // 2, (SCREEN_HEIGHT / 12)))
+
+        option_keys = list(options["base_options"].keys())
+        if var:
+            print(option_keys)
+            var = not var
+
+        option_rects = {}
+
+        for key in option_keys:
+            # Handling 'difficulty' separately since it's a number
+            if key == "difficulty":
+                option_text = f"{key.capitalize()}: {options['base_options'][key]}"
+                option_rects[key] = draw_button(
+                    option_text, ((SCREEN_WIDTH - 400) // 2), (y_offset * SCREEN_HEIGHT // 12), 400, 50, GRAY, LIGHT_BLUE, mouse_pos
+                )
+                y_offset += 1
+            else:
+                option_text = f"{key.capitalize()}: {options['base_options'][key]}"
+                option_rects[key] = draw_button(
+                    option_text, ((SCREEN_WIDTH - 400) // 2), (y_offset * SCREEN_HEIGHT // 12), 400, 50, GRAY, LIGHT_BLUE, mouse_pos
+                )
+                y_offset += 1
+
+        ai_keys = list(options["game_options"]["ai"].keys())
+        for key in ai_keys:
+            option_text = f"AI {key.capitalize()}: {options['game_options']['ai'][key]}"
+            option_rects[key] = draw_button(
+                option_text, ((SCREEN_WIDTH - 400) // 2), (y_offset * SCREEN_HEIGHT // 12), 400, 50, GRAY, LIGHT_BLUE, mouse_pos
+            )
+            y_offset += 1
+
+        buttons = {
+            "Save": draw_button(
+                "Save",
+                ((SCREEN_WIDTH - 175) // 2 + 112.5),
+                (y_offset * SCREEN_HEIGHT // 12),
+                175,
+                50,
+                GREEN,
+                LIGHT_BLUE,
+                mouse_pos,
             ),
-        )
-        # Draw health/mana bars for player2.
-        p2_health_width = int((self.player2.get_health() / 100) * 200)
-        pygame.draw.rect(
-            self.gui_surface,
-            (255, 0, 0),
-            (
-            self.p2_health_rect.x,
-            self.p2_health_rect.y,
-            p2_health_width,
-            self.p2_health_rect.height,
+            "Back": draw_button(
+                "Back",
+                ((SCREEN_WIDTH - 175) // 2 - 112.5),
+                (y_offset * SCREEN_HEIGHT // 12),
+                175,
+                50,
+                RED,
+                LIGHT_BLUE,
+                mouse_pos,
             ),
-        )
-        # Draw player2's name above the health bar
-        player2_name_surface = self.log_window.font.render(self.player2.get_name(), True, (255, 255, 255))
-        self.gui_surface.blit(player2_name_surface, (self.p2_health_rect.x, self.p2_health_rect.y - 25))
-        p2_mana_width = int((self.player2.get_mana() / 100) * 200)
-        pygame.draw.rect(
-            self.gui_surface,
-            (0, 0, 255),
-            (
-            self.p2_mana_rect.x,
-            self.p2_mana_rect.y,
-            p2_mana_width,
-            self.p2_mana_rect.height,
-            ),
-        )
-        # Update log window on the GUI surface.
-        self.log_window.update(self.gui_surface)
-        # Blit the GUI surface onto the right half of the main screen.
-        self.screen.blit(self.gui_surface, (684, 0))
-        logging.debug("GUI updated")
+        }
 
-    def log(self, message):
-        """Add a message to the log window."""
-        self.log_window.add_message(message)
-        logging.info(message)
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                for key, rect in option_rects.items():
+                    if rect.collidepoint(event.pos):
+                        if key in options["base_options"]:
+                            if isinstance(options["base_options"][key], bool):
+                                options["base_options"][key] = not options[
+                                    "base_options"
+                                ][key]
+                            elif key == "mode":
+                                options["base_options"][key] = (
+                                    "player_vs_ai"
+                                    if options["base_options"][key] == "two_player"
+                                    else "two_player"
+                                )
+                            elif key == "difficulty":
+                                # For 'difficulty', let the user change the difficultyiculty
+                                options["base_options"][key] = (
+                                    options["base_options"][key] % 5
+                                ) + 1  # Toggle between 1, 2, 3 for difficulty
+                        elif key in options["game_options"]["ai"]:
+                            options["game_options"]["ai"][key] += (
+                                1  # Increment AI options for simplicity
+                            )
+                if buttons["Save"].collidepoint(event.pos):
+                    save_options(options)
+                    running = False
+                elif buttons["Back"].collidepoint(event.pos):
+                    running = False
 
-    def process_round_moves(self, move1, move2):
-        """
-        Process both players' moves concurrently.
-        move1: move chosen by player1 ("Attack", "Defending", "Resting")
-        move2: move chosen by player2 ("Attack", "Defending", "Resting")
-        """
-        logging.debug(
-            f"Processing moves: {self.player1.get_name()} -> {move1}, {self.player2.get_name()} -> {move2}"
-        )
-        # Process player1's move.
-        if move1 == "Attack":
-            if self.player1.get_mana() >= 20:
-                self.player1.set_mana(self.player1.get_mana() - 20)
-                if move2 == "Defending":
-                    damage = self.player1.get_attack() - self.player2.get_defense()
-                    if damage < 0:
-                        damage = 0
-                    fully_efficient, reduction = calculate_defense_efficiency()
-                    if fully_efficient:
-                        damage = 0
-                        self.log(
-                            f"{self.player2.get_name()} defended fully against {self.player1.get_name()}'s attack!"
-                        )
-                    else:
-                        damage = int(damage * (1 - reduction))
-                        self.log(
-                            f"{self.player2.get_name()} defended inefficiently, reducing damage by {int(reduction * 100)}%!"
-                        )
-                elif move2 == "Resting":
-                    damage = int(self.player1.get_attack() * 1.5)
-                elif move2 == "Attacking":
-                    damage = self.player1.get_attack()
-                else:
-                    damage = self.player1.get_attack()
-                self.player2.set_health(self.player2.get_health() - damage)
-                self.log(
-                    f"{self.player1.get_name()} attacks {self.player2.get_name()} for {damage} damage!"
+        pygame.display.flip()
+
+
+# Start game
+def start_game():
+    single_player = options["base_options"]["mode"] == "player_vs_ai"
+
+    def select_player_menu(player_num):
+        running = True
+        selected_player = None
+        players = [
+            Player_List.Draco(),
+            Player_List.Hydra(),
+            Player_List.Phoenix(),
+            Player_List.Lyra(),
+            Player_List.Orion(),
+            Player_List.Pegasus(),
+            Player_List.Andromeda(),
+            Player_List.Centaurus(),
+            Player_List.Cassiopeia(),
+        ]
+        player_names = [player.get_name() for player in players]
+        # background_image = pygame.image.load(r"src\background.png")
+        # background_image = pygame.transform.scale(background_image, (1920, 1080))
+        # screen.blit(background_image, (0, 0))
+        # pygame.display.flip()
+        while running:
+            #loading background
+            background_image = pygame.image.load(r"src\background.png")
+            background_image = pygame.transform.scale(background_image, (1920, 1080))
+            screen.blit(background_image, (0, 0))
+            pygame.display.flip()
+            mouse_pos = pygame.mouse.get_pos()
+            y_offset = 1
+
+            title_text = TITLE_FONT.render(
+                f"Select Player {player_num}", True, DARK_GRAY
+            )
+            screen.blit(
+                title_text, (((SCREEN_WIDTH - title_text.get_width()) // 2), ((y_offset * SCREEN_HEIGHT) / 13))
+            )
+            y_offset += 2
+
+            player_rects = {}
+
+            for name in player_names:
+                player_rects[name] = draw_button(
+                    name, ((SCREEN_WIDTH - 400) // 2), ((y_offset * SCREEN_HEIGHT) / 13), 400, 50, GRAY, LIGHT_BLUE, mouse_pos
                 )
-            else:
-                self.log(
-                    f"{self.player1.get_name()} tried to attack but didn't have enough mana!"
-                )
-        elif move1 == "Defending":
-            if self.player1.get_mana() >= 20:
-                self.player1.set_mana(self.player1.get_mana() - 20)
-                self.log(f"{self.player1.get_name()} is defending this turn!")
-            else:
-                self.log(
-                    f"{self.player1.get_name()} tried to defend but didn't have enough mana!"
-                )
-        elif move1 == "Resting":
-            mana_gain = random.randint(20, 35)
-            self.player1.set_mana(self.player1.get_mana() + mana_gain)
-            self.log(f"{self.player1.get_name()} rests and gains {mana_gain} mana!")
+                y_offset += 1
 
-        # Process player2's move.
-        if move2 == "Attacking":
-            if self.player2.get_mana() >= 20:
-                self.player2.set_mana(self.player2.get_mana() - 20)
-                if move1 == "Defending":
-                    damage = self.player2.get_attack() - self.player1.get_defense()
-                    if damage < 0:
-                        damage = 0
-                    fully_efficient, reduction = calculate_defense_efficiency()
-                    if fully_efficient:
-                        damage = 0
-                        self.log(
-                            f"{self.player1.get_name()} defended fully against {self.player2.get_name()}'s attack!"
-                        )
-                    else:
-                        damage = int(damage * (1 - reduction))
-                        self.log(
-                            f"{self.player1.get_name()} defended inefficiently, reducing damage by {int(reduction * 100)}%!"
-                        )
-                elif move1 == "Resting":
-                    damage = int(self.player2.get_attack() * 1.5)
-                elif move1 == "Attacking":
-                    damage = self.player2.get_attack()
-                else:
-                    damage = self.player2.get_attack()
-                self.player1.set_health(self.player1.get_health() - damage)
-                self.log(
-                    f"{self.player2.get_name()} attacks {self.player1.get_name()} for {damage} damage!"
-                )
-            else:
-                self.log(
-                    f"{self.player2.get_name()} tried to attack but didn't have enough mana!"
-                )
-        elif move2 == "Defending":
-            if self.player2.get_mana() >= 20:
-                self.player2.set_mana(self.player2.get_mana() - 20)
-                self.log(f"{self.player2.get_name()} is defending this turn!")
-            else:
-                self.log(
-                    f"{self.player2.get_name()} tried to defend but didn't have enough mana!"
-                )
-        elif move2 == "Resting":
-            mana_gain = random.randint(20, 35)
-            self.player2.set_mana(self.player2.get_mana() + mana_gain)
-            self.log(f"{self.player2.get_name()} rests and gains {mana_gain} mana!")
+            cancel_button = draw_button(
+                "Cancel", ((SCREEN_WIDTH - 400) // 2), ((y_offset * SCREEN_HEIGHT) / 13), 400, 50, RED, LIGHT_BLUE, mouse_pos
+            )
+            y_offset += 1
 
-    def battle_round(self, single_player=False, bot=None):
-        """
-        Main battle loop.
-        For every TURN_TIME seconds, imaging.scan() is used to get both players' moves.
-        The moves are processed, and both the camera view and GUI are updated.
-        """
-        logging.debug("Starting battle round")
-        # Get moves from imaging.scan (blocks for TURN_TIME seconds).
-        moves = imaging.scan(TURN_TIME, single_player)
-        logging.debug(f"Scanned moves: {moves}")
-        if not single_player:
-            move_p1, move_p2 = moves
-        else:
-            move_p1 = moves
-            if bot is None:
-                logging.error("Bot is not defined in single player mode")
-                raise ValueError("Bot is not defined in single player mode")
-            move_p2 = ai.wizard_bot_turn(bot, self.player1)
-
-        self.log(
-            f"Moves this turn: {self.player1.get_name()} -> {move_p1}, {self.player2.get_name()} -> {move_p2}"
-        )
-
-        self.process_round_moves(move_p1, move_p2)
-
-        # Update display: left half (camera) and right half (GUI).
-        self.update_camera_view()
-        self.update_gui()
-        pygame.display.update()
-        self.clock.tick(30)
-        logging.debug("Battle round completed")
-
-    def declare_winner(self):
-        if self.player1.get_health() > self.player2.get_health():
-            self.log(f"{self.player1.get_name()} wins!")
-        elif self.player2.get_health() > self.player1.get_health():
-            self.log(f"{self.player2.get_name()} wins!")
-        else:
-            self.log("It's a draw!")
-        logging.info("Game ended, winner declared")
-        # Keep the window open after the game ends until the user quits.
-        while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
-                    logging.info("Game window closed by user")
-                    return
-            self.update_camera_view()
-            self.update_gui()
-            pygame.display.update()
-            self.clock.tick(30)
+                    sys.exit()
+                elif event.type == pygame.MOUSEBUTTONDOWN:
+                    for name, rect in player_rects.items():
+                        if rect.collidepoint(event.pos):
+                            selected_player = name
+                            running = False
+                    if cancel_button.collidepoint(event.pos):
+                        running = False
+                        main_menu()
 
-    def gameOver(self):
-        if self.player1.get_health() <= 0 or self.player2.get_health() <= 0:
-            logging.debug("Game over condition met")
-            return True
-        return False
+            pygame.display.flip()
 
+        return selected_player
 
-def run():
-    # Load configuration from YAML.
-    yaml_path = os.path.join(os.path.dirname(__file__), "../properties.yaml")
-    with open(yaml_path, "r") as file:
-        properties = yaml.safe_load(file)
-    logging.debug("Configuration loaded from YAML")
+    def ai_select(player1):
+        players = [
+            Player_List.Draco(),
+            Player_List.Hydra(),
+            Player_List.Phoenix(),
+            Player_List.Lyra(),
+            Player_List.Orion(),
+            Player_List.Pegasus(),
+            Player_List.Andromeda(),
+            Player_List.Centaurus(),
+            Player_List.Cassiopeia(),
+        ]
+        player_names = [
+            player.get_name() for player in players if player.get_name() != player1
+        ]
+        selected_player = random.choice(player_names)
+        return selected_player
 
-    player1_name = properties.get("game_options", {}).get("player1", {}).get("name")
-    player2_name = properties.get("game_options", {}).get("player2", {}).get("name")
-    if player1_name is None:
-        logging.error("player1 is not specified in properties.yaml")
-        raise ValueError("player1 is not specified in properties.yaml")
-    if player2_name is None:
-        logging.error("player2 is not specified in properties.yaml")
-        raise ValueError("player2 is not specified in properties.yaml")
+    player1 = select_player_menu(1)
+    options["game_options"]["player1"] = {"name": player1}
+    save_options(options)
 
-    single_player = properties.get("base_options", {}).get("mode") == "player_vs_ai"
-    bot = None
     if single_player:
-        bot = ai.wizard_bot()
+        player2 = ai_select(player1)
+    else:
+        player2 = select_player_menu(2)
 
-    player_classes = {
-        "Draco": Draco,
-        "Hydra": Hydra,
-        "Phoenix": Phoenix,
-        "Lyra": Lyra,
-        "Orion": Orion,
-        "Pegasus": Pegasus,
-        "Andromeda": Andromeda,
-        "Centaurus": Centaurus,
-        "Cassiopeia": Cassiopeia,
-    }
-    p1_class = player_classes.get(player1_name)
-    p2_class = player_classes.get(player2_name)
-    if p1_class is None:
-        logging.error(f"Unknown player1: {player1_name}")
-        raise ValueError(f"Unknown player1: {player1_name}")
-    if p2_class is None:
-        logging.error(f"Unknown player2: {player2_name}")
-        raise ValueError(f"Unknown player2: {player2_name}")
+    options["game_options"]["player2"] = {"name": player2}
+    save_options(options)
 
-    game = GameEngine(p1_class(), p2_class())
-    logging.info("GameEngine instance created")
-    while not game.gameOver():
-        game.battle_round(single_player=single_player, bot=bot)
-        pygame.time.wait(5000)
-        # ? Logic for pausing game and resuming to let user see stats
+    def countdown():
+        for i in range(3, 0, -1):
+            background_image = pygame.image.load(r"src\background.png")
+            background_image = pygame.transform.scale(background_image, (1920, 1080))
+            screen.blit(background_image, (0, 0))
+            pygame.display.flip()
+            countdown_text = TITLE_FONT.render(str(i), True, DARK_GRAY)
+            screen.blit(
+                countdown_text,
+                (
+                    SCREEN_WIDTH // 2 - countdown_text.get_width() // 2,
+                    SCREEN_HEIGHT // 2 - countdown_text.get_height() // 2,
+                ),
+            )
+            pygame.display.flip()
+            pygame.time.delay(1000)
 
-    game.declare_winner()
+    countdown()
+    import engine
+
+    if __name__ == "__main__":
+        engine.run()
 
 
-if __name__ == "__main__":
-    run()
+# Run main menu
+main_menu()
+pygame.quit()
