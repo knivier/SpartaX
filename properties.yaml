@@ -10,7 +10,7 @@ game_options:
     health: 40
     mana: 5
   player1:
-    name: Draco
+    name: Hydra
   player2:
     name: Phoenix
 temp_game_options:
