@@ -8,12 +8,14 @@ import numpy as np
 
 WIDTH, HEIGHT = 1920, 1080
 """Width and height of the Pygame screen"""
-MIN_DETECTION_CONFIDENCE = 0.5
+MIN_DETECTION_CONFIDENCE = 0.75
 """Confidence level required to establish a pose detection"""
 MIN_TRACKING_CONFIDENCE = 0.8
 """Confidence level required to establish pose tracking"""
 MIN_PRESENCE_CONFIDENCE = 0.4
 """Confidence level required to establish a pose presence"""
+TORSO_LENGTH_ARM_RATIO = 0.35
+
 NUM_POSES = 2
 """Number of poses to detect"""
 MODEL_PATH = "pose_landmarker_full.task"
@@ -67,51 +69,94 @@ def define_action(pose_landmarks):
     right_wrist_x = pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_WRIST].x
     left_wrist_x = pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_WRIST].x
 
+    right_wrist_y = pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_WRIST].y
+    left_wrist_y = pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_WRIST].y
+
     right_shoulder_x = pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_SHOULDER].x
     left_shoulder_x = pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_SHOULDER].x
 
-    if right_shoulder_x == 0:
-        human_center = left_shoulder_x
-    elif left_shoulder_x == 0:
-        human_center = right_shoulder_x
-    else:
-        human_center = np.average([right_shoulder_x, left_shoulder_x])
+    right_shoulder_y = pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_SHOULDER].y
+    left_shoulder_y = pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_SHOULDER].y
 
-    shoulder_width = np.abs(right_shoulder_x - left_shoulder_x)
+    right_hip_y = pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_HIP].y
+    left_hip_y = pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_HIP].y
+
+    if right_shoulder_x == 0:
+        human_center_x = left_shoulder_x
+    elif left_shoulder_x == 0:
+        human_center_x = right_shoulder_x
+    else:
+        human_center_x = np.average([right_shoulder_x, left_shoulder_x])
+
+    if right_hip_y == 0:
+        torso_length = np.abs(left_hip_y - left_shoulder_y)
+    elif left_hip_y == 0:
+        torso_length = np.abs(right_hip_y - right_shoulder_y)
+    else:
+        torso_length = np.average(
+            [
+                np.abs(right_hip_y - right_shoulder_y),
+                np.abs(left_hip_y - left_shoulder_y),
+            ]
+        )
+
+    # shoulder_width = np.abs(right_shoulder_x - left_shoulder_x)
 
     player_number = 0
     player_move = "Resting"
 
-    if human_center < 0.5:
-        player_number = 1
-    else:
-        player_number = 2
+    player_number = get_player_number(pose_landmarks)
 
     if (
         right_wrist_x == 0
         or left_wrist_x == 0
-        or human_center == 0
-        or shoulder_width == 0
+        or human_center_x == 0
+        or torso_length == 0
     ):
         return tuple([player_number, player_move])
 
+    # print(f"Distance from right wrist to center: {abs(right_wrist_x - human_center_x)}")
+    # print(f"Distance from left wrist to center: {abs(left_wrist_x - human_center_x)}")
+    # print("Right wrist y between shoulder and hip: ", right_wrist_y > right_hip_y and right_wrist_y < right_shoulder_y)
+    print("Right wrist y above hip: ", right_wrist_y > right_hip_y)
+    print("Right wrist y below shoulder: ", right_wrist_y < right_shoulder_y)
+    print("Left wrist y below hip: ", left_wrist_y > left_hip_y)
+    print("Left wrist y above shoulder: ", left_wrist_y < left_shoulder_y)
+    # print(f"Right wrist y: {right_wrist_y}")
+    # print(f"Right hip y: {right_hip_y}")
+    # print(f"Right shoulder y: {right_shoulder_y}")
+
     if (
-        abs(right_wrist_x - human_center) > 2 * shoulder_width
-        or abs(left_wrist_x - human_center) > 2 * shoulder_width
+        abs(right_wrist_x - human_center_x) > TORSO_LENGTH_ARM_RATIO * torso_length
+        or abs(left_wrist_x - human_center_x) > TORSO_LENGTH_ARM_RATIO * torso_length
     ):
         player_move = "Attack"
 
-    if (
-        abs(
-            pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_WRIST].x
-            - pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_WRIST].x
+    elif (
+        # abs(
+        #     pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_WRIST].x
+        #     - pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_WRIST].x
+        # )
+        # < shoulder_width
+        # and right_wrist_x > min(right_shoulder_x, right_hip_x)
+        # and right_wrist_x < max(right_shoulder_x, right_hip_x)
+        # and left_wrist_x > min(left_shoulder_x, left_hip_x)
+        # and left_wrist_x < max(left_shoulder_x, left_hip_x)
+        # not (
+        (
+            right_wrist_y < (right_hip_y + 0.2 * (right_shoulder_y - right_hip_y))
+            and right_wrist_y > right_shoulder_y
         )
-        < shoulder_width
-        and abs(
-            pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_WRIST].y
-            - pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_WRIST].y
+        or (
+            left_wrist_y < (left_hip_y + 0.2 * (left_shoulder_y - left_hip_y))
+            and left_wrist_y > left_shoulder_y
         )
-        < shoulder_width
+        # )
+        # and abs(
+        #     pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_WRIST].y
+        #     - pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_WRIST].y
+        # )
+        # < shoulder_width
     ):
         player_move = "Defending"
 
@@ -133,7 +178,7 @@ options = vision.PoseLandmarkerOptions(
 def draw_landmarks_on_image(rgb_image, detection_result):
     if (rgb_image is None) or (detection_result is None):
         return
-    
+
     pose_object_list = detection_result.pose_landmarks
     annotated_image = rgb_image.copy()
 
