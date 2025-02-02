@@ -11,11 +11,12 @@ from Player_List import (
     Centaurus,
     Cassiopeia,
 )
-# from imaging import scan, to_window
 import imaging
 import yaml
 import os
 import cv2  # For color conversion
+import logging
+import time
 
 # Ensure Pygame is initialized before anything else
 pygame.init()
@@ -25,6 +26,15 @@ pygame.font.init()  # Explicitly initialize the font module
 ROUND_TIME = 60  # Total time for the entire battle (seconds)
 TURN_TIME = 5  # Each turn lasts 5 seconds
 
+# Set up logging
+logging.basicConfig(
+    filename='logs.log',
+    level=logging.DEBUG,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+
+# Log new session
+logging.info(f"NEW SESSION ID: {time.time()}")
 
 def calculate_defense_efficiency():
     """Return a tuple (fully_efficient, reduction).
@@ -32,6 +42,7 @@ def calculate_defense_efficiency():
     - If not fully efficient, reduction is between 40% and 80% (as a fraction)."""
     fully_efficient = random.choice([True, False])
     reduction = random.uniform(0.4, 0.8)
+    logging.debug(f"Defense efficiency calculated: fully_efficient={fully_efficient}, reduction={reduction}")
     return fully_efficient, reduction
 
 
@@ -44,11 +55,13 @@ class LogWindow:
         self.font = pygame.font.Font(None, 24)
         self.messages = []
         self.max_lines = 20
+        logging.debug("LogWindow initialized")
 
     def add_message(self, message):
         self.messages.append(message)
         if len(self.messages) > self.max_lines:
             self.messages.pop(0)
+        logging.debug(f"Message added to LogWindow: {message}")
 
     def update(self, surface):
         # Draw a background for the log area.
@@ -58,6 +71,7 @@ class LogWindow:
             text_surface = self.font.render(message, True, (255, 255, 255))
             surface.blit(text_surface, (self.rect.x + 10, y))
             y += 30
+        logging.debug("LogWindow updated")
 
 
 class GameEngine:
@@ -81,6 +95,7 @@ class GameEngine:
         # Log window area on the GUI surface.
         self.log_rect = pygame.Rect(16, 250, 652, 400)
         self.log_window = LogWindow(self.log_rect)
+        logging.debug("GameEngine initialized")
 
     def update_camera_view(self):
         """
@@ -96,10 +111,12 @@ class GameEngine:
                 # Scale frame to fill the left half (684x720).
                 frame_surface = pygame.transform.scale(frame_surface, (684, 720))
                 self.screen.blit(frame_surface, (0, 0))
+                logging.debug("Camera view updated with new frame")
             else:
                 pygame.draw.rect(self.screen, (0, 0, 0), (0, 0, 684, 720))
-        except pygame.error:
-            pass
+                logging.debug("Camera view updated with black screen")
+        except pygame.error as e:
+            logging.error(f"Pygame error in update_camera_view: {e}")
 
     def update_gui(self):
         """
@@ -156,10 +173,12 @@ class GameEngine:
         self.log_window.update(self.gui_surface)
         # Blit the GUI surface onto the right half of the main screen.
         self.screen.blit(self.gui_surface, (684, 0))
+        logging.debug("GUI updated")
 
     def log(self, message):
         """Add a message to the log window."""
         self.log_window.add_message(message)
+        logging.info(message)
 
     def process_round_moves(self, move1, move2):
         """
@@ -167,6 +186,7 @@ class GameEngine:
         move1: move chosen by player1 ("Attack", "Defending", "Resting")
         move2: move chosen by player2 ("Attack", "Defending", "Resting")
         """
+        logging.debug(f"Processing moves: {self.player1.get_name()} -> {move1}, {self.player2.get_name()} -> {move2}")
         # Process player1's move.
         if move1 == "Attack":
             if self.player1.get_mana() >= 20:
@@ -265,12 +285,11 @@ class GameEngine:
         For every TURN_TIME seconds, imaging.scan() is used to get both players' moves.
         The moves are processed, and both the camera view and GUI are updated.
         """
-
-        #     # Get moves from imaging.scan (blocks for TURN_TIME seconds).
+        logging.debug("Starting battle round")
+        # Get moves from imaging.scan (blocks for TURN_TIME seconds).
         thing = imaging.scan(TURN_TIME, False)
-        print(thing)
+        logging.debug(f"Scanned moves: {thing}")
         move_p1, move_p2 = thing
-        # move_p1, move_p2 = imaging.scan(TURN_TIME, False)
         self.log(
             f"Moves this turn: {self.player1.get_name()} -> {move_p1}, {self.player2.get_name()} -> {move_p2}"
         )
@@ -282,6 +301,7 @@ class GameEngine:
         self.update_gui()
         pygame.display.update()
         self.clock.tick(30)
+        logging.debug("Battle round completed")
 
     def declare_winner(self):
         if self.player1.get_health() > self.player2.get_health():
@@ -290,11 +310,13 @@ class GameEngine:
             self.log(f"{self.player2.get_name()} wins!")
         else:
             self.log("It's a draw!")
+        logging.info("Game ended, winner declared")
         # Keep the window open after the game ends until the user quits.
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
+                    logging.info("Game window closed by user")
                     return
             self.update_camera_view()
             self.update_gui()
@@ -303,6 +325,7 @@ class GameEngine:
     
     def gameOver(self):
         if self.player1.get_health() <= 0 or self.player2.get_health() <= 0:
+            logging.debug("Game over condition met")
             return True
         return False
 
@@ -312,12 +335,15 @@ def run():
     yaml_path = os.path.join(os.path.dirname(__file__), "../properties.yaml")
     with open(yaml_path, "r") as file:
         properties = yaml.safe_load(file)
+    logging.debug("Configuration loaded from YAML")
 
     player1_name = properties.get("game_options", {}).get("player1", {}).get("name")
     player2_name = properties.get("game_options", {}).get("player2", {}).get("name")
     if player1_name is None:
+        logging.error("player1 is not specified in properties.yaml")
         raise ValueError("player1 is not specified in properties.yaml")
     if player2_name is None:
+        logging.error("player2 is not specified in properties.yaml")
         raise ValueError("player2 is not specified in properties.yaml")
 
     player_classes = {
@@ -334,12 +360,14 @@ def run():
     p1_class = player_classes.get(player1_name)
     p2_class = player_classes.get(player2_name)
     if p1_class is None:
+        logging.error(f"Unknown player1: {player1_name}")
         raise ValueError(f"Unknown player1: {player1_name}")
     if p2_class is None:
+        logging.error(f"Unknown player2: {player2_name}")
         raise ValueError(f"Unknown player2: {player2_name}")
 
     game = GameEngine(p1_class(), p2_class())
-    # game.battle_round()
+    logging.info("GameEngine instance created")
     while not game.gameOver():
         game.battle_round()
         pygame.time.wait(5000)
