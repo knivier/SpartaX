@@ -1,0 +1,64 @@
+2025-02-02 10:24:42,966 - INFO - NEW SESSION ID: 1738509882.966416
+2025-02-02 10:24:42,967 - DEBUG - Configuration loaded from YAML
+2025-02-02 10:24:43,116 - DEBUG - LogWindow initialized
+2025-02-02 10:24:43,117 - DEBUG - GameEngine initialized
+2025-02-02 10:24:43,117 - INFO - GameEngine instance created
+2025-02-02 10:24:43,117 - DEBUG - Starting battle round
+2025-02-02 10:26:45,572 - INFO - NEW SESSION ID: 1738510005.572333
+2025-02-02 10:26:45,573 - DEBUG - Configuration loaded from YAML
+2025-02-02 10:26:45,708 - DEBUG - LogWindow initialized
+2025-02-02 10:26:45,708 - DEBUG - GameEngine initialized
+2025-02-02 10:26:45,708 - INFO - GameEngine instance created
+2025-02-02 10:26:45,708 - DEBUG - Starting battle round
+2025-02-02 10:26:52,617 - DEBUG - Scanned moves: Special Attack
+2025-02-02 10:26:52,618 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Centaurus -> Attack
+2025-02-02 10:26:52,618 - INFO - Moves this turn: Draco -> Special Attack, Centaurus -> Attack
+2025-02-02 10:26:52,618 - DEBUG - Processing moves: Draco -> Special Attack, Centaurus -> Attack
+2025-02-02 10:26:52,618 - DEBUG - Message added to LogWindow: Draco uses a special attack on Centaurus for 50 damage!
+2025-02-02 10:26:52,618 - INFO - Draco uses a special attack on Centaurus for 50 damage!
+2025-02-02 10:26:52,620 - DEBUG - Message added to LogWindow: Centaurus attacks Draco for 33 damage!
+2025-02-02 10:26:52,620 - INFO - Centaurus attacks Draco for 33 damage!
+2025-02-02 10:26:52,627 - DEBUG - Camera view updated with new frame
+2025-02-02 10:26:52,629 - DEBUG - LogWindow updated
+2025-02-02 10:26:52,632 - DEBUG - GUI updated
+2025-02-02 10:26:52,634 - DEBUG - Battle round completed
+2025-02-02 10:26:57,635 - DEBUG - Starting battle round
+2025-02-02 10:27:04,497 - DEBUG - Scanned moves: Healing
+2025-02-02 10:27:04,500 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Healing, Centaurus -> Attack
+2025-02-02 10:27:04,500 - INFO - Moves this turn: Draco -> Healing, Centaurus -> Attack
+2025-02-02 10:27:04,500 - DEBUG - Processing moves: Draco -> Healing, Centaurus -> Attack
+2025-02-02 10:27:04,500 - DEBUG - Message added to LogWindow: Draco heals and gains 15 health!
+2025-02-02 10:27:04,500 - INFO - Draco heals and gains 15 health!
+2025-02-02 10:27:04,502 - DEBUG - Message added to LogWindow: Centaurus attacks Draco for 33 damage!
+2025-02-02 10:27:04,502 - INFO - Centaurus attacks Draco for 33 damage!
+2025-02-02 10:27:04,507 - DEBUG - Camera view updated with new frame
+2025-02-02 10:27:04,509 - DEBUG - LogWindow updated
+2025-02-02 10:27:04,512 - DEBUG - GUI updated
+2025-02-02 10:27:04,516 - DEBUG - Battle round completed
+2025-02-02 10:27:09,518 - DEBUG - Starting battle round
+2025-02-02 10:27:16,394 - DEBUG - Scanned moves: Special Attack
+2025-02-02 10:27:16,395 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Centaurus -> Attack
+2025-02-02 10:27:16,395 - INFO - Moves this turn: Draco -> Special Attack, Centaurus -> Attack
+2025-02-02 10:27:16,395 - DEBUG - Processing moves: Draco -> Special Attack, Centaurus -> Attack
+2025-02-02 10:27:16,395 - DEBUG - Message added to LogWindow: Draco tried to use a special attack but didn't have enough mana!
+2025-02-02 10:27:16,395 - INFO - Draco tried to use a special attack but didn't have enough mana!
+2025-02-02 10:27:16,397 - DEBUG - Message added to LogWindow: Centaurus attacks Draco for 33 damage!
+2025-02-02 10:27:16,397 - INFO - Centaurus attacks Draco for 33 damage!
+2025-02-02 10:27:16,402 - DEBUG - Camera view updated with new frame
+2025-02-02 10:27:16,404 - DEBUG - LogWindow updated
+2025-02-02 10:27:16,406 - DEBUG - GUI updated
+2025-02-02 10:27:16,416 - DEBUG - Battle round completed
+2025-02-02 10:27:21,418 - DEBUG - Starting battle round
+2025-02-02 10:27:27,944 - DEBUG - Scanned moves: Special Attack
+2025-02-02 10:27:27,944 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Centaurus -> Attack
+2025-02-02 10:27:27,944 - INFO - Moves this turn: Draco -> Special Attack, Centaurus -> Attack
+2025-02-02 10:27:27,944 - DEBUG - Processing moves: Draco -> Special Attack, Centaurus -> Attack
+2025-02-02 10:27:27,944 - DEBUG - Message added to LogWindow: Draco tried to use a special attack but didn't have enough mana!
+2025-02-02 10:27:27,944 - INFO - Draco tried to use a special attack but didn't have enough mana!
+2025-02-02 10:27:27,946 - DEBUG - Message added to LogWindow: Centaurus attacks Draco for 33 damage!
+2025-02-02 10:27:27,946 - INFO - Centaurus attacks Draco for 33 damage!
+2025-02-02 10:27:27,952 - DEBUG - Camera view updated with new frame
+2025-02-02 10:27:27,955 - DEBUG - LogWindow updated
+2025-02-02 10:27:27,957 - DEBUG - GUI updated
+2025-02-02 10:27:27,962 - DEBUG - Battle round completed
+2025-02-02 10:27:32,963 - DEBUG - Starting battle round

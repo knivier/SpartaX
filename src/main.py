@@ -35,6 +35,11 @@ def save_options(options):
 # Initialize Pygame
 pygame.init()
 
+# Initialize background music
+pygame.mixer.music.load('src/sounds/bg_music.wav')
+pygame.mixer.music.play(-1)  # -1 means loop indefinitely[10]
+pygame.mixer.music.set_volume(0.5)  # Set volume to 50%[3]
+
 # Screen dimensions
 SCREEN_WIDTH, SCREEN_HEIGHT = 1920, 1080  # Init heights, can change to 1020x1080rez
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.FULLSCREEN)
@@ -330,7 +335,12 @@ def start_game():
     save_options(options)
 
     def countdown():
+        background_image = pygame.image.load(r"src/background.png").convert()
+        screen_width, screen_height = screen.get_size()
+        #background_image = pygame.transform.scale(background_image, (1368, 720))
+        a = pygame.transform.scale(background_image, (screen_width, screen_height))
         for i in range(3, 0, -1):
+            screen.blit(a, (0, 0))
             #screen.fill(WHITE)
             countdown_text = TITLE_FONT.render(str(i), True, DARK_GRAY)
             screen.blit(

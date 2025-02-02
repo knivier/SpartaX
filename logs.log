@@ -1,0 +1,460 @@
+2025-02-02 11:14:11,413 - INFO - NEW SESSION ID: 1738512851.413101
+2025-02-02 11:14:11,414 - DEBUG - Configuration loaded from YAML
+2025-02-02 11:14:11,547 - DEBUG - LogWindow initialized
+2025-02-02 11:14:11,547 - DEBUG - GameEngine initialized
+2025-02-02 11:14:31,593 - INFO - NEW SESSION ID: 1738512871.59344
+2025-02-02 11:14:31,594 - DEBUG - Configuration loaded from YAML
+2025-02-02 11:14:31,756 - DEBUG - LogWindow initialized
+2025-02-02 11:14:31,756 - DEBUG - GameEngine initialized
+2025-02-02 11:14:59,742 - INFO - NEW SESSION ID: 1738512899.7424471
+2025-02-02 11:14:59,743 - DEBUG - Configuration loaded from YAML
+2025-02-02 11:14:59,872 - DEBUG - LogWindow initialized
+2025-02-02 11:14:59,872 - DEBUG - GameEngine initialized
+2025-02-02 11:15:00,041 - INFO - GameEngine instance created
+2025-02-02 11:15:00,041 - DEBUG - Starting battle round
+2025-02-02 11:15:35,262 - INFO - NEW SESSION ID: 1738512935.2625651
+2025-02-02 11:15:35,263 - DEBUG - Configuration loaded from YAML
+2025-02-02 11:15:35,395 - DEBUG - LogWindow initialized
+2025-02-02 11:15:35,395 - DEBUG - GameEngine initialized
+2025-02-02 11:15:35,550 - INFO - GameEngine instance created
+2025-02-02 11:15:35,550 - DEBUG - Starting battle round
+2025-02-02 11:15:42,454 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:15:42,454 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Orion -> Attack
+2025-02-02 11:15:42,454 - INFO - Moves this turn: Draco -> Special Attack, Orion -> Attack
+2025-02-02 11:15:42,454 - DEBUG - Processing moves: Draco -> Special Attack, Orion -> Attack
+2025-02-02 11:15:42,454 - DEBUG - Message added to LogWindow: Draco uses a special attack on Orion for 50 damage!
+2025-02-02 11:15:42,454 - INFO - Draco uses a special attack on Orion for 50 damage!
+2025-02-02 11:15:42,456 - DEBUG - Message added to LogWindow: Orion attacks Draco for 28 damage!
+2025-02-02 11:15:42,457 - INFO - Orion attacks Draco for 28 damage!
+2025-02-02 11:15:42,462 - DEBUG - Camera view updated with new frame
+2025-02-02 11:15:42,464 - DEBUG - LogWindow updated
+2025-02-02 11:18:28,856 - INFO - NEW SESSION ID: 1738513108.856596
+2025-02-02 11:18:28,857 - DEBUG - Configuration loaded from YAML
+2025-02-02 11:18:29,001 - DEBUG - LogWindow initialized
+2025-02-02 11:18:29,002 - DEBUG - GameEngine initialized
+2025-02-02 11:18:29,162 - INFO - GameEngine instance created
+2025-02-02 11:18:29,162 - DEBUG - Starting battle round
+2025-02-02 11:18:36,042 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:18:36,042 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Lyra -> Attack
+2025-02-02 11:18:36,042 - INFO - Moves this turn: Draco -> Special Attack, Lyra -> Attack
+2025-02-02 11:18:36,042 - DEBUG - Processing moves: Draco -> Special Attack, Lyra -> Attack
+2025-02-02 11:18:36,042 - DEBUG - Message added to LogWindow: Draco uses a special attack on Lyra for 50 damage!
+2025-02-02 11:18:36,042 - INFO - Draco uses a special attack on Lyra for 50 damage!
+2025-02-02 11:18:36,044 - DEBUG - Message added to LogWindow: Lyra attacks Draco for 40 damage!
+2025-02-02 11:18:36,044 - INFO - Lyra attacks Draco for 40 damage!
+2025-02-02 11:18:36,049 - DEBUG - Camera view updated with new frame
+2025-02-02 11:18:36,052 - DEBUG - LogWindow updated
+2025-02-02 11:18:36,054 - DEBUG - GUI updated
+2025-02-02 11:18:36,057 - DEBUG - Battle round completed
+2025-02-02 11:18:41,058 - DEBUG - Starting battle round
+2025-02-02 11:20:36,820 - INFO - NEW SESSION ID: 1738513236.820126
+2025-02-02 11:20:36,821 - DEBUG - Configuration loaded from YAML
+2025-02-02 11:20:36,958 - DEBUG - LogWindow initialized
+2025-02-02 11:20:36,958 - DEBUG - GameEngine initialized
+2025-02-02 11:20:37,112 - INFO - GameEngine instance created
+2025-02-02 11:20:37,112 - DEBUG - Starting battle round
+2025-02-02 11:20:43,936 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:20:43,937 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Andromeda -> Attack
+2025-02-02 11:20:43,937 - INFO - Moves this turn: Draco -> Special Attack, Andromeda -> Attack
+2025-02-02 11:20:43,937 - DEBUG - Processing moves: Draco -> Special Attack, Andromeda -> Attack
+2025-02-02 11:20:43,937 - DEBUG - Message added to LogWindow: Draco uses a special attack on Andromeda for 50 damage!
+2025-02-02 11:20:43,937 - INFO - Draco uses a special attack on Andromeda for 50 damage!
+2025-02-02 11:20:43,939 - DEBUG - Message added to LogWindow: Andromeda attacks Draco for 37 damage!
+2025-02-02 11:20:43,939 - INFO - Andromeda attacks Draco for 37 damage!
+2025-02-02 11:20:43,946 - DEBUG - Camera view updated with new frame
+2025-02-02 11:20:43,948 - DEBUG - LogWindow updated
+2025-02-02 11:20:43,950 - DEBUG - GUI updated
+2025-02-02 11:20:43,953 - DEBUG - Battle round completed
+2025-02-02 11:20:48,954 - DEBUG - Starting battle round
+2025-02-02 11:25:57,177 - INFO - NEW SESSION ID: 1738513557.177354
+2025-02-02 11:25:57,178 - DEBUG - Configuration loaded from YAML
+2025-02-02 11:25:57,332 - DEBUG - LogWindow initialized
+2025-02-02 11:25:57,332 - DEBUG - GameEngine initialized
+2025-02-02 11:25:57,551 - INFO - GameEngine instance created
+2025-02-02 11:25:57,551 - DEBUG - Starting battle round
+2025-02-02 11:26:04,455 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:26:04,455 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Andromeda -> Attack
+2025-02-02 11:26:04,455 - INFO - Moves this turn: Draco -> Special Attack, Andromeda -> Attack
+2025-02-02 11:26:04,455 - DEBUG - Processing moves: Draco -> Special Attack, Andromeda -> Attack
+2025-02-02 11:26:04,455 - DEBUG - Message added to LogWindow: Draco uses a special attack on Andromeda for 50 damage!
+2025-02-02 11:26:04,455 - INFO - Draco uses a special attack on Andromeda for 50 damage!
+2025-02-02 11:26:04,457 - DEBUG - Message added to LogWindow: Andromeda attacks Draco for 37 damage!
+2025-02-02 11:26:04,457 - INFO - Andromeda attacks Draco for 37 damage!
+2025-02-02 11:26:04,463 - DEBUG - Camera view updated with new frame
+2025-02-02 11:26:04,465 - DEBUG - LogWindow updated
+2025-02-02 11:26:04,467 - DEBUG - GUI updated
+2025-02-02 11:26:04,468 - DEBUG - Battle round completed
+2025-02-02 11:26:09,470 - DEBUG - Starting battle round
+2025-02-02 11:26:40,024 - INFO - NEW SESSION ID: 1738513600.02433
+2025-02-02 11:26:40,025 - DEBUG - Configuration loaded from YAML
+2025-02-02 11:26:40,163 - DEBUG - LogWindow initialized
+2025-02-02 11:26:40,163 - DEBUG - GameEngine initialized
+2025-02-02 11:26:40,322 - INFO - GameEngine instance created
+2025-02-02 11:26:40,322 - DEBUG - Starting battle round
+2025-02-02 11:26:47,152 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:26:47,152 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Pegasus -> Attack
+2025-02-02 11:26:47,152 - INFO - Moves this turn: Draco -> Special Attack, Pegasus -> Attack
+2025-02-02 11:26:47,152 - DEBUG - Processing moves: Draco -> Special Attack, Pegasus -> Attack
+2025-02-02 11:26:47,152 - DEBUG - Message added to LogWindow: Draco uses a special attack on Pegasus for 50 damage!
+2025-02-02 11:26:47,152 - INFO - Draco uses a special attack on Pegasus for 50 damage!
+2025-02-02 11:26:47,154 - DEBUG - Message added to LogWindow: Pegasus attacks Draco for 32 damage!
+2025-02-02 11:26:47,154 - INFO - Pegasus attacks Draco for 32 damage!
+2025-02-02 11:26:47,159 - DEBUG - Camera view updated with new frame
+2025-02-02 11:26:47,161 - DEBUG - LogWindow updated
+2025-02-02 11:33:39,009 - INFO - NEW SESSION ID: 1738514019.00913
+2025-02-02 11:33:39,010 - DEBUG - Configuration loaded from YAML
+2025-02-02 11:33:39,169 - DEBUG - LogWindow initialized
+2025-02-02 11:33:39,169 - DEBUG - GameEngine initialized
+2025-02-02 11:33:39,376 - INFO - GameEngine instance created
+2025-02-02 11:33:39,376 - DEBUG - Starting battle round
+2025-02-02 11:33:46,139 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:33:46,139 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Lyra -> Attack
+2025-02-02 11:33:46,139 - INFO - Moves this turn: Draco -> Special Attack, Lyra -> Attack
+2025-02-02 11:33:46,139 - DEBUG - Processing moves: Draco -> Special Attack, Lyra -> Attack
+2025-02-02 11:33:46,139 - DEBUG - Message added to LogWindow: Draco uses a special attack on Lyra for 50 damage!
+2025-02-02 11:33:46,139 - INFO - Draco uses a special attack on Lyra for 50 damage!
+2025-02-02 11:33:46,141 - DEBUG - Message added to LogWindow: Lyra attacks Draco for 40 damage!
+2025-02-02 11:33:46,141 - INFO - Lyra attacks Draco for 40 damage!
+2025-02-02 11:33:46,146 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:46,149 - DEBUG - LogWindow updated
+2025-02-02 11:33:46,151 - DEBUG - GUI updated
+2025-02-02 11:33:46,159 - DEBUG - Battle round completed
+2025-02-02 11:33:51,160 - DEBUG - Starting battle round
+2025-02-02 11:33:58,060 - DEBUG - Scanned moves: Healing
+2025-02-02 11:33:58,060 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Healing, Lyra -> Attack
+2025-02-02 11:33:58,060 - INFO - Moves this turn: Draco -> Healing, Lyra -> Attack
+2025-02-02 11:33:58,060 - DEBUG - Processing moves: Draco -> Healing, Lyra -> Attack
+2025-02-02 11:33:58,060 - DEBUG - Message added to LogWindow: Draco heals and gains 26 health!
+2025-02-02 11:33:58,060 - INFO - Draco heals and gains 26 health!
+2025-02-02 11:33:58,062 - DEBUG - Message added to LogWindow: Lyra attacks Draco for 40 damage!
+2025-02-02 11:33:58,063 - INFO - Lyra attacks Draco for 40 damage!
+2025-02-02 11:33:58,068 - DEBUG - Camera view updated with new frame
+2025-02-02 11:33:58,070 - DEBUG - LogWindow updated
+2025-02-02 11:33:58,072 - DEBUG - GUI updated
+2025-02-02 11:33:58,075 - DEBUG - Battle round completed
+2025-02-02 11:34:03,076 - DEBUG - Starting battle round
+2025-02-02 11:34:09,948 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:34:09,948 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Lyra -> Attack
+2025-02-02 11:34:09,948 - INFO - Moves this turn: Draco -> Special Attack, Lyra -> Attack
+2025-02-02 11:34:09,948 - DEBUG - Processing moves: Draco -> Special Attack, Lyra -> Attack
+2025-02-02 11:34:09,948 - DEBUG - Message added to LogWindow: Draco tried to use a special attack but didn't have enough mana!
+2025-02-02 11:34:09,948 - INFO - Draco tried to use a special attack but didn't have enough mana!
+2025-02-02 11:34:09,950 - DEBUG - Message added to LogWindow: Lyra attacks Draco for 40 damage!
+2025-02-02 11:34:09,950 - INFO - Lyra attacks Draco for 40 damage!
+2025-02-02 11:34:09,957 - DEBUG - Camera view updated with new frame
+2025-02-02 11:34:09,960 - DEBUG - LogWindow updated
+2025-02-02 11:34:09,962 - DEBUG - GUI updated
+2025-02-02 11:34:09,968 - DEBUG - Battle round completed
+2025-02-02 11:34:14,969 - DEBUG - Starting battle round
+2025-02-02 11:38:03,384 - INFO - NEW SESSION ID: 1738514283.3844428
+2025-02-02 11:38:03,386 - DEBUG - Configuration loaded from YAML
+2025-02-02 11:38:03,556 - DEBUG - LogWindow initialized
+2025-02-02 11:38:03,557 - DEBUG - GameEngine initialized
+2025-02-02 11:38:03,807 - INFO - GameEngine instance created
+2025-02-02 11:38:03,808 - DEBUG - Starting battle round
+2025-02-02 11:38:10,712 - DEBUG - Scanned moves: Healing
+2025-02-02 11:38:10,712 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Healing, Hydra -> Attack
+2025-02-02 11:38:10,712 - INFO - Moves this turn: Draco -> Healing, Hydra -> Attack
+2025-02-02 11:38:10,712 - DEBUG - Processing moves: Draco -> Healing, Hydra -> Attack
+2025-02-02 11:38:10,713 - DEBUG - Message added to LogWindow: Draco heals and gains 16 health!
+2025-02-02 11:38:10,713 - INFO - Draco heals and gains 16 health!
+2025-02-02 11:38:10,714 - DEBUG - Message added to LogWindow: Hydra attacks Draco for 30 damage!
+2025-02-02 11:38:10,715 - INFO - Hydra attacks Draco for 30 damage!
+2025-02-02 11:38:10,720 - DEBUG - Camera view updated with new frame
+2025-02-02 11:38:10,722 - DEBUG - LogWindow updated
+2025-02-02 11:38:10,724 - DEBUG - GUI updated
+2025-02-02 11:38:10,731 - DEBUG - Battle round completed
+2025-02-02 11:38:15,732 - DEBUG - Starting battle round
+2025-02-02 11:38:22,639 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:38:22,640 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Hydra -> Attack
+2025-02-02 11:38:22,640 - INFO - Moves this turn: Draco -> Special Attack, Hydra -> Attack
+2025-02-02 11:38:22,640 - DEBUG - Processing moves: Draco -> Special Attack, Hydra -> Attack
+2025-02-02 11:38:22,640 - DEBUG - Message added to LogWindow: Draco uses a special attack on Hydra for 50 damage!
+2025-02-02 11:38:22,640 - INFO - Draco uses a special attack on Hydra for 50 damage!
+2025-02-02 11:38:22,642 - DEBUG - Message added to LogWindow: Hydra attacks Draco for 30 damage!
+2025-02-02 11:38:22,642 - INFO - Hydra attacks Draco for 30 damage!
+2025-02-02 11:38:22,650 - DEBUG - Camera view updated with new frame
+2025-02-02 11:38:22,652 - DEBUG - LogWindow updated
+2025-02-02 11:38:22,654 - DEBUG - GUI updated
+2025-02-02 11:38:22,665 - DEBUG - Battle round completed
+2025-02-02 11:38:27,667 - DEBUG - Starting battle round
+2025-02-02 11:38:35,087 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:38:35,088 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Hydra -> Attack
+2025-02-02 11:38:35,088 - INFO - Moves this turn: Draco -> Special Attack, Hydra -> Attack
+2025-02-02 11:38:35,088 - DEBUG - Processing moves: Draco -> Special Attack, Hydra -> Attack
+2025-02-02 11:38:35,088 - DEBUG - Message added to LogWindow: Draco tried to use a special attack but didn't have enough mana!
+2025-02-02 11:38:35,088 - INFO - Draco tried to use a special attack but didn't have enough mana!
+2025-02-02 11:38:35,090 - DEBUG - Message added to LogWindow: Hydra attacks Draco for 30 damage!
+2025-02-02 11:38:35,090 - INFO - Hydra attacks Draco for 30 damage!
+2025-02-02 11:38:35,095 - DEBUG - Camera view updated with new frame
+2025-02-02 11:38:35,097 - DEBUG - LogWindow updated
+2025-02-02 11:38:35,100 - DEBUG - GUI updated
+2025-02-02 11:38:35,106 - DEBUG - Battle round completed
+2025-02-02 11:38:40,106 - DEBUG - Starting battle round
+2025-02-02 11:38:47,031 - DEBUG - Scanned moves: Resting
+2025-02-02 11:38:47,032 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Resting, Hydra -> Attack
+2025-02-02 11:38:47,032 - INFO - Moves this turn: Draco -> Resting, Hydra -> Attack
+2025-02-02 11:38:47,032 - DEBUG - Processing moves: Draco -> Resting, Hydra -> Attack
+2025-02-02 11:38:47,032 - DEBUG - Message added to LogWindow: Draco rests and gains 22 mana!
+2025-02-02 11:38:47,032 - INFO - Draco rests and gains 22 mana!
+2025-02-02 11:38:47,034 - DEBUG - Message added to LogWindow: Hydra attacks Draco for 45 damage!
+2025-02-02 11:38:47,034 - INFO - Hydra attacks Draco for 45 damage!
+2025-02-02 11:38:47,039 - DEBUG - Camera view updated with new frame
+2025-02-02 11:38:47,042 - DEBUG - LogWindow updated
+2025-02-02 11:38:47,044 - DEBUG - GUI updated
+2025-02-02 11:38:47,049 - DEBUG - Battle round completed
+2025-02-02 11:38:52,050 - DEBUG - Starting battle round
+2025-02-02 11:38:58,990 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:38:58,991 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Hydra -> Attacking
+2025-02-02 11:38:58,991 - INFO - Moves this turn: Draco -> Special Attack, Hydra -> Attacking
+2025-02-02 11:38:58,991 - DEBUG - Processing moves: Draco -> Special Attack, Hydra -> Attacking
+2025-02-02 11:38:58,991 - DEBUG - Message added to LogWindow: Draco tried to use a special attack but didn't have enough mana!
+2025-02-02 11:38:58,991 - INFO - Draco tried to use a special attack but didn't have enough mana!
+2025-02-02 11:38:58,996 - DEBUG - Camera view updated with new frame
+2025-02-02 11:38:58,999 - DEBUG - LogWindow updated
+2025-02-02 11:38:59,001 - DEBUG - GUI updated
+2025-02-02 11:38:59,003 - DEBUG - Battle round completed
+2025-02-02 11:39:04,004 - DEBUG - Starting battle round
+2025-02-02 11:39:10,906 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:39:10,907 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Hydra -> Attacking
+2025-02-02 11:39:10,907 - INFO - Moves this turn: Draco -> Special Attack, Hydra -> Attacking
+2025-02-02 11:39:10,907 - DEBUG - Processing moves: Draco -> Special Attack, Hydra -> Attacking
+2025-02-02 11:39:10,907 - DEBUG - Message added to LogWindow: Draco tried to use a special attack but didn't have enough mana!
+2025-02-02 11:39:10,907 - INFO - Draco tried to use a special attack but didn't have enough mana!
+2025-02-02 11:39:10,912 - DEBUG - Camera view updated with new frame
+2025-02-02 11:39:10,913 - DEBUG - LogWindow updated
+2025-02-02 11:39:10,915 - DEBUG - GUI updated
+2025-02-02 11:39:10,917 - DEBUG - Battle round completed
+2025-02-02 11:39:15,918 - DEBUG - Starting battle round
+2025-02-02 11:39:22,751 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:39:22,752 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Hydra -> Attacking
+2025-02-02 11:39:22,752 - INFO - Moves this turn: Draco -> Special Attack, Hydra -> Attacking
+2025-02-02 11:39:22,752 - DEBUG - Processing moves: Draco -> Special Attack, Hydra -> Attacking
+2025-02-02 11:39:22,752 - DEBUG - Message added to LogWindow: Draco tried to use a special attack but didn't have enough mana!
+2025-02-02 11:39:22,752 - INFO - Draco tried to use a special attack but didn't have enough mana!
+2025-02-02 11:39:22,757 - DEBUG - Camera view updated with new frame
+2025-02-02 11:39:22,758 - DEBUG - LogWindow updated
+2025-02-02 11:39:22,760 - DEBUG - GUI updated
+2025-02-02 11:39:22,762 - DEBUG - Battle round completed
+2025-02-02 11:39:27,763 - DEBUG - Starting battle round
+2025-02-02 11:39:34,824 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:39:34,825 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Hydra -> Attacking
+2025-02-02 11:39:34,825 - INFO - Moves this turn: Draco -> Special Attack, Hydra -> Attacking
+2025-02-02 11:39:34,825 - DEBUG - Processing moves: Draco -> Special Attack, Hydra -> Attacking
+2025-02-02 11:39:34,825 - DEBUG - Message added to LogWindow: Draco tried to use a special attack but didn't have enough mana!
+2025-02-02 11:39:34,825 - INFO - Draco tried to use a special attack but didn't have enough mana!
+2025-02-02 11:39:34,830 - DEBUG - Camera view updated with new frame
+2025-02-02 11:39:34,833 - DEBUG - LogWindow updated
+2025-02-02 11:39:34,835 - DEBUG - GUI updated
+2025-02-02 11:39:34,837 - DEBUG - Battle round completed
+2025-02-02 11:39:39,838 - DEBUG - Starting battle round
+2025-02-02 11:42:36,983 - INFO - NEW SESSION ID: 1738514556.983232
+2025-02-02 11:42:36,984 - DEBUG - Configuration loaded from YAML
+2025-02-02 11:42:37,125 - DEBUG - LogWindow initialized
+2025-02-02 11:42:37,125 - DEBUG - GameEngine initialized
+2025-02-02 11:42:37,299 - INFO - GameEngine instance created
+2025-02-02 11:42:37,299 - DEBUG - Starting battle round
+2025-02-02 11:42:44,151 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:42:44,151 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Pegasus -> Attack
+2025-02-02 11:42:44,151 - INFO - Moves this turn: Draco -> Special Attack, Pegasus -> Attack
+2025-02-02 11:42:44,151 - DEBUG - Processing moves: Draco -> Special Attack, Pegasus -> Attack
+2025-02-02 11:42:44,151 - DEBUG - Message added to LogWindow: Draco uses a special attack on Pegasus for 50 damage!
+2025-02-02 11:42:44,151 - INFO - Draco uses a special attack on Pegasus for 50 damage!
+2025-02-02 11:42:44,153 - DEBUG - Message added to LogWindow: Pegasus attacks Draco for 32 damage!
+2025-02-02 11:42:44,153 - INFO - Pegasus attacks Draco for 32 damage!
+2025-02-02 11:42:44,159 - DEBUG - Camera view updated with new frame
+2025-02-02 11:42:44,162 - DEBUG - LogWindow updated
+2025-02-02 11:42:44,164 - DEBUG - GUI updated
+2025-02-02 11:42:44,170 - DEBUG - Battle round completed
+2025-02-02 11:42:49,170 - DEBUG - Starting battle round
+2025-02-02 11:43:51,454 - INFO - NEW SESSION ID: 1738514631.454952
+2025-02-02 11:43:51,455 - DEBUG - Configuration loaded from YAML
+2025-02-02 11:44:39,366 - INFO - NEW SESSION ID: 1738514679.366951
+2025-02-02 11:44:39,367 - DEBUG - Configuration loaded from YAML
+2025-02-02 11:44:39,490 - DEBUG - LogWindow initialized
+2025-02-02 11:44:59,385 - INFO - NEW SESSION ID: 1738514699.385717
+2025-02-02 11:44:59,386 - DEBUG - Configuration loaded from YAML
+2025-02-02 11:44:59,508 - DEBUG - LogWindow initialized
+2025-02-02 11:44:59,508 - DEBUG - GameEngine initialized
+2025-02-02 11:44:59,671 - INFO - GameEngine instance created
+2025-02-02 11:44:59,671 - DEBUG - Starting battle round
+2025-02-02 11:45:06,595 - DEBUG - Scanned moves: Special Attack
+2025-02-02 11:45:06,596 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Pegasus -> Attack
+2025-02-02 11:45:06,596 - INFO - Moves this turn: Draco -> Special Attack, Pegasus -> Attack
+2025-02-02 11:45:06,596 - DEBUG - Processing moves: Draco -> Special Attack, Pegasus -> Attack
+2025-02-02 11:45:06,596 - DEBUG - Message added to LogWindow: Draco uses a special attack on Pegasus for 50 damage!
+2025-02-02 11:45:06,596 - INFO - Draco uses a special attack on Pegasus for 50 damage!
+2025-02-02 11:45:06,598 - DEBUG - Message added to LogWindow: Pegasus attacks Draco for 32 damage!
+2025-02-02 11:45:06,598 - INFO - Pegasus attacks Draco for 32 damage!
+2025-02-02 11:45:06,604 - DEBUG - Camera view updated with new frame
+2025-02-02 11:45:06,606 - DEBUG - LogWindow updated
+2025-02-02 11:45:06,608 - DEBUG - GUI updated
+2025-02-02 11:45:06,619 - DEBUG - Battle round completed
+2025-02-02 11:45:11,619 - DEBUG - Starting battle round
+2025-02-02 11:47:17,516 - INFO - NEW SESSION ID: 1738514837.516055
+2025-02-02 11:47:17,517 - DEBUG - Configuration loaded from YAML
+2025-02-02 11:47:17,704 - DEBUG - LogWindow initialized
+2025-02-02 11:47:17,704 - DEBUG - GameEngine initialized
+2025-02-02 11:47:17,915 - INFO - GameEngine instance created
+2025-02-02 11:47:17,915 - DEBUG - Starting battle round
+2025-02-02 11:47:25,413 - DEBUG - Scanned moves: ('Defending', 'Special Attack')
+2025-02-02 11:47:25,413 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Defending, Phoenix -> Special Attack
+2025-02-02 11:47:25,413 - INFO - Moves this turn: Draco -> Defending, Phoenix -> Special Attack
+2025-02-02 11:47:25,413 - DEBUG - Processing moves: Draco -> Defending, Phoenix -> Special Attack
+2025-02-02 11:47:25,413 - DEBUG - Message added to LogWindow: Draco is defending this turn!
+2025-02-02 11:47:25,413 - INFO - Draco is defending this turn!
+2025-02-02 11:47:25,413 - DEBUG - Message added to LogWindow: Phoenix uses a special attack on Draco for 30 damage!
+2025-02-02 11:47:25,413 - INFO - Phoenix uses a special attack on Draco for 30 damage!
+2025-02-02 11:47:25,418 - DEBUG - Camera view updated with new frame
+2025-02-02 11:47:25,421 - DEBUG - LogWindow updated
+2025-02-02 11:47:25,423 - DEBUG - GUI updated
+2025-02-02 11:47:25,425 - DEBUG - Battle round completed
+2025-02-02 11:47:30,427 - DEBUG - Starting battle round
+2025-02-02 11:47:38,336 - DEBUG - Scanned moves: ('Defending', 'Defending')
+2025-02-02 11:47:38,337 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Defending, Phoenix -> Defending
+2025-02-02 11:47:38,337 - INFO - Moves this turn: Draco -> Defending, Phoenix -> Defending
+2025-02-02 11:47:38,337 - DEBUG - Processing moves: Draco -> Defending, Phoenix -> Defending
+2025-02-02 11:47:38,337 - DEBUG - Message added to LogWindow: Draco is defending this turn!
+2025-02-02 11:47:38,337 - INFO - Draco is defending this turn!
+2025-02-02 11:47:38,337 - DEBUG - Message added to LogWindow: Phoenix is defending this turn!
+2025-02-02 11:47:38,337 - INFO - Phoenix is defending this turn!
+2025-02-02 11:47:38,342 - DEBUG - Camera view updated with new frame
+2025-02-02 11:47:38,343 - DEBUG - LogWindow updated
+2025-02-02 11:47:38,346 - DEBUG - GUI updated
+2025-02-02 11:47:38,347 - DEBUG - Battle round completed
+2025-02-02 11:47:43,349 - DEBUG - Starting battle round
+2025-02-02 11:47:51,053 - DEBUG - Scanned moves: ('Special Attack', 'Resting')
+2025-02-02 11:47:51,054 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Phoenix -> Resting
+2025-02-02 11:47:51,055 - INFO - Moves this turn: Draco -> Special Attack, Phoenix -> Resting
+2025-02-02 11:47:51,055 - DEBUG - Processing moves: Draco -> Special Attack, Phoenix -> Resting
+2025-02-02 11:47:51,055 - DEBUG - Message added to LogWindow: Draco uses a special attack on Phoenix for 50 damage!
+2025-02-02 11:47:51,055 - INFO - Draco uses a special attack on Phoenix for 50 damage!
+2025-02-02 11:47:51,055 - DEBUG - Message added to LogWindow: Phoenix rests and gains 30 mana!
+2025-02-02 11:47:51,055 - INFO - Phoenix rests and gains 30 mana!
+2025-02-02 11:47:51,059 - DEBUG - Camera view updated with new frame
+2025-02-02 11:47:51,062 - DEBUG - LogWindow updated
+2025-02-02 11:47:51,065 - DEBUG - GUI updated
+2025-02-02 11:47:51,067 - DEBUG - Battle round completed
+2025-02-02 11:47:56,068 - DEBUG - Starting battle round
+2025-02-02 11:48:03,973 - DEBUG - Scanned moves: ('Resting', 'Defending')
+2025-02-02 11:48:03,974 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Resting, Phoenix -> Defending
+2025-02-02 11:48:03,974 - INFO - Moves this turn: Draco -> Resting, Phoenix -> Defending
+2025-02-02 11:48:03,974 - DEBUG - Processing moves: Draco -> Resting, Phoenix -> Defending
+2025-02-02 11:48:03,974 - DEBUG - Message added to LogWindow: Draco rests and gains 24 mana!
+2025-02-02 11:48:03,974 - INFO - Draco rests and gains 24 mana!
+2025-02-02 11:48:03,974 - DEBUG - Message added to LogWindow: Phoenix is defending this turn!
+2025-02-02 11:48:03,974 - INFO - Phoenix is defending this turn!
+2025-02-02 11:48:03,979 - DEBUG - Camera view updated with new frame
+2025-02-02 11:48:03,982 - DEBUG - LogWindow updated
+2025-02-02 11:48:03,984 - DEBUG - GUI updated
+2025-02-02 11:48:03,986 - DEBUG - Battle round completed
+2025-02-02 11:48:08,987 - DEBUG - Starting battle round
+2025-02-02 11:48:16,911 - DEBUG - Scanned moves: ('Resting', 'Special Attack')
+2025-02-02 11:48:16,911 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Resting, Phoenix -> Special Attack
+2025-02-02 11:48:16,911 - INFO - Moves this turn: Draco -> Resting, Phoenix -> Special Attack
+2025-02-02 11:48:16,911 - DEBUG - Processing moves: Draco -> Resting, Phoenix -> Special Attack
+2025-02-02 11:48:16,911 - DEBUG - Message added to LogWindow: Draco rests and gains 33 mana!
+2025-02-02 11:48:16,911 - INFO - Draco rests and gains 33 mana!
+2025-02-02 11:48:16,911 - DEBUG - Message added to LogWindow: Phoenix tried to use a special attack but didn't have enough mana!
+2025-02-02 11:48:16,911 - INFO - Phoenix tried to use a special attack but didn't have enough mana!
+2025-02-02 11:48:16,916 - DEBUG - Camera view updated with new frame
+2025-02-02 11:48:16,918 - DEBUG - LogWindow updated
+2025-02-02 11:48:16,920 - DEBUG - GUI updated
+2025-02-02 11:48:16,922 - DEBUG - Battle round completed
+2025-02-02 11:48:21,923 - DEBUG - Starting battle round
+2025-02-02 11:48:29,870 - DEBUG - Scanned moves: ('Healing', 'Resting')
+2025-02-02 11:48:29,871 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Healing, Phoenix -> Resting
+2025-02-02 11:48:29,871 - INFO - Moves this turn: Draco -> Healing, Phoenix -> Resting
+2025-02-02 11:48:29,871 - DEBUG - Processing moves: Draco -> Healing, Phoenix -> Resting
+2025-02-02 11:48:29,871 - DEBUG - Message added to LogWindow: Draco heals and gains 19 health!
+2025-02-02 11:48:29,871 - INFO - Draco heals and gains 19 health!
+2025-02-02 11:48:29,871 - DEBUG - Message added to LogWindow: Phoenix rests and gains 29 mana!
+2025-02-02 11:48:29,871 - INFO - Phoenix rests and gains 29 mana!
+2025-02-02 11:48:29,876 - DEBUG - Camera view updated with new frame
+2025-02-02 11:48:29,878 - DEBUG - LogWindow updated
+2025-02-02 11:48:29,880 - DEBUG - GUI updated
+2025-02-02 11:48:29,881 - DEBUG - Battle round completed
+2025-02-02 11:48:34,883 - DEBUG - Starting battle round
+2025-02-02 11:48:42,785 - DEBUG - Scanned moves: ('Resting', 'Special Attack')
+2025-02-02 11:48:42,786 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Resting, Phoenix -> Special Attack
+2025-02-02 11:48:42,786 - INFO - Moves this turn: Draco -> Resting, Phoenix -> Special Attack
+2025-02-02 11:48:42,786 - DEBUG - Processing moves: Draco -> Resting, Phoenix -> Special Attack
+2025-02-02 11:48:42,786 - DEBUG - Message added to LogWindow: Draco rests and gains 33 mana!
+2025-02-02 11:48:42,786 - INFO - Draco rests and gains 33 mana!
+2025-02-02 11:48:42,786 - DEBUG - Message added to LogWindow: Phoenix uses a special attack on Draco for 30 damage!
+2025-02-02 11:48:42,786 - INFO - Phoenix uses a special attack on Draco for 30 damage!
+2025-02-02 11:48:42,793 - DEBUG - Camera view updated with new frame
+2025-02-02 11:48:42,795 - DEBUG - LogWindow updated
+2025-02-02 11:48:42,798 - DEBUG - GUI updated
+2025-02-02 11:48:42,800 - DEBUG - Battle round completed
+2025-02-02 11:48:47,801 - DEBUG - Starting battle round
+2025-02-02 11:48:55,734 - DEBUG - Scanned moves: ('Special Attack', 'Resting')
+2025-02-02 11:48:55,735 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Phoenix -> Resting
+2025-02-02 11:48:55,735 - INFO - Moves this turn: Draco -> Special Attack, Phoenix -> Resting
+2025-02-02 11:48:55,735 - DEBUG - Processing moves: Draco -> Special Attack, Phoenix -> Resting
+2025-02-02 11:48:55,735 - DEBUG - Message added to LogWindow: Draco uses a special attack on Phoenix for 50 damage!
+2025-02-02 11:48:55,735 - INFO - Draco uses a special attack on Phoenix for 50 damage!
+2025-02-02 11:48:55,735 - DEBUG - Message added to LogWindow: Phoenix rests and gains 34 mana!
+2025-02-02 11:48:55,735 - INFO - Phoenix rests and gains 34 mana!
+2025-02-02 11:48:55,740 - DEBUG - Camera view updated with new frame
+2025-02-02 11:48:55,741 - DEBUG - LogWindow updated
+2025-02-02 11:48:55,743 - DEBUG - GUI updated
+2025-02-02 11:48:55,745 - DEBUG - Battle round completed
+2025-02-02 11:49:00,746 - DEBUG - Starting battle round
+2025-02-02 11:52:31,012 - INFO - NEW SESSION ID: 1738515151.012106
+2025-02-02 11:52:31,013 - DEBUG - Configuration loaded from YAML
+2025-02-02 11:52:31,055 - DEBUG - LogWindow initialized
+2025-02-02 11:52:31,055 - DEBUG - GameEngine initialized
+2025-02-02 11:52:31,238 - INFO - GameEngine instance created
+2025-02-02 11:52:31,238 - DEBUG - Starting battle round
+2025-02-02 11:52:38,742 - DEBUG - Scanned moves: ('Resting', 'Special Attack')
+2025-02-02 11:52:38,742 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Resting, Draco -> Special Attack
+2025-02-02 11:52:38,742 - INFO - Moves this turn: Draco -> Resting, Draco -> Special Attack
+2025-02-02 11:52:38,742 - DEBUG - Processing moves: Draco -> Resting, Draco -> Special Attack
+2025-02-02 11:52:38,742 - DEBUG - Message added to LogWindow: Draco rests and gains 22 mana!
+2025-02-02 11:52:38,742 - INFO - Draco rests and gains 22 mana!
+2025-02-02 11:52:38,742 - DEBUG - Message added to LogWindow: Draco uses a special attack on Draco for 50 damage!
+2025-02-02 11:52:38,742 - INFO - Draco uses a special attack on Draco for 50 damage!
+2025-02-02 11:52:38,748 - DEBUG - Camera view updated with new frame
+2025-02-02 11:52:38,750 - DEBUG - LogWindow updated
+2025-02-02 11:52:38,752 - DEBUG - GUI updated
+2025-02-02 11:52:38,752 - DEBUG - Battle round completed
+2025-02-02 11:52:43,754 - DEBUG - Starting battle round
+2025-02-02 11:54:28,969 - INFO - NEW SESSION ID: 1738515268.9699311
+2025-02-02 11:54:28,970 - DEBUG - Configuration loaded from YAML
+2025-02-02 11:54:28,971 - DEBUG - LogWindow initialized
+2025-02-02 11:54:28,971 - DEBUG - GameEngine initialized
+2025-02-02 11:54:29,138 - INFO - GameEngine instance created
+2025-02-02 11:54:29,138 - DEBUG - Starting battle round
+2025-02-02 11:54:36,855 - DEBUG - Scanned moves: ('Special Attack', 'Special Attack')
+2025-02-02 11:54:36,856 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Lyra -> Special Attack
+2025-02-02 11:54:36,856 - INFO - Moves this turn: Draco -> Special Attack, Lyra -> Special Attack
+2025-02-02 11:54:36,856 - DEBUG - Processing moves: Draco -> Special Attack, Lyra -> Special Attack
+2025-02-02 11:54:36,856 - DEBUG - Message added to LogWindow: Draco uses a special attack on Lyra for 50 damage!
+2025-02-02 11:54:36,856 - INFO - Draco uses a special attack on Lyra for 50 damage!
+2025-02-02 11:54:36,856 - DEBUG - Message added to LogWindow: Lyra uses a special attack on Draco for 80 damage!
+2025-02-02 11:54:36,856 - INFO - Lyra uses a special attack on Draco for 80 damage!
+2025-02-02 11:54:36,862 - DEBUG - Camera view updated with new frame
+2025-02-02 11:54:36,864 - DEBUG - LogWindow updated
+2025-02-02 11:54:36,867 - DEBUG - GUI updated
+2025-02-02 11:54:36,869 - DEBUG - Battle round completed
+2025-02-02 11:54:41,870 - DEBUG - Starting battle round
+2025-02-02 11:55:04,181 - INFO - NEW SESSION ID: 1738515304.18149
+2025-02-02 11:55:04,182 - DEBUG - Configuration loaded from YAML
+2025-02-02 11:55:04,224 - DEBUG - LogWindow initialized
+2025-02-02 11:55:04,224 - DEBUG - GameEngine initialized
+2025-02-02 11:55:04,392 - INFO - GameEngine instance created
+2025-02-02 11:55:04,392 - DEBUG - Starting battle round
+2025-02-02 11:55:11,595 - DEBUG - Scanned moves: ('Special Attack', 'Special Attack')
+2025-02-02 11:55:11,596 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> Special Attack, Draco -> Special Attack
+2025-02-02 11:55:11,596 - INFO - Moves this turn: Draco -> Special Attack, Draco -> Special Attack
+2025-02-02 11:55:11,596 - DEBUG - Processing moves: Draco -> Special Attack, Draco -> Special Attack
+2025-02-02 11:55:11,596 - DEBUG - Message added to LogWindow: Draco uses a special attack on Draco for 50 damage!
+2025-02-02 11:55:11,596 - INFO - Draco uses a special attack on Draco for 50 damage!
+2025-02-02 11:55:11,596 - DEBUG - Message added to LogWindow: Draco uses a special attack on Draco for 50 damage!
+2025-02-02 11:55:11,596 - INFO - Draco uses a special attack on Draco for 50 damage!
+2025-02-02 11:55:11,602 - DEBUG - Camera view updated with new frame
+2025-02-02 11:55:11,603 - DEBUG - LogWindow updated
+2025-02-02 11:55:11,605 - DEBUG - GUI updated
+2025-02-02 11:55:11,607 - DEBUG - Battle round completed
+2025-02-02 11:55:16,608 - DEBUG - Starting battle round

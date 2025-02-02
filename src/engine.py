@@ -20,6 +20,8 @@ import cv2  # For color conversion
 import logging
 import time
 import ai
+import sounds
+import spritesheet
 
 # Ensure Pygame is initialized before anything else
 pygame.init()
@@ -62,6 +64,21 @@ class LogWindow:
         self.messages = []
         self.max_lines = 20
         logging.debug("LogWindow initialized")
+        # Create surfaces for sprite images
+        self.sprite_surface = pygame.Surface((64, 64), pygame.SRCALPHA)
+        self.player1_sprite = None
+        self.player2_sprite = None
+
+    def load_sprites(self, player1_name, player2_name):
+        try:
+            self.player1_sprite = pygame.image.load(f'src/sprites/{player1_name.lower()}.png').convert_alpha()
+            self.player2_sprite = pygame.image.load(f'src/sprites/{player2_name.lower()}.png').convert_alpha()
+            # Scale sprites to fit
+            self.player1_sprite = pygame.transform.scale(self.player1_sprite, (48, 48))
+            self.player2_sprite = pygame.transform.scale(self.player2_sprite, (48, 48))
+        except pygame.error:
+            self.player1_sprite = None
+            self.player2_sprite = None[4][28]
 
     def add_message(self, message):
         self.messages.append(message)
@@ -72,6 +89,13 @@ class LogWindow:
     def update(self, surface):
         # Draw a background for the log area.
         pygame.draw.rect(surface, (30, 30, 30), self.rect)
+        
+        # Draw sprites next to health bars if loaded
+        if self.player1_sprite:
+            surface.blit(self.player1_sprite, (self.rect.x + 220, 50))
+        if self.player2_sprite:
+            surface.blit(self.player2_sprite, (self.rect.x + 220, 150))
+        
         y = self.rect.y + 10
         for message in self.messages:
             text_surface = self.font.render(message, True, (255, 255, 255))
@@ -85,24 +109,37 @@ class GameEngine:
         self.player1 = player1
         self.player2 = player2
         # Create a display of 1368x720.
-        self.screen = pygame.display.set_mode((1368, 720))
+        self.screen = pygame.display.set_mode((1920, 1080))
         # self.screen = pygame.display.get_surface()
         # pygame.display.set_caption("Wizard Duel")
         self.clock = pygame.time.Clock()
         self.running = True
+        # Initialize background music
+        pygame.mixer.music.load('src/sounds/bg_music.wav')
+        pygame.mixer.music.play(-1)  # -1 means loop indefinitely[10]
+        pygame.mixer.music.set_volume(0.5)  # Set volume to 50%[3]
+        
+        
 
         # Set up a dedicated GUI surface for the right half.
         # Right half occupies x = 684 to 1368.
-        self.gui_surface = pygame.Surface((1368 // 2, 720))
+        self.gui_surface = pygame.Surface((1920 // 2, 1080))
         # Positions for health/mana bars (relative to the GUI surface).
         self.p1_health_rect = pygame.Rect(16, 50, 200, 20)
         self.p1_mana_rect = pygame.Rect(16, 80, 200, 20)
         self.p2_health_rect = pygame.Rect(16, 150, 200, 20)
+        self.player1_action = "Idle"  # Default action state
+        self.player2_action = "Idle"  # Default action state
         self.p2_mana_rect = pygame.Rect(16, 180, 200, 20)
         # Log window area on the GUI surface.
-        self.log_rect = pygame.Rect(16, 250, 652, 400)
+        self.log_rect = pygame.Rect(16, 250, (1920 - 100) // 2, 980)
         self.log_window = LogWindow(self.log_rect)
+        
+        # self.log_window.load_sprites(player1.get_name(), player2.get_name())[24]
         logging.debug("GameEngine initialized")
+        
+        self.sprite_manager = spritesheet.SpriteManager()
+        self.sound_manager = sounds.SoundManager()
 
     def update_camera_view(self):
         """
@@ -116,11 +153,11 @@ class GameEngine:
                 # Create a Pygame surface from the numpy array.
                 frame_surface = pygame.surfarray.make_surface(frame_rgb.swapaxes(0, 1))
                 # Scale frame to fill the left half (684x720).
-                frame_surface = pygame.transform.scale(frame_surface, (684, 720))
+                frame_surface = pygame.transform.scale(frame_surface, (1920//2, 1080))
                 self.screen.blit(frame_surface, (0, 0))
                 logging.debug("Camera view updated with new frame")
             else:
-                pygame.draw.rect(self.screen, (0, 0, 0), (0, 0, 684, 720))
+                pygame.draw.rect(self.screen, (0, 0, 0), (0, 0, 1920//2, 1080))
                 logging.debug("Camera view updated with black screen")
         except pygame.error as e:
             logging.error(f"Pygame error in update_camera_view: {e}")
@@ -157,6 +194,11 @@ class GameEngine:
                 self.p1_mana_rect.height,
             ),
         )
+        
+        # Add health number for player1
+        health_text = self.log_window.font.render(f"Health: {self.player1.get_health()}", True, (255, 255, 255))
+        self.gui_surface.blit(health_text, (226, 50))
+        
         # Draw health/mana bars for player2.
         p2_health_width = int((self.player2.get_health() / 100) * 200)
         pygame.draw.rect(
@@ -183,11 +225,31 @@ class GameEngine:
             self.p2_mana_rect.height,
             ),
         )
+        
+        # Add health number for player2
+        health_text2 = self.log_window.font.render(f"Health: {self.player2.get_health()}", True, (255, 255, 255))
+        self.gui_surface.blit(health_text2, (226, 150))
+        
         # Update log window on the GUI surface
         self.log_window.update(self.gui_surface)
 
         # Blit the GUI surface onto the right half of the main screen
         self.screen.blit(self.gui_surface, (684, 0))
+        
+        p1_sprite = self.sprite_manager.get_sprite(self.player1.get_name(), self.player1_action)
+        p2_sprite = self.sprite_manager.get_sprite(self.player2.get_name(), self.player2_action)
+        
+        # if p1_sprite:
+        #     self.sprite_surface.blit(p1_sprite, (20, 20))
+        # if p2_sprite:
+        #     self.sprite_surface.blit(p2_sprite, (120, 20))
+            
+        # Play sounds based on actions
+        if self.player1_action in ['Attack', 'Heal', 'Special']:
+            self.sound_manager.play_sound(self.player1_action)
+            print('sound')
+        if self.player2_action in ['Attack', 'Heal', 'Special']:
+            self.sound_manager.play_sound(self.player2_action)
 
     # Update the display
         pygame.display.update()
@@ -345,6 +407,25 @@ class GameEngine:
                 self.log(
                     f"{self.player2.get_name()} tried to use a special attack but didn't have enough mana!"
                 )
+                
+        if not hasattr(self, 'sound_manager'):
+            self.sound_manager = sounds.SoundManager()
+    
+        # Play sounds based on player actions
+        if move1 == "Attack":
+            self.sound_manager.play_sound('Attack')
+        elif move1 == "Healing":
+            self.sound_manager.play_sound('Heal')
+        elif move1 == "Special Attack":
+            self.sound_manager.play_sound('Special')
+            
+        # Same for player 2
+        if move2 == "Attack":
+            self.sound_manager.play_sound('Attack')
+        elif move2 == "Healing":
+            self.sound_manager.play_sound('Heal')
+        elif move2 == "Special Attack":
+            self.sound_manager.play_sound('Special')
 
     def battle_round(self, single_player=False, bot=None):
         """
@@ -358,8 +439,11 @@ class GameEngine:
         logging.debug(f"Scanned moves: {moves}")
         if not single_player:
             move_p1, move_p2 = moves
+            self.player1_action = move_p1
+            self.player2_action = move_p2
         else:
             move_p1 = moves
+            self.player1_action = moves
             if bot is None:
                 logging.error("Bot is not defined in single player mode")
                 raise ValueError("Bot is not defined in single player mode")
