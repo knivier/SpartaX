@@ -183,15 +183,6 @@ class GameEngine:
             self.p2_mana_rect.height,
             ),
         )
-        effect = ParticleEffect(pos=(200, 300), target=(700, 300), num_particles=30, color=(255, 50, 50))
-        self.particle_effects.append(effect)
-        for effect in self.particle_effects:
-            effect.update()
-            effect.draw(self.screen)
-
-        # Remove dead particle effects
-        self.particle_effects = [effect for effect in self.particle_effects if effect.particles]
-
         # Update log window on the GUI surface
         self.log_window.update(self.gui_surface)
 
