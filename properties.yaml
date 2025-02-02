@@ -1,25 +1,18 @@
 base_options:
   debug_mode: true
+  difficulty: 5
   mode: player_vs_ai
   skeleton: true
   splitscreen: true
-  diff: 1
 game_options:
   ai:
-    attack: 
+    attack: 0
     health: 0
     mana: 0
   player1:
-    attack: 0
-    health: 0
-    mana: 0
-    name: Draco
+    name: Hydra
   player2:
-    attack: 0
-    color: blue
-    health: 0
-    mana: 0
-    name: PLACEHOLDER
+    name: Hydra
 temp_game_options:
-  player1: ""
-  player2: ""
+  player1: ''
+  player2: ''

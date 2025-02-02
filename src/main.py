@@ -1,41 +1,44 @@
 import pygame
 import yaml
 import sys
+import os
 import Player_List
 
 # Load game options from YAML file, defaults are preset if yaml is errored
 def load_options():
     try:
-        with open('../properties.yaml', 'r') as file:
+        yaml_path = os.path.join(os.path.dirname(__file__), '../properties.yaml')
+        with open(yaml_path, 'r') as file:
             return yaml.safe_load(file)
     except FileNotFoundError: 
         return {
             "base_options": {
-            "mode": "two_player",
-            "debug_mode": False,
-            "splitscreen": False,
-            "skeleton": False,
-            "diff": 2
+                "mode": "two_player",
+                "debug_mode": False,
+                "splitscreen": False,
+                "skeleton": False,
+                "difficulty": 2  # Ensure difficulty is included here
             },
             "game_options": {
-            "ai": {
-                "attack": 0,
-                "health": 0,
-                "mana": 0
-            }
+                "ai": {
+                    "attack": 0,
+                    "health": 0,
+                    "mana": 0
+                }
             }
         }
 
 # Save game options to YAML file
 def save_options(options):
-    with open('../properties.yaml', 'w') as file:
+    yaml_path = os.path.join(os.path.dirname(__file__), '../properties.yaml')
+    with open(yaml_path, 'w') as file:
         yaml.dump(options, file)
 
 # Initialize Pygame
 pygame.init()
 
 # Screen dimensions
-SCREEN_WIDTH, SCREEN_HEIGHT = 800, 600 # Init heights, can change to 1020x1080rez
+SCREEN_WIDTH, SCREEN_HEIGHT = 800, 600  # Init heights, can change to 1020x1080rez
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption('WizViz')
 
@@ -101,13 +104,20 @@ def options_menu():
         if var:
             print(option_keys)
             var = not var
+        
         y_offset = 20
         option_rects = {}
         
         for key in option_keys:
-            option_text = f'{key.capitalize()}: {options["base_options"][key]}'
-            option_rects[key] = draw_button(option_text, 200, y_offset, 400, 40, GRAY, LIGHT_BLUE, mouse_pos)
-            y_offset += 60
+            # Handling 'difficulty' separately since it's a number
+            if key == "difficulty":
+                option_text = f'{key.capitalize()}: {options["base_options"][key]}'
+                option_rects[key] = draw_button(option_text, 200, y_offset, 400, 40, GRAY, LIGHT_BLUE, mouse_pos)
+                y_offset += 60
+            else:
+                option_text = f'{key.capitalize()}: {options["base_options"][key]}'
+                option_rects[key] = draw_button(option_text, 200, y_offset, 400, 40, GRAY, LIGHT_BLUE, mouse_pos)
+                y_offset += 60
         
         ai_keys = list(options["game_options"]["ai"].keys())
         for key in ai_keys:
@@ -132,7 +142,9 @@ def options_menu():
                                 options["base_options"][key] = not options["base_options"][key]
                             elif key == "mode":
                                 options["base_options"][key] = "player_vs_ai" if options["base_options"][key] == "two_player" else "two_player"
-
+                            elif key == "difficulty":
+                                # For 'difficulty', let the user change the difficultyiculty
+                                options["base_options"][key] = (options["base_options"][key] % 5) + 1  # Toggle between 1, 2, 3 for difficulty
                         elif key in options["game_options"]["ai"]:
                             options["game_options"]["ai"][key] += 1  # Increment AI options for simplicity
                 if buttons["Save"].collidepoint(event.pos):

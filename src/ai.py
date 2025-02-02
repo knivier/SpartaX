@@ -1,8 +1,20 @@
 import random
+import yaml
 
 class wizard_bot:
-    def __init__(self, difficulty):
-        #add difficulty as variable
+        
+    def __init__(self):
+        def loadDifficulty():
+            try:
+                yaml_path = os.path.join(os.path.dirname(__file__), '../properties.yaml')
+                with open(yaml_path, 'r') as file:
+                    properties = yaml.safe_load(file)
+                    difficulty= properties.get('base_options', {}).get('difficulty', 2)
+            except FileNotFoundError:
+                difficulty= 2
+                return difficulty
+            
+        difficulty = loadDifficulty()
         self.health = 80 + (difficulty * 10)
         self.mana = 40 + (difficulty * 10)
         self.state = ""
