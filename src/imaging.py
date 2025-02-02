@@ -22,7 +22,8 @@ SOLO_PLAY = False
 
 NUM_POSES = 2
 """Number of poses to detect"""
-MODEL_PATH = "pose_landmarker_full.task"
+MODEL_PATH = "/Users/ankur/Coding-Projects/Hackathon/SpartahackX/SpartaX/src/pose_landmarker_full.task"
+# MODEL_PATH = "./src/pose_landmarker_full.task"
 """Path to the pose landmarker model"""
 
 pygame.init()
@@ -308,8 +309,8 @@ def scan(seconds, solo_play) -> any:
                 break
 
         cap.release()
-        pygame.quit()
-
+        # pygame.display.quit()
+        
     max_action_index_p1 = np.argmax(p1_actions)
     max_action_index_p2 = np.argmax(p2_actions)
     return tuple([actions[max_action_index_p1], actions[max_action_index_p2]])
