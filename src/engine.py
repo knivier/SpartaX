@@ -29,13 +29,14 @@ TURN_TIME = 5  # Each turn lasts 5 seconds
 
 # Set up logging
 logging.basicConfig(
-    filename='logs.log',
+    filename="logs.log",
     level=logging.DEBUG,
-    format='%(asctime)s - %(levelname)s - %(message)s'
+    format="%(asctime)s - %(levelname)s - %(message)s",
 )
 
 # Log new session
 logging.info(f"NEW SESSION ID: {time.time()}")
+
 
 def calculate_defense_efficiency():
     """Return a tuple (fully_efficient, reduction).
@@ -43,7 +44,9 @@ def calculate_defense_efficiency():
     - If not fully efficient, reduction is between 40% and 80% (as a fraction)."""
     fully_efficient = random.choice([True, False])
     reduction = random.uniform(0.4, 0.8)
-    logging.debug(f"Defense efficiency calculated: fully_efficient={fully_efficient}, reduction={reduction}")
+    logging.debug(
+        f"Defense efficiency calculated: fully_efficient={fully_efficient}, reduction={reduction}"
+    )
     return fully_efficient, reduction
 
 
@@ -187,7 +190,9 @@ class GameEngine:
         move1: move chosen by player1 ("Attack", "Defending", "Resting")
         move2: move chosen by player2 ("Attack", "Defending", "Resting")
         """
-        logging.debug(f"Processing moves: {self.player1.get_name()} -> {move1}, {self.player2.get_name()} -> {move2}")
+        logging.debug(
+            f"Processing moves: {self.player1.get_name()} -> {move1}, {self.player2.get_name()} -> {move2}"
+        )
         # Process player1's move.
         if move1 == "Attack":
             if self.player1.get_mana() >= 20:
@@ -298,7 +303,7 @@ class GameEngine:
                 logging.error("Bot is not defined in single player mode")
                 raise ValueError("Bot is not defined in single player mode")
             move_p2 = ai.wizard_bot_turn(bot, self.player1)
-            
+
         self.log(
             f"Moves this turn: {self.player1.get_name()} -> {move_p1}, {self.player2.get_name()} -> {move_p2}"
         )
@@ -331,7 +336,7 @@ class GameEngine:
             self.update_gui()
             pygame.display.update()
             self.clock.tick(30)
-    
+
     def gameOver(self):
         if self.player1.get_health() <= 0 or self.player2.get_health() <= 0:
             logging.debug("Game over condition met")
@@ -345,8 +350,7 @@ def run():
     with open(yaml_path, "r") as file:
         properties = yaml.safe_load(file)
     logging.debug("Configuration loaded from YAML")
-    
-    
+
     player1_name = properties.get("game_options", {}).get("player1", {}).get("name")
     player2_name = properties.get("game_options", {}).get("player2", {}).get("name")
     if player1_name is None:
@@ -389,7 +393,6 @@ def run():
         # ? Logic for pausing game and resuming to let user see stats
 
     game.declare_winner()
-    
 
 
 if __name__ == "__main__":

@@ -1,0 +1,58 @@
+2025-02-02 03:47:36,517 - INFO - NEW SESSION ID: 1738486056.517313
+2025-02-02 03:47:36,518 - DEBUG - Configuration loaded from YAML
+2025-02-02 03:47:36,553 - DEBUG - LogWindow initialized
+2025-02-02 03:47:36,554 - DEBUG - GameEngine initialized
+2025-02-02 03:47:36,554 - INFO - GameEngine instance created
+2025-02-02 03:47:36,554 - DEBUG - Starting battle round
+2025-02-02 03:47:43,071 - DEBUG - Scanned moves: Defending
+2025-02-02 03:48:26,522 - INFO - NEW SESSION ID: 1738486106.522683
+2025-02-02 03:48:26,523 - DEBUG - Configuration loaded from YAML
+2025-02-02 03:48:26,537 - DEBUG - LogWindow initialized
+2025-02-02 03:48:26,537 - DEBUG - GameEngine initialized
+2025-02-02 03:48:26,537 - INFO - GameEngine instance created
+2025-02-02 03:48:26,537 - DEBUG - Starting battle round
+2025-02-02 03:48:32,979 - DEBUG - Scanned moves: Defending
+2025-02-02 03:48:32,979 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> D, Draco -> Attacking
+2025-02-02 03:48:32,979 - INFO - Moves this turn: Draco -> D, Draco -> Attacking
+2025-02-02 03:48:32,979 - DEBUG - Processing moves: Draco -> D, Draco -> Attacking
+2025-02-02 03:48:32,979 - DEBUG - Message added to LogWindow: Draco attacks Draco for 25 damage!
+2025-02-02 03:48:32,979 - INFO - Draco attacks Draco for 25 damage!
+2025-02-02 03:48:32,983 - DEBUG - Camera view updated with new frame
+2025-02-02 03:48:32,987 - DEBUG - LogWindow updated
+2025-02-02 03:48:32,987 - DEBUG - GUI updated
+2025-02-02 03:48:32,988 - DEBUG - Battle round completed
+2025-02-02 03:48:37,989 - DEBUG - Starting battle round
+2025-02-02 03:48:44,422 - DEBUG - Scanned moves: Defending
+2025-02-02 03:48:44,423 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> D, Draco -> Special Attack
+2025-02-02 03:48:44,423 - INFO - Moves this turn: Draco -> D, Draco -> Special Attack
+2025-02-02 03:48:44,423 - DEBUG - Processing moves: Draco -> D, Draco -> Special Attack
+2025-02-02 03:48:44,426 - DEBUG - Camera view updated with new frame
+2025-02-02 03:48:44,428 - DEBUG - LogWindow updated
+2025-02-02 03:48:44,428 - DEBUG - GUI updated
+2025-02-02 03:48:44,429 - DEBUG - Battle round completed
+2025-02-02 03:48:49,430 - DEBUG - Starting battle round
+2025-02-02 03:48:53,022 - DEBUG - Scanned moves: Special Attack
+2025-02-02 03:48:53,022 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> S, Draco -> Attacking
+2025-02-02 03:48:53,022 - INFO - Moves this turn: Draco -> S, Draco -> Attacking
+2025-02-02 03:48:53,022 - DEBUG - Processing moves: Draco -> S, Draco -> Attacking
+2025-02-02 03:48:53,022 - DEBUG - Message added to LogWindow: Draco attacks Draco for 25 damage!
+2025-02-02 03:48:53,022 - INFO - Draco attacks Draco for 25 damage!
+2025-02-02 03:48:53,026 - DEBUG - Camera view updated with new frame
+2025-02-02 03:48:53,027 - DEBUG - LogWindow updated
+2025-02-02 03:48:53,027 - DEBUG - GUI updated
+2025-02-02 03:48:53,028 - DEBUG - Battle round completed
+2025-02-02 03:51:38,793 - INFO - NEW SESSION ID: 1738486298.793758
+2025-02-02 03:51:38,794 - DEBUG - Configuration loaded from YAML
+2025-02-02 03:51:38,809 - DEBUG - LogWindow initialized
+2025-02-02 03:51:38,809 - DEBUG - GameEngine initialized
+2025-02-02 03:51:38,809 - INFO - GameEngine instance created
+2025-02-02 03:51:38,809 - DEBUG - Starting battle round
+2025-02-02 03:51:45,271 - DEBUG - Scanned moves: Special Attack
+2025-02-02 03:51:45,272 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> S, Hydra -> Special Attack
+2025-02-02 03:51:45,272 - INFO - Moves this turn: Draco -> S, Hydra -> Special Attack
+2025-02-02 03:51:45,272 - DEBUG - Processing moves: Draco -> S, Hydra -> Special Attack
+2025-02-02 03:51:45,275 - DEBUG - Camera view updated with new frame
+2025-02-02 03:51:45,280 - DEBUG - LogWindow updated
+2025-02-02 03:51:45,280 - DEBUG - GUI updated
+2025-02-02 03:51:45,282 - DEBUG - Battle round completed
+2025-02-02 03:51:50,283 - DEBUG - Starting battle round

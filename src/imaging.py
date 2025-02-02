@@ -107,12 +107,12 @@ def define_action(pose_landmarks):
     player_number = get_player_number(pose_landmarks)
     player_move = "Resting"
     
-    print(f"Right wrist visibility: {right_wrist.visibility}")
-    print(f"Left wrist visibility: {left_wrist.visibility}")
-    print(f"Right shoulder visibility: {right_shoulder.visibility}")
-    print(f"Left shoulder visibility: {left_shoulder.visibility}")
-    print(f"Right hip visibility: {right_hip.visibility}")
-    print(f"Left hip visibility: {left_hip.visibility}")
+    # print(f"Right wrist visibility: {right_wrist.visibility}")
+    # print(f"Left wrist visibility: {left_wrist.visibility}")
+    # print(f"Right shoulder visibility: {right_shoulder.visibility}")
+    # print(f"Left shoulder visibility: {left_shoulder.visibility}")
+    # print(f"Right hip visibility: {right_hip.visibility}")
+    # print(f"Left hip visibility: {left_hip.visibility}")
     
     if (
         right_wrist.visibility == 0

@@ -216,7 +216,7 @@ def options_menu():
 # Start game
 def start_game():
     single_player = options["base_options"]["mode"] == "player_vs_ai"
-    
+
     def select_player_menu(player_num):
         running = True
         selected_player = None
@@ -266,8 +266,8 @@ def start_game():
             pygame.display.flip()
 
         return selected_player
-    
-    def ai_select():
+
+    def ai_select(player1):
         players = [
             Player_List.Draco(),
             Player_List.Hydra(),
@@ -279,7 +279,10 @@ def start_game():
             Player_List.Centaurus(),
             Player_List.Cassiopeia(),
         ]
-        selected_player = random.choice(players).get_name()
+        player_names = [
+            player.get_name() for player in players if player.get_name() != player1
+        ]
+        selected_player = random.choice(player_names)
         return selected_player
 
     player1 = select_player_menu(1)
@@ -287,10 +290,10 @@ def start_game():
     save_options(options)
 
     if single_player:
-        player2 = ai_select()
+        player2 = ai_select(player1)
     else:
         player2 = select_player_menu(2)
-        
+
     options["game_options"]["player2"] = {"name": player2}
     save_options(options)
 
