@@ -58,3 +58,41 @@
 2025-02-02 05:15:26,685 - DEBUG - GUI updated
 2025-02-02 05:15:26,686 - DEBUG - Battle round completed
 2025-02-02 05:15:31,687 - DEBUG - Starting battle round
+2025-02-02 09:34:35,917 - INFO - NEW SESSION ID: 1738506875.9175596
+2025-02-02 09:34:35,920 - DEBUG - Configuration loaded from YAML
+2025-02-02 09:34:36,496 - DEBUG - LogWindow initialized
+2025-02-02 09:34:36,496 - DEBUG - GameEngine initialized
+2025-02-02 09:34:36,496 - INFO - GameEngine instance created
+2025-02-02 09:34:36,497 - DEBUG - Starting battle round
+2025-02-02 09:35:16,716 - INFO - NEW SESSION ID: 1738506916.714558
+2025-02-02 09:35:16,718 - DEBUG - Configuration loaded from YAML
+2025-02-02 09:35:16,819 - DEBUG - LogWindow initialized
+2025-02-02 09:35:16,821 - DEBUG - GameEngine initialized
+2025-02-02 09:35:16,821 - INFO - GameEngine instance created
+2025-02-02 09:35:16,821 - DEBUG - Starting battle round
+2025-02-02 09:35:25,771 - DEBUG - Scanned moves: Special Attack
+2025-02-02 09:35:25,771 - DEBUG - Message added to LogWindow: Moves this turn: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:35:25,771 - INFO - Moves this turn: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:35:25,771 - DEBUG - Processing moves: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:35:25,781 - DEBUG - Camera view updated with new frame
+2025-02-02 09:35:25,786 - DEBUG - LogWindow updated
+2025-02-02 09:35:25,788 - DEBUG - GUI updated
+2025-02-02 09:35:25,788 - DEBUG - Battle round completed
+2025-02-02 09:35:30,788 - DEBUG - Starting battle round
+2025-02-02 09:35:39,174 - DEBUG - Scanned moves: Special Attack
+2025-02-02 09:35:39,175 - DEBUG - Message added to LogWindow: Moves this turn: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:35:39,175 - INFO - Moves this turn: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:35:39,175 - DEBUG - Processing moves: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:35:39,186 - DEBUG - Camera view updated with new frame
+2025-02-02 09:35:39,187 - DEBUG - LogWindow updated
+2025-02-02 09:35:39,189 - DEBUG - GUI updated
+2025-02-02 09:35:39,189 - DEBUG - Battle round completed
+2025-02-02 09:35:44,190 - DEBUG - Starting battle round
+2025-02-02 09:35:52,774 - DEBUG - Scanned moves: Special Attack
+2025-02-02 09:35:52,774 - DEBUG - Message added to LogWindow: Moves this turn: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:35:52,774 - INFO - Moves this turn: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:35:52,774 - DEBUG - Processing moves: Hydra -> Special Attack, Centaurus -> Attack
+2025-02-02 09:35:52,786 - DEBUG - Camera view updated with new frame
+2025-02-02 09:35:52,790 - DEBUG - LogWindow updated
+2025-02-02 09:35:52,790 - DEBUG - GUI updated
+2025-02-02 09:35:52,792 - DEBUG - Battle round completed
