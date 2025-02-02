@@ -2,3 +2,6 @@ pygame
 PyYAML
 opencv-python
 mediapipe
+numpy
+setuptools
+wheel
