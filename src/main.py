@@ -1,20 +1,21 @@
 import pygame
 import yaml
-import game
 import sys
+import Player_List
 
 # Load game options from YAML file, defaults are preset if yaml is errored
 def load_options():
     try:
         with open('../properties.yaml', 'r') as file:
             return yaml.safe_load(file)
-    except FileNotFoundError:
+    except FileNotFoundError: 
         return {
             "base_options": {
             "mode": "two_player",
             "debug_mode": False,
             "splitscreen": False,
-            "skeleton": False
+            "skeleton": False,
+            "diff": 2
             },
             "game_options": {
             "ai": {
@@ -47,6 +48,7 @@ FONT, TITLE_FONT, TOOLTIP_FONT = pygame.font.Font(None, 36), pygame.font.Font(No
 
 # Load options
 options = load_options()
+print(options)
 
 # Button class for UI
 def draw_button(text, x, y, width, height, color, hover_color, mouse_pos):
@@ -86,59 +88,117 @@ def main_menu():
                     sys.exit()
         
         pygame.display.flip()
-        # Options menu
-        def options_menu():
-            running = True
-            while running:
-                screen.fill(WHITE)
-                mouse_pos = pygame.mouse.get_pos()
-                
-                option_keys = list(options["base_options"].keys())
-                y_offset = 60
-                option_rects = {}
-                
-                for key in option_keys:
-                    option_text = f'{key.capitalize()}: {options["base_options"][key]}'
-                    option_rects[key] = draw_button(option_text, 200, y_offset, 400, 40, GRAY, LIGHT_BLUE, mouse_pos)
-                    y_offset += 60
-                
-                ai_keys = list(options["game_options"]["ai"].keys())
-                for key in ai_keys:
-                    option_text = f'AI {key.capitalize()}: {options["game_options"]["ai"][key]}'
-                    option_rects[key] = draw_button(option_text, 200, y_offset, 400, 40, GRAY, LIGHT_BLUE, mouse_pos)
-                    y_offset += 60
-                
-                buttons = {
-                    "Save": draw_button('Save', SCREEN_WIDTH // 2 + 100, 500, 150, 50, GREEN, LIGHT_BLUE, mouse_pos),
-                    "Back": draw_button('Back', SCREEN_WIDTH // 2 - 250, 500, 150, 50, RED, LIGHT_BLUE, mouse_pos)
-                }
-                
-                for event in pygame.event.get():
-                    if event.type == pygame.QUIT:
-                        pygame.quit()
-                        sys.exit()
-                    elif event.type == pygame.MOUSEBUTTONDOWN:
-                        for key, rect in option_rects.items():
-                            if rect.collidepoint(event.pos):
-                                if key in options["base_options"]:
-                                    if isinstance(options["base_options"][key], bool):
-                                        options["base_options"][key] = not options["base_options"][key]
-                                    elif key == "mode":
-                                        options["base_options"][key] = "player_vs_ai" if options["base_options"][key] == "two_player" else "two_player"
-                                elif key in options["game_options"]["ai"]:
-                                    options["game_options"]["ai"][key] += 1  # Increment AI options for simplicity
-                        if buttons["Save"].collidepoint(event.pos):
-                            save_options(options)
-                            running = False
-                        elif buttons["Back"].collidepoint(event.pos):
-                            running = False
 
-                pygame.display.flip()
+# Options menu
+def options_menu():
+    running = True
+    var = True
+    while running:
+        screen.fill(WHITE)
+        mouse_pos = pygame.mouse.get_pos()
+        
+        option_keys = list(options["base_options"].keys())
+        if var:
+            print(option_keys)
+            var = not var
+        y_offset = 20
+        option_rects = {}
+        
+        for key in option_keys:
+            option_text = f'{key.capitalize()}: {options["base_options"][key]}'
+            option_rects[key] = draw_button(option_text, 200, y_offset, 400, 40, GRAY, LIGHT_BLUE, mouse_pos)
+            y_offset += 60
+        
+        ai_keys = list(options["game_options"]["ai"].keys())
+        for key in ai_keys:
+            option_text = f'AI {key.capitalize()}: {options["game_options"]["ai"][key]}'
+            option_rects[key] = draw_button(option_text, 200, y_offset, 400, 40, GRAY, LIGHT_BLUE, mouse_pos)
+            y_offset += 60
+        
+        buttons = {
+            "Save": draw_button('Save', SCREEN_WIDTH // 2 + 100, 500, 150, 50, GREEN, LIGHT_BLUE, mouse_pos),
+            "Back": draw_button('Back', SCREEN_WIDTH // 2 - 250, 500, 150, 50, RED, LIGHT_BLUE, mouse_pos)
+        }
+        
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                for key, rect in option_rects.items():
+                    if rect.collidepoint(event.pos):
+                        if key in options["base_options"]:
+                            if isinstance(options["base_options"][key], bool):
+                                options["base_options"][key] = not options["base_options"][key]
+                            elif key == "mode":
+                                options["base_options"][key] = "player_vs_ai" if options["base_options"][key] == "two_player" else "two_player"
+
+                        elif key in options["game_options"]["ai"]:
+                            options["game_options"]["ai"][key] += 1  # Increment AI options for simplicity
+                if buttons["Save"].collidepoint(event.pos):
+                    save_options(options)
+                    running = False
+                elif buttons["Back"].collidepoint(event.pos):
+                    running = False
+
         pygame.display.flip()
 
 # Start game
 def start_game():
-    game.run()
+    def select_player_menu(player_num):
+        running = True
+        selected_player = None
+        players = [Player_List.Draco(), Player_List.Hydra(), Player_List.Phoenix(), Player_List.Lyra(), Player_List.Orion(), Player_List.Pegasus(), Player_List.Andromeda(), Player_List.Centaurus(), Player_List.Cassiopeia()]
+        player_names = [player.getName() for player in players]
+        
+        while running:
+            screen.fill(WHITE)
+            mouse_pos = pygame.mouse.get_pos()
+            
+            title_text = TITLE_FONT.render(f'Select Player {player_num}', True, DARK_GRAY)
+            screen.blit(title_text, (SCREEN_WIDTH // 2 - title_text.get_width() // 2, 50))
+            
+            y_offset = 150
+            player_rects = {}
+            
+            for name in player_names:
+                player_rects[name] = draw_button(name, 300, y_offset, 200, 50, GRAY, LIGHT_BLUE, mouse_pos)
+                y_offset += 70
+            
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+                elif event.type == pygame.MOUSEBUTTONDOWN:
+                    for name, rect in player_rects.items():
+                        if rect.collidepoint(event.pos):
+                            selected_player = name
+                            running = False
+            
+            pygame.display.flip()
+        
+        return selected_player
+
+    player1 = select_player_menu(1)
+    options["game_options"]["player1"] = {"name": player1}
+    save_options(options)
+
+    player2 = select_player_menu(2)
+    options["game_options"]["player2"] = {"name": player2}
+    save_options(options)
+
+    def countdown():
+        for i in range(3, 0, -1):
+            screen.fill(WHITE)
+            countdown_text = TITLE_FONT.render(str(i), True, DARK_GRAY)
+            screen.blit(countdown_text, (SCREEN_WIDTH // 2 - countdown_text.get_width() // 2, SCREEN_HEIGHT // 2 - countdown_text.get_height() // 2))
+            pygame.display.flip()
+            pygame.time.delay(1000)
+
+    countdown()
+    pygame.quit()
+    import engine
+    engine.run()
 
 # Run main menu
 main_menu()
