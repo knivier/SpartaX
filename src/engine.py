@@ -1,5 +1,6 @@
 import random
 import pygame
+from particles import ParticleEffect
 
 from Player_List import (
     Draco,
@@ -182,6 +183,8 @@ class GameEngine:
             self.p2_mana_rect.height,
             ),
         )
+        effect = ParticleEffect(pos=(200, 300), target=(700, 300), num_particles=30, color=(255, 50, 50))
+        self.particle_effects.append(effect)
         for effect in self.particle_effects:
             effect.update()
             effect.draw(self.screen)
@@ -214,7 +217,6 @@ class GameEngine:
             f"Processing moves: {self.player1.get_name()} -> {move1}, {self.player2.get_name()} -> {move2}"
         )
         # Process player1's move.
-        self.particle_effects = []
         if move1 == "Attack":
             pygame.display.update()
             if self.player1.get_mana() >= 20:
