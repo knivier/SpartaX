@@ -26,12 +26,12 @@ MODEL_PATH = "/Users/ankur/Coding-Projects/Hackathon/SpartahackX/SpartaX/src/pos
 # MODEL_PATH = "./src/pose_landmarker_full.task"
 """Path to the pose landmarker model"""
 
-pygame.init()
-cap = cv2.VideoCapture(0)
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, WIDTH)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, HEIGHT)
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("WizViz Pose Detection")
+# pygame.init()
+# cap = cv2.VideoCapture(0)
+# cap.set(cv2.CAP_PROP_FRAME_WIDTH, WIDTH)
+# cap.set(cv2.CAP_PROP_FRAME_HEIGHT, HEIGHT)
+# screen = pygame.display.set_mode((WIDTH, HEIGHT))
+# pygame.display.set_caption("WizViz Pose Detection")
 
 to_window = None
 last_timestamp_ms = 0
@@ -233,8 +233,16 @@ def draw_landmarks_on_image(rgb_image, detection_result):
     return annotated_image
 
 
-def scan(seconds, solo_play) -> any:
+def scan(seconds, solo_play):
     global SOLO_PLAY
+    
+    pygame.init()
+    cap = cv2.VideoCapture(0)
+    cap.set(cv2.CAP_PROP_FRAME_WIDTH, WIDTH)
+    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, HEIGHT)
+    screen = pygame.display.set_mode((WIDTH, HEIGHT))
+    pygame.display.set_caption("WizViz Pose Detection")
+
 
     def timer_callback():
         nonlocal running
@@ -273,7 +281,7 @@ def scan(seconds, solo_play) -> any:
             if detection_result is not None:
                 for pose_landmarks in detection_result.pose_landmarks:
                     action = define_action(pose_landmarks)
-                    print(f"Player {action[0]}: {action[1]}")
+                    # print(f"Player {action[0]}: {action[1]}")
                     if action[0] == 1:
                         if action[1] == "Attack":
                             p1_actions[0] += 1
