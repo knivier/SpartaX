@@ -54,12 +54,12 @@ class wizard_bot:
     def has_enough_mana(self, value):
         return self.mana >= value
 
-def wizard_bot_turn(bot, player, difficult):
+def wizard_bot_turn(bot, player):
     #safety
-    if difficult < 0:
-        difficult = 0
+    if difficulty < 0:
+        difficulty = 0
     #easy/medium mode 
-    if(difficult <= 3):
+    if(difficulty <= 3):
         number = random.randint(1,4)
         if number == 1: 
             bot.set_state("Rest")
