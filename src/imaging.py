@@ -13,13 +13,12 @@ MIN_DETECTION_CONFIDENCE = 0.75
 """Confidence level required to establish a pose detection"""
 MIN_TRACKING_CONFIDENCE = 0.8
 """Confidence level required to establish pose tracking"""
-MIN_PRESENCE_CONFIDENCE = 0.4
+MIN_PRESENCE_CONFIDENCE = 0.7
 """Confidence level required to establish a pose presence"""
 TORSO_LENGTH_ARM_RATIO = 0.35
 """Ratio of the torso length to the arm length"""
 SOLO_PLAY = False
 """Whether the player is playing alone"""
-
 NUM_POSES = 2
 """Number of poses to detect"""
 MODEL_PATH = "pose_landmarker_full.task"
@@ -108,10 +107,8 @@ def define_action(pose_landmarks):
             ]
         )
 
-    player_number = 0
-    player_move = "Resting"
-
     player_number = get_player_number(pose_landmarks)
+    player_move = "Resting"
 
     if (
         right_wrist_x == 0
@@ -125,16 +122,31 @@ def define_action(pose_landmarks):
         abs(right_wrist_x - human_center_x) > TORSO_LENGTH_ARM_RATIO * torso_length
         or abs(left_wrist_x - human_center_x) > TORSO_LENGTH_ARM_RATIO * torso_length
     ):
+        
         player_move = "Attack"
+        
+        if (
+            right_wrist_y < (right_hip_y - (TORSO_LENGTH_ARM_RATIO * torso_length))
+            and abs(left_wrist_x - human_center_x) > TORSO_LENGTH_ARM_RATIO * torso_length
+        ) or (
+            left_wrist_y < (left_hip_y - (TORSO_LENGTH_ARM_RATIO * torso_length))
+            and abs(right_wrist_x - human_center_x) > TORSO_LENGTH_ARM_RATIO * torso_length
+        ):
+            player_move = "Special Attack"
 
     elif (
-        right_wrist_y < (right_hip_y + 0.2 * (right_shoulder_y - right_hip_y))
+        right_wrist_y < (right_hip_y - (0.2 * torso_length))
         and right_wrist_y > right_shoulder_y
     ) or (
-        left_wrist_y < (left_hip_y + 0.2 * (left_shoulder_y - left_hip_y))
+        left_wrist_y < (left_hip_y - (0.2 * torso_length))
         and left_wrist_y > left_shoulder_y
     ):
         player_move = "Defending"
+
+    elif right_wrist_y < (right_shoulder_y + 0.15 * torso_length) or left_wrist_y < (
+        left_shoulder_y + 0.15 * torso_length
+    ):
+        player_move = "Healing"
 
     return tuple([player_number, player_move])
 
@@ -178,7 +190,7 @@ def draw_landmarks_on_image(rgb_image, detection_result):
             mp.solutions.drawing_styles.get_default_pose_landmarks_style(),
         )
 
-        if False:  # ! Disable for production
+        if True:  # ! Disable for production
             nose_pose = pose_landmarks[mp.solutions.pose.PoseLandmark.NOSE]
             action = define_action(pose_landmarks)
 
@@ -244,12 +256,12 @@ def scan(seconds, solo_play) -> any:
 
     if solo_play:
         SOLO_PLAY = True
-    p1_actions = [0, 0, 0]
-    """[Attacking, Defending, Resting]"""
-    p2_actions = [0, 0, 0]
-    """[Attacking, Defending, Resting]"""
+    p1_actions = [0, 0, 0, 0, 0]
+    """[Attacking, Defending, Resting, Healing, Special Attack]"""
+    p2_actions = [0, 0, 0, 0, 0]
+    """[Attacking, Defending, Resting, Healing, Special Attack]"""
 
-    actions = ["Attack", "Defending", "Resting"]
+    actions = ["Attack", "Defending", "Resting", "Healing", "Special Attack"]
 
     with vision.PoseLandmarker.create_from_options(options) as landmarker:
         global to_window
@@ -315,4 +327,4 @@ def scan(seconds, solo_play) -> any:
     return tuple([actions[max_action_index_p1], actions[max_action_index_p2]])
 
 
-# scan(3, False)
+# scan(10, True)
