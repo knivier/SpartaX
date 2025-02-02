@@ -1,4 +1,3 @@
-import time
 import random
 import pygame
 from Player_List import (
@@ -268,7 +267,10 @@ class GameEngine:
         """
 
         #     # Get moves from imaging.scan (blocks for TURN_TIME seconds).
-        move_p1, move_p2 = imaging.scan(TURN_TIME, False)
+        thing = imaging.scan(TURN_TIME, False)
+        print(thing)
+        move_p1, move_p2 = thing
+        # move_p1, move_p2 = imaging.scan(TURN_TIME, False)
         self.log(
             f"Moves this turn: {self.player1.get_name()} -> {move_p1}, {self.player2.get_name()} -> {move_p2}"
         )

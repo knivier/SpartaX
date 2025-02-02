@@ -74,78 +74,81 @@ def get_player_number(pose_landmarks):
 
 
 def define_action(pose_landmarks):
-    right_wrist_x = pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_WRIST].x
-    left_wrist_x = pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_WRIST].x
+    right_wrist = pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_WRIST]
+    left_wrist = pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_WRIST]
 
-    right_wrist_y = pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_WRIST].y
-    left_wrist_y = pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_WRIST].y
+    right_shoulder = pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_SHOULDER]
+    left_shoulder = pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_SHOULDER]
 
-    right_shoulder_x = pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_SHOULDER].x
-    left_shoulder_x = pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_SHOULDER].x
+    right_hip = pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_HIP]
+    left_hip = pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_HIP]
 
-    right_shoulder_y = pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_SHOULDER].y
-    left_shoulder_y = pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_SHOULDER].y
-
-    right_hip_y = pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_HIP].y
-    left_hip_y = pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_HIP].y
-
-    if right_shoulder_x == 0:
-        human_center_x = left_shoulder_x
-    elif left_shoulder_x == 0:
-        human_center_x = right_shoulder_x
+    if right_shoulder.x == 0:
+        human_center_x = left_shoulder.x
+    elif left_shoulder.x == 0:
+        human_center_x = right_shoulder.x
     else:
-        human_center_x = np.average([right_shoulder_x, left_shoulder_x])
+        human_center_x = np.average([right_shoulder.x, left_shoulder.x])
 
-    if right_hip_y == 0:
-        torso_length = np.abs(left_hip_y - left_shoulder_y)
-    elif left_hip_y == 0:
-        torso_length = np.abs(right_hip_y - right_shoulder_y)
+    if right_hip.y == 0:
+        torso_length = np.abs(left_hip.y - left_shoulder.y)
+    elif left_hip.y == 0:
+        torso_length = np.abs(right_hip.y - right_shoulder.y)
     else:
         torso_length = np.average(
             [
-                np.abs(right_hip_y - right_shoulder_y),
-                np.abs(left_hip_y - left_shoulder_y),
+                np.abs(right_hip.y - right_shoulder.y),
+                np.abs(left_hip.y - left_shoulder.y),
             ]
         )
 
     player_number = get_player_number(pose_landmarks)
     player_move = "Resting"
-
+    
+    print(f"Right wrist visibility: {right_wrist.visibility}")
+    print(f"Left wrist visibility: {left_wrist.visibility}")
+    print(f"Right shoulder visibility: {right_shoulder.visibility}")
+    print(f"Left shoulder visibility: {left_shoulder.visibility}")
+    print(f"Right hip visibility: {right_hip.visibility}")
+    print(f"Left hip visibility: {left_hip.visibility}")
+    
     if (
-        right_wrist_x == 0
-        or left_wrist_x == 0
-        or human_center_x == 0
-        or torso_length == 0
+        right_wrist.visibility == 0
+        or left_wrist.visibility == 0
+        or right_shoulder.visibility == 0
+        or left_shoulder.visibility == 0
+        or right_hip.visibility == 0
+        or left_hip.visibility == 0
     ):
         return tuple([player_number, player_move])
 
     if (
-        abs(right_wrist_x - human_center_x) > TORSO_LENGTH_ARM_RATIO * torso_length
-        or abs(left_wrist_x - human_center_x) > TORSO_LENGTH_ARM_RATIO * torso_length
+        abs(right_wrist.x - human_center_x) > TORSO_LENGTH_ARM_RATIO * torso_length
+        or abs(left_wrist.x - human_center_x) > TORSO_LENGTH_ARM_RATIO * torso_length
     ):
         
         player_move = "Attack"
         
         if (
-            right_wrist_y < (right_hip_y - (TORSO_LENGTH_ARM_RATIO * torso_length))
-            and abs(left_wrist_x - human_center_x) > TORSO_LENGTH_ARM_RATIO * torso_length
+            right_wrist.y < (right_hip.y - (TORSO_LENGTH_ARM_RATIO * torso_length))
+            and abs(left_wrist.x - human_center_x) > TORSO_LENGTH_ARM_RATIO * torso_length
         ) or (
-            left_wrist_y < (left_hip_y - (TORSO_LENGTH_ARM_RATIO * torso_length))
-            and abs(right_wrist_x - human_center_x) > TORSO_LENGTH_ARM_RATIO * torso_length
+            left_wrist.y < (left_hip.y - (TORSO_LENGTH_ARM_RATIO * torso_length))
+            and abs(right_wrist.x - human_center_x) > TORSO_LENGTH_ARM_RATIO * torso_length
         ):
             player_move = "Special Attack"
 
     elif (
-        right_wrist_y < (right_hip_y - (0.2 * torso_length))
-        and right_wrist_y > right_shoulder_y
+        right_wrist.y < (right_hip.y - (0.2 * torso_length))
+        and right_wrist.y > right_shoulder.y
     ) or (
-        left_wrist_y < (left_hip_y - (0.2 * torso_length))
-        and left_wrist_y > left_shoulder_y
+        left_wrist.y < (left_hip.y - (0.2 * torso_length))
+        and left_wrist.y > left_shoulder.y
     ):
         player_move = "Defending"
 
-    elif right_wrist_y < (right_shoulder_y + 0.15 * torso_length) or left_wrist_y < (
-        left_shoulder_y + 0.15 * torso_length
+    elif right_wrist.y < (right_shoulder.y + 0.15 * torso_length) or left_wrist.y < (
+        left_shoulder.y + 0.15 * torso_length
     ):
         player_move = "Healing"
 
@@ -266,11 +269,11 @@ def scan(seconds, solo_play):
     if solo_play:
         SOLO_PLAY = True
     p1_actions = [0, 0, 0, 0, 0]
-    """[Attacking, Defending, Resting, Healing, Special Attack]"""
+    """[Resting, Defending, Attacking, Healing, Special Attack]"""
     p2_actions = [0, 0, 0, 0, 0]
-    """[Attacking, Defending, Resting, Healing, Special Attack]"""
+    """[Resting, Defending, Attacking, Healing, Special Attack]"""
 
-    actions = ["Attack", "Defending", "Resting", "Healing", "Special Attack"]
+    actions = ["Resting", "Defending", "Attacking", "Healing", "Special Attack"]
 
     with vision.PoseLandmarker.create_from_options(options) as landmarker:
         global to_window
@@ -295,22 +298,22 @@ def scan(seconds, solo_play):
                     action = define_action(pose_landmarks)
                     # print(f"Player {action[0]}: {action[1]}")
                     if action[0] == 1:
-                        if action[1] == "Attack":
+                        if action[1] == "Resting":
                             p1_actions[0] += 1
                         elif action[1] == "Defending":
                             p1_actions[1] += 1
-                        elif action[1] == "Resting":
+                        elif action[1] == "Attacking":
                             p1_actions[2] += 1
                         elif action[1] == "Healing":
                             p1_actions[3] += 1
                         else:
                             p1_actions[4] += 1
                     elif action[0] == 2:
-                        if action[1] == "Attack":
+                        if action[1] == "Resting":
                             p2_actions[0] += 1
                         elif action[1] == "Defending":
                             p2_actions[1] += 1
-                        elif action[1] == "Resting":
+                        elif action[1] == "Attacking":
                             p2_actions[2] += 1
                         elif action[1] == "Healing":
                             p2_actions[3] += 1
@@ -346,6 +349,5 @@ def scan(seconds, solo_play):
     
     else:
         return tuple([actions[max_action_index_p1], actions[max_action_index_p2]])
-
 
 print(scan(5, True))
