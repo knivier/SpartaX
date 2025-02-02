@@ -161,7 +161,7 @@ def start_game():
         running = True
         selected_player = None
         players = [Player_List.Draco(), Player_List.Hydra(), Player_List.Phoenix(), Player_List.Lyra(), Player_List.Orion(), Player_List.Pegasus(), Player_List.Andromeda(), Player_List.Centaurus(), Player_List.Cassiopeia()]
-        player_names = [player.getName() for player in players]
+        player_names = [player.get_name() for player in players]
         
         while running:
             screen.fill(WHITE)
@@ -210,7 +210,8 @@ def start_game():
     countdown()
     pygame.quit()
     import engine
-    engine.run()
+    if __name__ == "__main__":
+        engine.run()
 
 # Run main menu
 main_menu()

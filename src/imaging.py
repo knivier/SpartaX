@@ -178,7 +178,7 @@ def draw_landmarks_on_image(rgb_image, detection_result):
             mp.solutions.drawing_styles.get_default_pose_landmarks_style(),
         )
 
-        if False:  # ! Disable for production
+        if True:  # ! Disable for production
             nose_pose = pose_landmarks[mp.solutions.pose.PoseLandmark.NOSE]
             action = define_action(pose_landmarks)
 
