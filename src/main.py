@@ -265,20 +265,20 @@ def start_game():
                 f"Select Player {player_num}", True, DARK_GRAY
             )
             screen.blit(
-                title_text, (((SCREEN_WIDTH - title_text.get_width()) // 2), ((y_offset * SCREEN_HEIGHT) / 13))
+                title_text, (((SCREEN_WIDTH - title_text.get_width()) // 2), ((y_offset * SCREEN_HEIGHT) / 15))
             )
-            y_offset += 2
+            y_offset += 1.5
 
             player_rects = {}
 
             for name in player_names:
                 player_rects[name] = draw_button(
-                    name, ((SCREEN_WIDTH - 400) // 2), ((y_offset * SCREEN_HEIGHT) / 13), 400, 50, GRAY, LIGHT_BLUE, mouse_pos
+                    name, ((SCREEN_WIDTH - 400) // 2), ((y_offset * SCREEN_HEIGHT) / 15), 400, 50, GRAY, LIGHT_BLUE, mouse_pos
                 )
                 y_offset += 1
 
             cancel_button = draw_button(
-                "Cancel", ((SCREEN_WIDTH - 400) // 2), ((y_offset * SCREEN_HEIGHT) / 13), 400, 50, RED, LIGHT_BLUE, mouse_pos
+                "Cancel", ((SCREEN_WIDTH - 400) // 2), ((y_offset * SCREEN_HEIGHT) / 15), 400, 50, RED, LIGHT_BLUE, mouse_pos
             )
             y_offset += 1
 
