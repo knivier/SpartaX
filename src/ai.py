@@ -10,14 +10,24 @@ class wizard_bot:
                 with open(yaml_path, 'r') as file:
                     properties = yaml.safe_load(file)
                     difficulty= properties.get('base_options', {}).get('difficulty', 2)
+                    health_base = properties.get('game_options', {}).get('ai', {}).get('health', 0)
+                    attack_base = properties.get('game_options', {}).get('ai', {}).get('attack', 0)
+                    mana_base = properties.get('game_options', {}).get('ai', {}).get('mana', 0)
             except FileNotFoundError:
                 difficulty= 2
-                return difficulty
+            return [difficulty, health_base, attack_base, mana_base]
             
-        difficulty = loadDifficulty()
-        self.health = 80 + (difficulty * 10)
-        self.mana = 40 + (difficulty * 10)
+        difficulty = loadDifficulty()[0]
+        self.health = loadDifficulty()[1] + (difficulty * 10)
+        self.mana = loadDifficulty()[2] + (difficulty * 10)
+        self.attack = loadDifficulty()[3] + (difficulty+10)
         self.state = ""
+
+    def get_attack(self):
+        return self.attack
+    
+    def set_attack(self, value):
+        self.attack = value
 
     def get_mana(self):
         return self.mana

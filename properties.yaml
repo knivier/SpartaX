@@ -6,9 +6,9 @@ base_options:
   splitscreen: true
 game_options:
   ai:
-    attack: 0
-    health: 0
-    mana: 0
+    attack: 80
+    health: 40
+    mana: 5
   player1:
     name: Hydra
   player2:
