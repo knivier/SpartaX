@@ -86,7 +86,7 @@ def main_menu():
     running = True
     while running:
         background_image = pygame.image.load(r"src/background.png")
-        #background_image = pygame.transform.scale(background_image, (1368, 720))
+        background_image = pygame.transform.scale(background_image, (1920, 1080))
         screen.blit(background_image, (0, 0))
         pygame.display.flip()
         mouse_pos = pygame.mouse.get_pos()
@@ -124,7 +124,7 @@ def options_menu():
     var = True
     while running:
         background_image = pygame.image.load(r"src/background.png")
-        #background_image = pygame.transform.scale(background_image, (1368, 720))
+        background_image = pygame.transform.scale(background_image, (1920, 1080))
         screen.blit(background_image, (0, 0))
         pygame.display.flip()
         mouse_pos = pygame.mouse.get_pos()
@@ -249,7 +249,7 @@ def start_game():
         while running:
             #loading background
             background_image = pygame.image.load(r"src/background.png")
-            #background_image = pygame.transform.scale(background_image, (1368, 720))
+            background_image = pygame.transform.scale(background_image, (1920, 1080))
             screen.blit(background_image, (0, 0))
             pygame.display.flip()
             mouse_pos = pygame.mouse.get_pos()
@@ -326,7 +326,7 @@ def start_game():
     def countdown():
         for i in range(3, 0, -1):
             background_image = pygame.image.load(r"src/background.png")
-            #background_image = pygame.transform.scale(background_image, (1368, 720))
+            background_image = pygame.transform.scale(background_image, (1920, 1080))
             screen.blit(background_image, (0, 0))
             pygame.display.flip()
             countdown_text = TITLE_FONT.render(str(i), True, DARK_GRAY)
