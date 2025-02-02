@@ -4,36 +4,163 @@ import mediapipe as mp
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 from mediapipe.framework.formats import landmark_pb2
-
-pygame.init()
+import numpy as np
+import threading
 
 WIDTH, HEIGHT = 1920, 1080
 """Width and height of the Pygame screen"""
-MIN_DETECTION_CONFIDENCE = 0.8
+MIN_DETECTION_CONFIDENCE = 0.75
 """Confidence level required to establish a pose detection"""
-MIN_TRACKING_CONFIDENCE = 0.5
+MIN_TRACKING_CONFIDENCE = 0.8
 """Confidence level required to establish pose tracking"""
-MIN_PRESENCE_CONFIDENCE = 0.99
+MIN_PRESENCE_CONFIDENCE = 0.4
 """Confidence level required to establish a pose presence"""
+TORSO_LENGTH_ARM_RATIO = 0.35
+"""Ratio of the torso length to the arm length"""
+SOLO_PLAY = False
+"""Whether the player is playing alone"""
+
 NUM_POSES = 2
 """Number of poses to detect"""
 MODEL_PATH = "pose_landmarker_full.task"
 """Path to the pose landmarker model"""
 
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-
+pygame.init()
 cap = cv2.VideoCapture(0)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, WIDTH)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, HEIGHT)
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("WizViz Pose Detection")
+
+to_window = None
+last_timestamp_ms = 0
+detection_result = None
+
+
+def print_result(
+    result: vision.PoseLandmarkerResult,  # type: ignore
+    output_image: mp.Image,
+    timestamp_ms: int,
+):
+    global to_window
+    global last_timestamp_ms
+    global detection_result
+    if timestamp_ms < last_timestamp_ms:
+        return
+    last_timestamp_ms = timestamp_ms
+    detection_result = result
+    to_window = cv2.cvtColor(
+        draw_landmarks_on_image(output_image.numpy_view(), detection_result),
+        cv2.COLOR_RGB2BGR,
+    )
+
+
+def get_player_number(pose_landmarks):
+    nose_pose_x = pose_landmarks[mp.solutions.pose.PoseLandmark.NOSE].x
+    player_number = 0
+
+    if nose_pose_x == 0:
+        return 0
+
+    if SOLO_PLAY:
+        return 1
+
+    if nose_pose_x < 0.5:
+        player_number = 1
+    else:
+        player_number = 2
+
+    return player_number
+
+
+def define_action(pose_landmarks):
+    right_wrist_x = pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_WRIST].x
+    left_wrist_x = pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_WRIST].x
+
+    right_wrist_y = pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_WRIST].y
+    left_wrist_y = pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_WRIST].y
+
+    right_shoulder_x = pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_SHOULDER].x
+    left_shoulder_x = pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_SHOULDER].x
+
+    right_shoulder_y = pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_SHOULDER].y
+    left_shoulder_y = pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_SHOULDER].y
+
+    right_hip_y = pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_HIP].y
+    left_hip_y = pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_HIP].y
+
+    if right_shoulder_x == 0:
+        human_center_x = left_shoulder_x
+    elif left_shoulder_x == 0:
+        human_center_x = right_shoulder_x
+    else:
+        human_center_x = np.average([right_shoulder_x, left_shoulder_x])
+
+    if right_hip_y == 0:
+        torso_length = np.abs(left_hip_y - left_shoulder_y)
+    elif left_hip_y == 0:
+        torso_length = np.abs(right_hip_y - right_shoulder_y)
+    else:
+        torso_length = np.average(
+            [
+                np.abs(right_hip_y - right_shoulder_y),
+                np.abs(left_hip_y - left_shoulder_y),
+            ]
+        )
+
+    player_number = 0
+    player_move = "Resting"
+
+    player_number = get_player_number(pose_landmarks)
+
+    if (
+        right_wrist_x == 0
+        or left_wrist_x == 0
+        or human_center_x == 0
+        or torso_length == 0
+    ):
+        return tuple([player_number, player_move])
+
+    if (
+        abs(right_wrist_x - human_center_x) > TORSO_LENGTH_ARM_RATIO * torso_length
+        or abs(left_wrist_x - human_center_x) > TORSO_LENGTH_ARM_RATIO * torso_length
+    ):
+        player_move = "Attack"
+
+    elif (
+        right_wrist_y < (right_hip_y + 0.2 * (right_shoulder_y - right_hip_y))
+        and right_wrist_y > right_shoulder_y
+    ) or (
+        left_wrist_y < (left_hip_y + 0.2 * (left_shoulder_y - left_hip_y))
+        and left_wrist_y > left_shoulder_y
+    ):
+        player_move = "Defending"
+
+    return tuple([player_number, player_move])
+
+
+options = vision.PoseLandmarkerOptions(
+    base_options=python.BaseOptions(model_asset_path=MODEL_PATH),
+    running_mode=vision.RunningMode.LIVE_STREAM,
+    num_poses=NUM_POSES,
+    min_pose_detection_confidence=MIN_DETECTION_CONFIDENCE,
+    min_pose_presence_confidence=MIN_PRESENCE_CONFIDENCE,
+    min_tracking_confidence=MIN_TRACKING_CONFIDENCE,
+    output_segmentation_masks=True,
+    result_callback=print_result,
+)
 
 
 def draw_landmarks_on_image(rgb_image, detection_result):
-    pose_landmarks_list = detection_result.pose_landmarks
+    if (rgb_image is None) or (detection_result is None):
+        return
+
+    pose_object_list = detection_result.pose_landmarks
     annotated_image = rgb_image.copy()
 
     # Loop through the detected poses to visualize.
-    for idx in range(len(pose_landmarks_list)):
-        pose_landmarks = pose_landmarks_list[idx]
+    for idx in range(len(pose_object_list)):
+        pose_landmarks = pose_object_list[idx]
 
         pose_landmarks_proto = landmark_pb2.NormalizedLandmarkList()
         pose_landmarks_proto.landmark.extend(
@@ -51,12 +178,24 @@ def draw_landmarks_on_image(rgb_image, detection_result):
             mp.solutions.drawing_styles.get_default_pose_landmarks_style(),
         )
 
-        # print("Pose landmarks:", detection_result.pose_landmarks)
-        # if detection_result.pose_landmarks:
-        #     print("Pose landmarks[0]:", detection_result.pose_landmarks[0])
+        if False:  # ! Disable for production
+            nose_pose = pose_landmarks[mp.solutions.pose.PoseLandmark.NOSE]
+            action = define_action(pose_landmarks)
 
-        if detection_result.pose_landmarks and True:  # Disable for now
-            # pose_landmarks = detection_result.pose_landmarks[0]
+            cv2.putText(
+                annotated_image,
+                f"Player {action[0]}: {action[1]}",
+                (
+                    int(nose_pose.x * WIDTH),
+                    int(nose_pose.y * HEIGHT),
+                ),
+                cv2.FONT_HERSHEY_SIMPLEX,
+                1,
+                (255, 255, 255),
+                2,
+                cv2.LINE_AA,
+            )
+
             left_wrist = pose_landmarks[mp.solutions.pose.PoseLandmark.LEFT_WRIST]
             right_wrist = pose_landmarks[mp.solutions.pose.PoseLandmark.RIGHT_WRIST]
 
@@ -65,8 +204,8 @@ def draw_landmarks_on_image(rgb_image, detection_result):
                     annotated_image,
                     "Left wrist",
                     (
-                        int(left_wrist.x * to_window.shape[1]),
-                        int(left_wrist.y * to_window.shape[0]),
+                        int(left_wrist.x * WIDTH),
+                        int(left_wrist.y * HEIGHT),
                     ),
                     cv2.FONT_HERSHEY_SIMPLEX,
                     1,
@@ -80,8 +219,8 @@ def draw_landmarks_on_image(rgb_image, detection_result):
                     annotated_image,
                     "Right wrist",
                     (
-                        int(right_wrist.x * to_window.shape[1]),
-                        int(right_wrist.y * to_window.shape[0]),
+                        int(right_wrist.x * WIDTH),
+                        int(right_wrist.y * HEIGHT),
                     ),
                     cv2.FONT_HERSHEY_SIMPLEX,
                     1,
@@ -93,79 +232,87 @@ def draw_landmarks_on_image(rgb_image, detection_result):
     return annotated_image
 
 
-to_window = None
-last_timestamp_ms = 0
+def scan(seconds, solo_play) -> any:
+    global SOLO_PLAY
+
+    def timer_callback():
+        nonlocal running
+        running = False
+
+    timer = threading.Timer(seconds, timer_callback)
+    timer.start()
+
+    if solo_play:
+        SOLO_PLAY = True
+    p1_actions = [0, 0, 0]
+    """[Attacking, Defending, Resting]"""
+    p2_actions = [0, 0, 0]
+    """[Attacking, Defending, Resting]"""
+
+    actions = ["Attack", "Defending", "Resting"]
+
+    with vision.PoseLandmarker.create_from_options(options) as landmarker:
+        global to_window
+        running = True
+        while running:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    running = False
+
+            ret, frame = cap.read()
+            if not ret:
+                break
+
+            rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb_frame)
+            timestamp_ms = int(cv2.getTickCount() / cv2.getTickFrequency() * 1000)
+
+            landmarker.detect_async(mp_image, timestamp_ms)
+
+            if detection_result is not None:
+                for pose_landmarks in detection_result.pose_landmarks:
+                    action = define_action(pose_landmarks)
+                    print(f"Player {action[0]}: {action[1]}")
+                    if action[0] == 1:
+                        if action[1] == "Attack":
+                            p1_actions[0] += 1
+                        elif action[1] == "Defending":
+                            p1_actions[1] += 1
+                        else:
+                            p1_actions[2] += 1
+                    elif action[0] == 2:
+                        if action[1] == "Attack":
+                            p2_actions[0] += 1
+                        elif action[1] == "Defending":
+                            p2_actions[1] += 1
+                        else:
+                            p2_actions[2] += 1
+                    else:
+                        continue
+
+            if to_window is not None:
+                # Flip the frame horizontally
+                flip_frame = cv2.flip(to_window, 1)
+                # Rotate the frame 270 degrees
+                frame_rotated = cv2.rotate(flip_frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
+                # Convert the frame from BGR to RGB (Pygame uses RGB)
+                frame_rgb = cv2.cvtColor(frame_rotated, cv2.COLOR_BGR2RGB)
+                # Convert the frame to a Pygame surface
+                frame_surface = pygame.surfarray.make_surface(frame_rgb)
+                # Display the surface on the Pygame screen
+                screen.blit(frame_surface, (0, 0))
+
+                pygame.display.flip()
+
+            if cv2.waitKey(1) & 0xFF == ord("q"):
+                break
+
+        cap.release()
+        pygame.quit()
+
+    max_action_index_p1 = np.argmax(p1_actions)
+    max_action_index_p2 = np.argmax(p2_actions)
+    return tuple([actions[max_action_index_p1], actions[max_action_index_p2]])
 
 
-def print_result(
-    detection_result: vision.PoseLandmarkerResult,  # type: ignore
-    output_image: mp.Image,
-    timestamp_ms: int,
-):
-    global to_window
-    global last_timestamp_ms
-    if timestamp_ms < last_timestamp_ms:
-        return
-    last_timestamp_ms = timestamp_ms
-    to_window = cv2.cvtColor(
-        draw_landmarks_on_image(output_image.numpy_view(), detection_result),
-        cv2.COLOR_RGB2BGR,
-    )
-
-
-base_options = python.BaseOptions(model_asset_path=MODEL_PATH)
-options = vision.PoseLandmarkerOptions(
-    base_options=base_options,
-    running_mode=vision.RunningMode.LIVE_STREAM,
-    num_poses=NUM_POSES,
-    min_pose_detection_confidence=MIN_DETECTION_CONFIDENCE,
-    min_pose_presence_confidence=MIN_PRESENCE_CONFIDENCE,
-    min_tracking_confidence=MIN_TRACKING_CONFIDENCE,
-    output_segmentation_masks=False,
-    result_callback=print_result,
-)
-
-# Create PoseLandmarker object
-with vision.PoseLandmarker.create_from_options(options) as landmarker:
-    # Main loop to display the stream
-    running = True
-    while running:
-        # Check for Pygame events
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                running = False
-
-        # Capture frame from the camera
-        ret, frame = cap.read()
-        if not ret:
-            break
-
-        # Flip and convert the frame to RGB
-        rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-
-        # Convert the frame to a MediaPipe Image object
-        mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb_frame)
-        timestamp_ms = int(cv2.getTickCount() / cv2.getTickFrequency() * 1000)
-
-        # Perform pose detection asynchronously
-        landmarker.detect_async(mp_image, timestamp_ms)
-
-        if to_window is not None:
-            # Rotate the frame 270 degrees
-            frame_rotated = cv2.rotate(to_window, cv2.ROTATE_90_COUNTERCLOCKWISE)
-            # Convert the frame from BGR to RGB (Pygame uses RGB)
-            frame_rgb = cv2.cvtColor(frame_rotated, cv2.COLOR_BGR2RGB)
-            # Convert the frame to a Pygame surface
-            frame_surface = pygame.surfarray.make_surface(frame_rgb)
-            # Display the surface on the Pygame screen
-            screen.blit(frame_surface, (0, 0))
-
-            # Update the Pygame display
-            pygame.display.flip()
-
-        # Exit on pressing 'q'
-        if cv2.waitKey(1) & 0xFF == ord("q"):
-            break
-
-    cap.release()
-    pygame.quit()
+# scan(3, False)
