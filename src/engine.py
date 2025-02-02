@@ -29,14 +29,13 @@ TURN_TIME = 5  # Each turn lasts 5 seconds
 
 # Set up logging
 logging.basicConfig(
-    filename="logs.log",
+    filename='logs.log',
     level=logging.DEBUG,
-    format="%(asctime)s - %(levelname)s - %(message)s",
+    format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
 # Log new session
 logging.info(f"NEW SESSION ID: {time.time()}")
-
 
 def calculate_defense_efficiency():
     """Return a tuple (fully_efficient, reduction).
@@ -44,9 +43,7 @@ def calculate_defense_efficiency():
     - If not fully efficient, reduction is between 40% and 80% (as a fraction)."""
     fully_efficient = random.choice([True, False])
     reduction = random.uniform(0.4, 0.8)
-    logging.debug(
-        f"Defense efficiency calculated: fully_efficient={fully_efficient}, reduction={reduction}"
-    )
+    logging.debug(f"Defense efficiency calculated: fully_efficient={fully_efficient}, reduction={reduction}")
     return fully_efficient, reduction
 
 
@@ -183,107 +180,73 @@ class GameEngine:
         """Add a message to the log window."""
         self.log_window.add_message(message)
         logging.info(message)
-
-    def process_round_moves(self, move1, move2):
-        """
-        Process both players' moves concurrently.
-        move1: move chosen by player1 ("Attack", "Defending", "Resting")
-        move2: move chosen by player2 ("Attack", "Defending", "Resting")
-        """
-        logging.debug(
-            f"Processing moves: {self.player1.get_name()} -> {move1}, {self.player2.get_name()} -> {move2}"
-        )
-        # Process player1's move.
-        if move1 == "Attack":
-            if self.player1.get_mana() >= 20:
-                self.player1.set_mana(self.player1.get_mana() - 20)
-                if move2 == "Defending":
-                    damage = self.player1.get_attack() - self.player2.get_defense()
-                    if damage < 0:
-                        damage = 0
-                    fully_efficient, reduction = calculate_defense_efficiency()
-                    if fully_efficient:
-                        damage = 0
-                        self.log(
-                            f"{self.player2.get_name()} defended fully against {self.player1.get_name()}'s attack!"
-                        )
+        def process_round_moves(self, move1, move2):
+            """
+            Process both players' moves concurrently.
+            move1: move chosen by player1 ("Attack", "Defending", "Resting", "Healing", "Special Attack")
+            move2: move chosen by player2 ("Attack", "Defending", "Resting", "Healing", "Special Attack")
+            """
+            logging.debug(f"Processing moves: {self.player1.get_name()} -> {move1}, {self.player2.get_name()} -> {move2}")
+            
+            def process_move(player, opponent, move):
+                if move == "Attack":
+                    if player.get_mana() >= 20:
+                        player.set_mana(player.get_mana() - 20)
+                        if opponent_move == "Defending":
+                            damage = player.get_attack() - opponent.get_defense()
+                            if damage < 0:
+                                damage = 0
+                            fully_efficient, reduction = calculate_defense_efficiency()
+                            if fully_efficient:
+                                damage = 0
+                                self.log(f"{opponent.get_name()} defended fully against {player.get_name()}'s attack!")
+                            else:
+                                damage = int(damage * (1 - reduction))
+                                self.log(f"{opponent.get_name()} defended inefficiently, reducing damage by {int(reduction * 100)}%!")
+                        elif opponent_move == "Resting" or opponent_move == "Healing":
+                            damage = int(player.get_attack() * 1.5)
+                        else:
+                            damage = player.get_attack()
+                        opponent.set_health(opponent.get_health() - damage)
+                        self.log(f"{player.get_name()} attacks {opponent.get_name()} for {damage} damage!")
                     else:
-                        damage = int(damage * (1 - reduction))
-                        self.log(
-                            f"{self.player2.get_name()} defended inefficiently, reducing damage by {int(reduction * 100)}%!"
-                        )
-                elif move2 == "Resting":
-                    damage = int(self.player1.get_attack() * 1.5)
-                elif move2 == "Attacking":
-                    damage = self.player1.get_attack()
-                else:
-                    damage = self.player1.get_attack()
-                self.player2.set_health(self.player2.get_health() - damage)
-                self.log(
-                    f"{self.player1.get_name()} attacks {self.player2.get_name()} for {damage} damage!"
-                )
-            else:
-                self.log(
-                    f"{self.player1.get_name()} tried to attack but didn't have enough mana!"
-                )
-        elif move1 == "Defending":
-            if self.player1.get_mana() >= 20:
-                self.player1.set_mana(self.player1.get_mana() - 20)
-                self.log(f"{self.player1.get_name()} is defending this turn!")
-            else:
-                self.log(
-                    f"{self.player1.get_name()} tried to defend but didn't have enough mana!"
-                )
-        elif move1 == "Resting":
-            mana_gain = random.randint(20, 35)
-            self.player1.set_mana(self.player1.get_mana() + mana_gain)
-            self.log(f"{self.player1.get_name()} rests and gains {mana_gain} mana!")
-
-        # Process player2's move.
-        if move2 == "Attacking":
-            if self.player2.get_mana() >= 20:
-                self.player2.set_mana(self.player2.get_mana() - 20)
-                if move1 == "Defending":
-                    damage = self.player2.get_attack() - self.player1.get_defense()
-                    if damage < 0:
-                        damage = 0
-                    fully_efficient, reduction = calculate_defense_efficiency()
-                    if fully_efficient:
-                        damage = 0
-                        self.log(
-                            f"{self.player1.get_name()} defended fully against {self.player2.get_name()}'s attack!"
-                        )
+                        self.log(f"{player.get_name()} tried to attack but didn't have enough mana!")
+                elif move == "Defending":
+                    if player.get_mana() >= 20:
+                        player.set_mana(player.get_mana() - 20)
+                        self.log(f"{player.get_name()} is defending this turn!")
                     else:
-                        damage = int(damage * (1 - reduction))
-                        self.log(
-                            f"{self.player1.get_name()} defended inefficiently, reducing damage by {int(reduction * 100)}%!"
-                        )
-                elif move1 == "Resting":
-                    damage = int(self.player2.get_attack() * 1.5)
-                elif move1 == "Attacking":
-                    damage = self.player2.get_attack()
-                else:
-                    damage = self.player2.get_attack()
-                self.player1.set_health(self.player1.get_health() - damage)
-                self.log(
-                    f"{self.player2.get_name()} attacks {self.player1.get_name()} for {damage} damage!"
-                )
-            else:
-                self.log(
-                    f"{self.player2.get_name()} tried to attack but didn't have enough mana!"
-                )
-        elif move2 == "Defending":
-            if self.player2.get_mana() >= 20:
-                self.player2.set_mana(self.player2.get_mana() - 20)
-                self.log(f"{self.player2.get_name()} is defending this turn!")
-            else:
-                self.log(
-                    f"{self.player2.get_name()} tried to defend but didn't have enough mana!"
-                )
-        elif move2 == "Resting":
-            mana_gain = random.randint(20, 35)
-            self.player2.set_mana(self.player2.get_mana() + mana_gain)
-            self.log(f"{self.player2.get_name()} rests and gains {mana_gain} mana!")
+                        self.log(f"{player.get_name()} tried to defend but didn't have enough mana!")
+                elif move == "Resting":
+                    mana_gain = random.randint(20, 35)
+                    player.set_mana(player.get_mana() + mana_gain)
+                    self.log(f"{player.get_name()} rests and gains {mana_gain} mana!")
+                elif move == "Healing":
+                    if player.get_mana() >= 30:
+                        player.set_mana(player.get_mana() - 30)
+                        health_gain = random.randint(15, 30)
+                        player.set_health(player.get_health() + health_gain)
+                        self.log(f"{player.get_name()} heals and gains {health_gain} health!")
+                    else:
+                        self.log(f"{player.get_name()} tried to heal but didn't have enough mana!")
+                elif move == "Special Attack":
+                    if player.get_mana() >= 50:
+                        player.set_mana(player.get_mana() - 50)
+                        damage = player.get_attack() * 2
+                        opponent.set_health(opponent.get_health() - damage)
+                        self.log(f"{player.get_name()} uses a special attack on {opponent.get_name()} for {damage} damage!")
+                    else:
+                        self.log(f"{player.get_name()} tried to use a special attack but didn't have enough mana!")
+    
+            # Process player1's move.
+            opponent_move = move2
+            process_move(self.player1, self.player2, move1)
+    
+            # Process player2's move.
+            opponent_move = move1
+            process_move(self.player2, self.player1, move2)
+
+
 
     def battle_round(self, single_player=False, bot=None):
         """
@@ -303,7 +266,7 @@ class GameEngine:
                 logging.error("Bot is not defined in single player mode")
                 raise ValueError("Bot is not defined in single player mode")
             move_p2 = ai.wizard_bot_turn(bot, self.player1)
-
+            
         self.log(
             f"Moves this turn: {self.player1.get_name()} -> {move_p1}, {self.player2.get_name()} -> {move_p2}"
         )
@@ -336,7 +299,7 @@ class GameEngine:
             self.update_gui()
             pygame.display.update()
             self.clock.tick(30)
-
+    
     def gameOver(self):
         if self.player1.get_health() <= 0 or self.player2.get_health() <= 0:
             logging.debug("Game over condition met")
@@ -350,7 +313,8 @@ def run():
     with open(yaml_path, "r") as file:
         properties = yaml.safe_load(file)
     logging.debug("Configuration loaded from YAML")
-
+    
+    
     player1_name = properties.get("game_options", {}).get("player1", {}).get("name")
     player2_name = properties.get("game_options", {}).get("player2", {}).get("name")
     if player1_name is None:
@@ -393,6 +357,7 @@ def run():
         # ? Logic for pausing game and resuming to let user see stats
 
     game.declare_winner()
+    
 
 
 if __name__ == "__main__":

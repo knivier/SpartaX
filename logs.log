@@ -56,3 +56,45 @@
 2025-02-02 03:51:45,280 - DEBUG - GUI updated
 2025-02-02 03:51:45,282 - DEBUG - Battle round completed
 2025-02-02 03:51:50,283 - DEBUG - Starting battle round
+2025-02-02 03:55:38,414 - INFO - NEW SESSION ID: 1738486538.4149892
+2025-02-02 03:55:38,418 - DEBUG - Configuration loaded from YAML
+2025-02-02 03:55:38,516 - DEBUG - LogWindow initialized
+2025-02-02 03:55:38,517 - DEBUG - GameEngine initialized
+2025-02-02 03:55:38,517 - INFO - GameEngine instance created
+2025-02-02 03:55:38,517 - DEBUG - Starting battle round
+2025-02-02 04:35:11,281 - INFO - NEW SESSION ID: 1738488911.2813523
+2025-02-02 04:35:11,284 - DEBUG - Configuration loaded from YAML
+2025-02-02 04:35:11,379 - DEBUG - LogWindow initialized
+2025-02-02 04:35:11,379 - DEBUG - GameEngine initialized
+2025-02-02 04:35:11,379 - INFO - GameEngine instance created
+2025-02-02 04:35:11,380 - DEBUG - Starting battle round
+2025-02-02 04:35:23,204 - DEBUG - Scanned moves: Special Attack
+2025-02-02 04:35:23,204 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> S, Hydra -> Attacking
+2025-02-02 04:35:23,204 - INFO - Moves this turn: Draco -> S, Hydra -> Attacking
+2025-02-02 04:36:28,153 - INFO - NEW SESSION ID: 1738488988.1532562
+2025-02-02 04:36:28,156 - DEBUG - Configuration loaded from YAML
+2025-02-02 04:36:28,266 - DEBUG - LogWindow initialized
+2025-02-02 04:36:28,267 - DEBUG - GameEngine initialized
+2025-02-02 04:36:28,267 - INFO - GameEngine instance created
+2025-02-02 04:36:28,267 - DEBUG - Starting battle round
+2025-02-02 04:36:39,881 - DEBUG - Scanned moves: Special Attack
+2025-02-02 04:36:39,881 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> S, Hydra -> Resting
+2025-02-02 04:36:39,881 - INFO - Moves this turn: Draco -> S, Hydra -> Resting
+2025-02-02 04:38:52,065 - INFO - NEW SESSION ID: 1738489132.0653284
+2025-02-02 04:38:52,068 - DEBUG - Configuration loaded from YAML
+2025-02-02 04:38:52,167 - DEBUG - LogWindow initialized
+2025-02-02 04:38:52,167 - DEBUG - GameEngine initialized
+2025-02-02 04:38:52,167 - INFO - GameEngine instance created
+2025-02-02 04:38:52,167 - DEBUG - Starting battle round
+2025-02-02 04:39:01,147 - DEBUG - Scanned moves: Resting
+2025-02-02 04:39:01,148 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> R, Hydra -> Healing
+2025-02-02 04:39:01,148 - INFO - Moves this turn: Draco -> R, Hydra -> Healing
+2025-02-02 04:42:23,126 - INFO - NEW SESSION ID: 1738489343.126418
+2025-02-02 04:42:23,129 - DEBUG - Configuration loaded from YAML
+2025-02-02 04:42:23,242 - DEBUG - LogWindow initialized
+2025-02-02 04:42:23,242 - DEBUG - GameEngine initialized
+2025-02-02 04:42:23,243 - INFO - GameEngine instance created
+2025-02-02 04:42:23,243 - DEBUG - Starting battle round
+2025-02-02 04:42:31,625 - DEBUG - Scanned moves: Resting
+2025-02-02 04:42:31,625 - DEBUG - Message added to LogWindow: Moves this turn: Draco -> R, Hydra -> Attacking
+2025-02-02 04:42:31,625 - INFO - Moves this turn: Draco -> R, Hydra -> Attacking
