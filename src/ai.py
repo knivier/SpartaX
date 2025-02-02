@@ -1,3 +1,4 @@
+import os
 import random
 import yaml
 
@@ -56,31 +57,33 @@ class wizard_bot:
 
 def wizard_bot_turn(bot, player):
     #safety
-    if difficulty < 0:
-        difficulty = 0
-    if difficulty > 5: 
-        difficulty = 5
+    if bot.difficulty < 0:
+        bot.difficulty = 0
+    if bot.difficulty > 5: 
+        bot.difficulty = 5
     #easy/medium mode 
-    if(difficulty <= 3):
-        number = random.randint(1,4)
+    if(bot.difficulty <= 3):
+        number = random.randint(1,5)
         if number == 1: 
-            bot.set_state("Rest")
+            bot.set_state("Resting")
         elif number == 2: 
-            bot.set_state("Attack")
+            bot.set_state("Attacking")
         elif number == 3: 
-            bot.set_state("Defend")
+            bot.set_state("Defending")
         elif number == 4: 
-            bot.set_state("Heal")
-        return 
+            bot.set_state("Healing")
+        else:
+            bot.set_state("Special Attack")
+        return bot.get_state()
     # FSM - finite state machine to determine the wizard's action
     if bot.get_mana() == 0:
-        bot.set_state("Rest")
+        bot.set_state("Resting")
     elif player.get_health() <= bot.get_attack() and bot.has_enough_mana(10):
-        bot.set_state("Attack")
+        bot.set_state("Attacking")
     elif bot.get_health() <= player.get_attack() and bot.has_enough_mana(20):
-        bot.set_state("Defend")
+        bot.set_state("Defending")
     elif bot.get_health() <= 30 and bot.has_enough_mana(30):
-        bot.set_state("Heal")
+        bot.set_state("Healing")
     else:
         bot.set_state("Attack")
-    return 
+    return bot.get_state()

@@ -17,6 +17,7 @@ import os
 import cv2  # For color conversion
 import logging
 import time
+import ai
 
 # Ensure Pygame is initialized before anything else
 pygame.init()
@@ -208,7 +209,7 @@ class GameEngine:
                         )
                 elif move2 == "Resting":
                     damage = int(self.player1.get_attack() * 1.5)
-                elif move2 == "Attack":
+                elif move2 == "Attacking":
                     damage = self.player1.get_attack()
                 else:
                     damage = self.player1.get_attack()
@@ -234,7 +235,7 @@ class GameEngine:
             self.log(f"{self.player1.get_name()} rests and gains {mana_gain} mana!")
 
         # Process player2's move.
-        if move2 == "Attack":
+        if move2 == "Attacking":
             if self.player2.get_mana() >= 20:
                 self.player2.set_mana(self.player2.get_mana() - 20)
                 if move1 == "Defending":
@@ -254,7 +255,7 @@ class GameEngine:
                         )
                 elif move1 == "Resting":
                     damage = int(self.player2.get_attack() * 1.5)
-                elif move1 == "Attack":
+                elif move1 == "Attacking":
                     damage = self.player2.get_attack()
                 else:
                     damage = self.player2.get_attack()
@@ -279,7 +280,7 @@ class GameEngine:
             self.player2.set_mana(self.player2.get_mana() + mana_gain)
             self.log(f"{self.player2.get_name()} rests and gains {mana_gain} mana!")
 
-    def battle_round(self):
+    def battle_round(self, single_player=False, bot=None):
         """
         Main battle loop.
         For every TURN_TIME seconds, imaging.scan() is used to get both players' moves.
@@ -287,9 +288,17 @@ class GameEngine:
         """
         logging.debug("Starting battle round")
         # Get moves from imaging.scan (blocks for TURN_TIME seconds).
-        thing = imaging.scan(TURN_TIME, False)
-        logging.debug(f"Scanned moves: {thing}")
-        move_p1, move_p2 = thing
+        moves = imaging.scan(TURN_TIME, single_player)
+        logging.debug(f"Scanned moves: {moves}")
+        if not single_player:
+            move_p1, move_p2 = moves
+        else:
+            move_p1 = moves[0]
+            if bot is None:
+                logging.error("Bot is not defined in single player mode")
+                raise ValueError("Bot is not defined in single player mode")
+            move_p2 = ai.wizard_bot_turn(bot, self.player1)
+            
         self.log(
             f"Moves this turn: {self.player1.get_name()} -> {move_p1}, {self.player2.get_name()} -> {move_p2}"
         )
@@ -336,7 +345,8 @@ def run():
     with open(yaml_path, "r") as file:
         properties = yaml.safe_load(file)
     logging.debug("Configuration loaded from YAML")
-
+    
+    
     player1_name = properties.get("game_options", {}).get("player1", {}).get("name")
     player2_name = properties.get("game_options", {}).get("player2", {}).get("name")
     if player1_name is None:
@@ -345,6 +355,11 @@ def run():
     if player2_name is None:
         logging.error("player2 is not specified in properties.yaml")
         raise ValueError("player2 is not specified in properties.yaml")
+
+    single_player = properties.get("base_options", {}).get("mode") == "player_vs_ai"
+    bot = None
+    if single_player:
+        bot = ai.wizard_bot()
 
     player_classes = {
         "Draco": Draco,
@@ -369,7 +384,7 @@ def run():
     game = GameEngine(p1_class(), p2_class())
     logging.info("GameEngine instance created")
     while not game.gameOver():
-        game.battle_round()
+        game.battle_round(single_player=single_player, bot=bot)
         pygame.time.wait(5000)
         # ? Logic for pausing game and resuming to let user see stats
 

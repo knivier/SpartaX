@@ -3,6 +3,7 @@ import yaml
 import sys
 import os
 import Player_List
+import random
 
 
 # Load game options from YAML file, defaults are preset if yaml is errored
@@ -214,6 +215,8 @@ def options_menu():
 
 # Start game
 def start_game():
+    single_player = options["base_options"]["mode"] == "player_vs_ai"
+    
     def select_player_menu(player_num):
         running = True
         selected_player = None
@@ -263,12 +266,31 @@ def start_game():
             pygame.display.flip()
 
         return selected_player
+    
+    def ai_select():
+        players = [
+            Player_List.Draco(),
+            Player_List.Hydra(),
+            Player_List.Phoenix(),
+            Player_List.Lyra(),
+            Player_List.Orion(),
+            Player_List.Pegasus(),
+            Player_List.Andromeda(),
+            Player_List.Centaurus(),
+            Player_List.Cassiopeia(),
+        ]
+        selected_player = random.choice(players).get_name()
+        return selected_player
 
     player1 = select_player_menu(1)
     options["game_options"]["player1"] = {"name": player1}
     save_options(options)
 
-    player2 = select_player_menu(2)
+    if single_player:
+        player2 = ai_select()
+    else:
+        player2 = select_player_menu(2)
+        
     options["game_options"]["player2"] = {"name": player2}
     save_options(options)
 
